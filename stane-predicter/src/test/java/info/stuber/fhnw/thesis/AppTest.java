@@ -1,4 +1,4 @@
-package info.stuber.fhnw.stane_predicter;
+package info.stuber.fhnw.thesis;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
