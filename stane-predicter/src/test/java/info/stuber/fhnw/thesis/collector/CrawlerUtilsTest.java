@@ -1,4 +1,4 @@
-package utils;
+package info.stuber.fhnw.thesis.collector;
 
 import org.junit.Test;
 
