@@ -40,11 +40,12 @@ public class HelloLucene {
         w.close();
 
         // 2. query
-        String querystr = args.length > 0 ? args[0] : "lucene";
+        String querystr = args.length > 0 ? args[0] : "lucene dummies";
 
         // the "title" arg specifies the default field to use
         // when no field is explicitly specified in the query.
         Query q = new QueryParser("title", analyzer).parse(querystr);
+        System.out.println(q.toString());
 
         // 3. search
         int hitsPerPage = 10;
@@ -74,5 +75,5 @@ public class HelloLucene {
         doc.add(new StringField("isbn", isbn, Field.Store.YES));
         w.addDocument(doc);
     }
-    
+
 }

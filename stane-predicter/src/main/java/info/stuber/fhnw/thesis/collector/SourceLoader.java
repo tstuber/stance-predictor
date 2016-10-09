@@ -16,7 +16,7 @@ public class SourceLoader {
 	private Set<String> list = null;
 
 	public SourceLoader() {
-		list = new HashSet<>();
+		list = new HashSet<String>();
 	}
 
 	public void readSourceFile() {

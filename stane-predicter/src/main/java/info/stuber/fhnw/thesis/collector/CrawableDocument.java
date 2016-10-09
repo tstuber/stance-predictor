@@ -2,6 +2,8 @@ package info.stuber.fhnw.thesis.collector;
 
 import java.util.ArrayList;
 
+import org.jsoup.HttpStatusException;
+
 public class CrawableDocument {
 
 	private String url;
@@ -81,7 +83,17 @@ public class CrawableDocument {
 		return this.ex.size() > 0 ? true : false;
 	}
 	
-	public String getError()
+	public String getErrorForConsle() {
+		StringBuilder sb = new StringBuilder();
+		
+		if(this.ex.size() > 0) {
+			sb.append(ex.toString());
+		}
+		
+		return sb.toString();
+	}
+	
+	public String getErrorForSummary()
 	{
 		StringBuilder sb = new StringBuilder();
 		
@@ -96,7 +108,12 @@ public class CrawableDocument {
 			sb.append(newline);
 			
 			for(Exception ex : this.ex) {
-				sb.append(ex.getMessage());
+				
+				if(ex instanceof org.jsoup.HttpStatusException)
+					sb.append( ((HttpStatusException) ex).toString());
+				else
+					sb.append(ex);					
+					
 				sb.append(newline);
 			}
 			sb.append(newline);

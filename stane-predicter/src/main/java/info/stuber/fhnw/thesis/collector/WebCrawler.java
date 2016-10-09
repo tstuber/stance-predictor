@@ -21,6 +21,8 @@ import org.jsoup.select.Elements;
 import org.jsoup.select.NodeTraversor;
 import org.jsoup.select.NodeVisitor;
 
+import info.stuber.fhnw.thesis.utils.CrawlerUtils;
+
 public class WebCrawler {
 
 	private static final String USER_AGENT = "Mozilla/5.0 (jsoup)";
@@ -29,7 +31,6 @@ public class WebCrawler {
 
 	private Set<String> sources = null;
 	private ArrayList<CrawableDocument> urlList = null;
-	String selector = null;
 
 	public WebCrawler(Set<String> sources) {
 
@@ -45,12 +46,14 @@ public class WebCrawler {
 
 	}
 
-	public String crawlSites() {
+	public void crawlSites() {
 
-		int counter = 0;
+		int counter = 1;
+		boolean success;
 
 		for (CrawableDocument entity : urlList) {
 
+			success = false;
 			String url = entity.getUrl();
 			String webArchiveUrl = WEB_ARCHIVE_URL + url;
 
@@ -62,6 +65,7 @@ public class WebCrawler {
 			try {
 
 				// lookup selector
+				
 
 				Document doc = null;
 				try {
@@ -69,7 +73,7 @@ public class WebCrawler {
 					doc = Jsoup.connect(webArchiveUrl).userAgent(USER_AGENT).timeout(TIMEOUT).get();
 				} catch (org.jsoup.HttpStatusException httpex) {
 					// fetch the specified URL and parse to a HTML DOM
-					if (httpex.getMessage().contains("404"))
+					if (httpex.toString().contains("404"))
 						try {
 							doc = Jsoup.connect(url).userAgent(USER_AGENT).timeout(TIMEOUT).get();
 						} catch (Exception ex) {
@@ -83,12 +87,17 @@ public class WebCrawler {
 				}
 
 				HtmlToPlainText formatter = new HtmlToPlainText();
-
+				
+				//String selector = CrawlerUtils.getSelector(url);
+				String selector = null;
+				
 				if (selector != null) {
+					
+					Elements elements = doc.getElementsByTag("p");
 
 					// Elements elements = doc.select(selector); // get each
 					// element that matches the CSS selector
-					Elements elements = doc.getElementsByClass(selector); // get
+					//Elements elements = doc.getElementsByClass(selector); // get
 																			// each
 																			// element
 																			// that
@@ -116,12 +125,21 @@ public class WebCrawler {
 			String filename = "C:/temp/webcrawler/" + entity.getFilename();
 			writeToTextFile(filename, entity.getContent());
 			
-			if(entity.hasError())
-				writeErrorToTextFile(entity.getError());
+			if(entity.hasError()) 
+				writeErrorToTextFile(entity.getErrorForSummary());
+			else
+				success = true;
+			
 
 			counter++;
+			
+			if(success)
+				System.out.println("[DONE]");
+			else
+				System.out.println("[FAIL] " + entity.getErrorForConsle());
 		}
-		return null;
+		
+		
 	}
 
 	
