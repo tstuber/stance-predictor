@@ -1,5 +1,6 @@
 package info.stuber.fhnw.thesis.collector;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -22,12 +23,14 @@ import org.jsoup.select.NodeTraversor;
 import org.jsoup.select.NodeVisitor;
 
 import info.stuber.fhnw.thesis.utils.CrawlerUtils;
+import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
 public class WebCrawler {
 
 	private static final String USER_AGENT = "Mozilla/5.0 (jsoup)";
 	private static final String WEB_ARCHIVE_URL = "https://web.archive.org/web/20160331/";
 	private static final int TIMEOUT = 5 * 1000;
+	private static final String PATH_DOCUMENT = GetConfigPropertyValues.getProperty("path_documents");
 
 	private Set<String> sources = null;
 	private ArrayList<CrawableDocument> urlList = null;
@@ -65,7 +68,6 @@ public class WebCrawler {
 			try {
 
 				// lookup selector
-				
 
 				Document doc = null;
 				try {
@@ -87,24 +89,25 @@ public class WebCrawler {
 				}
 
 				HtmlToPlainText formatter = new HtmlToPlainText();
-				
-				//String selector = CrawlerUtils.getSelector(url);
+
+				// String selector = CrawlerUtils.getSelector(url);
 				String selector = null;
-				
+
 				if (selector != null) {
-					
+
 					Elements elements = doc.getElementsByTag("p");
 
 					// Elements elements = doc.select(selector); // get each
 					// element that matches the CSS selector
-					//Elements elements = doc.getElementsByClass(selector); // get
-																			// each
-																			// element
-																			// that
-																			// matches
-																			// the
-																			// CSS
-																			// selector
+					// Elements elements = doc.getElementsByClass(selector); //
+					// get
+					// each
+					// element
+					// that
+					// matches
+					// the
+					// CSS
+					// selector
 					for (Element element : elements) {
 						entity.setContent(formatter.getPlainText(element)); // format
 						// that
@@ -122,32 +125,33 @@ public class WebCrawler {
 			}
 
 			// Try to write File to disk
-			String filename = "C:/temp/webcrawler/" + entity.getFilename();
-			writeToTextFile(filename, entity.getContent());
+			File dir = new File(PATH_DOCUMENT);
+			if(!dir.exists())
+				dir.mkdir();
 			
-			if(entity.hasError()) 
+			String filename = PATH_DOCUMENT + entity.getFilename();
+			System.out.println("Target: " + filename);
+			writeToTextFile(filename, entity.getContent());
+
+			if (entity.hasError())
 				writeErrorToTextFile(entity.getErrorForSummary());
 			else
 				success = true;
-			
 
 			counter++;
-			
-			if(success)
+
+			if (success)
 				System.out.println("[DONE]");
 			else
 				System.out.println("[FAIL] " + entity.getErrorForConsle());
 		}
-		
-		
+
 	}
 
-	
-
 	public void writeErrorToTextFile(String content) {
-		
-		String filename = "C:/temp/webcrawler/errorSummary.txt"; 
-		
+
+		String filename = PATH_DOCUMENT + "/errorSummary.txt";
+
 		try {
 			Files.write(Paths.get(filename), content.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
 		} catch (IOException ex) {
@@ -157,8 +161,7 @@ public class WebCrawler {
 
 	public static void writeToTextFile(String fileName, String content) {
 		try {
-			Files.write(Paths.get(fileName), content.getBytes(), StandardOpenOption.CREATE,
-					StandardOpenOption.TRUNCATE_EXISTING);
+			Files.write(Paths.get(fileName), content.getBytes(), StandardOpenOption.CREATE);
 		} catch (IOException ex) {
 			System.out.println(ex);
 		}

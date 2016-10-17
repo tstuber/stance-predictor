@@ -1,4 +1,4 @@
-package info.stuber.fhnw.thesis;
+package info.stuber.fhnw.thesis.lucene;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,6 +27,8 @@ import org.apache.lucene.index.Term;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
+import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
+
 /**
  * Index all text files under a directory.
  * <p>
@@ -35,8 +37,8 @@ import org.apache.lucene.store.FSDirectory;
  */
 public class IndexFiles {
 
-	private static final String INDEX_PATH = "C:/temp/webcrawler_index";
-	private static final String DOC_PATH = "C:/temp/webcrawler";
+	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
+	private static final String DOC_PATH = GetConfigPropertyValues.getProperty("path_documents");
 	private static final boolean CREATE = true;
 	
 	private IndexFiles() {

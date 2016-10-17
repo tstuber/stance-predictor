@@ -9,9 +9,9 @@ import java.nio.charset.Charset;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SourceLoader {
+import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
-	private static final String CODING_EXPORT = "C:\\Users\\Thomas\\OneDrive\\FHNW\\Semester 5\\MT\\04_Data\\coding_exports_UK_clean_stuber.txt";
+public class SourceLoader {
 
 	private Set<String> list = null;
 
@@ -20,7 +20,8 @@ public class SourceLoader {
 	}
 
 	public void readSourceFile() {
-		File f = new File(CODING_EXPORT);
+	
+		File f = new File(GetConfigPropertyValues.getProperty("path_codingurls"));
 		BufferedReader reader = null;
 
 		try {

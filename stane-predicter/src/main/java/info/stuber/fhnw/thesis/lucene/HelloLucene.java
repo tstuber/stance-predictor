@@ -1,4 +1,4 @@
-package info.stuber.fhnw.thesis;
+package info.stuber.fhnw.thesis.lucene;
 
 
 import java.io.IOException;

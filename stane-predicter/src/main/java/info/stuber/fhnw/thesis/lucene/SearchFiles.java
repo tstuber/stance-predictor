@@ -1,4 +1,4 @@
-package info.stuber.fhnw.thesis;
+package info.stuber.fhnw.thesis.lucene;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,10 +20,12 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.FSDirectory;
 
+import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
+
 /** Simple command-line based search demo. */
 public class SearchFiles {
 
-	private static final String INDEX_PATH = "C:/temp/webcrawler_index";
+	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
 
 	private SearchFiles() {
 	}
