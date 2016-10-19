@@ -1,24 +1,15 @@
 package info.stuber.fhnw.thesis.gate;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.net.MalformedURLException;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import javax.swing.SwingUtilities;
-
 import gate.*;
-import gate.annotation.AnnotationSetImpl;
-import gate.creole.ResourceInstantiationException;
 import gate.creole.SerialAnalyserController;
-import gate.gui.MainFrame;
 import gate.util.GateException;
-import gate.util.Out;
 
 public class TutorialApp {
 
@@ -30,7 +21,7 @@ public class TutorialApp {
 	 */
 
 	public static void main(String[] args)
-			throws GateException, InvocationTargetException, InterruptedException, MalformedURLException {
+			throws GateException, InvocationTargetException, InterruptedException, IOException {
 
 		Gate.init();
 
@@ -39,36 +30,43 @@ public class TutorialApp {
 		Gate.getCreoleRegister().registerDirectories(aPluginDir.toURI().toURL());
 
 		// MainFrame.getInstance().setVisible(true);
-		SwingUtilities.invokeAndWait(new Runnable() {
-			public void run() {
-				MainFrame.getInstance().setVisible(true);
-			}
-		});
-
+//		SwingUtilities.invokeAndWait(new Runnable() {
+//			public void run() {
+//				MainFrame.getInstance().setVisible(true);
+//			}
+//		});
+		
 		gate.Corpus corpus = (Corpus) Factory.createResource("gate.corpora.CorpusImpl");
 
+		// FeatureMap params = Factory.newFeatureMap();
+		// params.put(Document.DOCUMENT_STRING_CONTENT_PARAMETER_NAME, "This is
+		// a document!");
+		// FeatureMap feats = Factory.newFeatureMap();
+		// feats.put("createdBy", "me!");
+		// Document doc1 = (Document)
+		// Factory.createResource("gate.corpora.DocumentImpl", params, feats,
+		// "My first document");
+		
+		// TODO: Test, if Archive-Org URL is existing, else take original one!
+		
+		HttpURLConnection connection = (HttpURLConnection) new URL("http://www.exelance.ch/").openConnection();
+		connection.setRequestMethod("HEAD");
+		int responseCode = connection.getResponseCode();
+		if (responseCode != 200) {
+			System.out.println("ERRRROR");
+		}
+
 		FeatureMap params = Factory.newFeatureMap();
-		params.put(Document.DOCUMENT_STRING_CONTENT_PARAMETER_NAME, "This is a document!");
-		FeatureMap feats = Factory.newFeatureMap();
-		feats.put("createdBy", "me!");
-		Document doc1 = (Document) Factory.createResource("gate.corpora.DocumentImpl", params, feats,
-				"My first document");
-
-		params = Factory.newFeatureMap();
 		params.put(Document.DOCUMENT_STRING_CONTENT_PARAMETER_NAME, "This is home");
-		params.put(Document.DOCUMENT_URL_PARAMETER_NAME,
-				"https://www.theguardian.com/commentisfree/2016/oct/17/3-million-citizens-uk-brexit-vote-theresa-may");
+		params.put(Document.DOCUMENT_URL_PARAMETER_NAME, "http://www.telegraph.co.uk/news/politics/conservative/10618693/Conservatives-likely-to-reduce-top-rate-of-tax-says-Boris-Johnson.html");
 		params.put(Document.DOCUMENT_ENCODING_PARAMETER_NAME, "UTF-8");
-		feats = Factory.newFeatureMap();
+		FeatureMap feats = Factory.newFeatureMap();
 		feats.put("Date", new Date());
-		Document doc2 = (Document) Factory.createResource("gate.corpora.DocumentImpl", params, feats,
-				"My second document");
+		Document doc = (Document) Factory.createResource("gate.corpora.DocumentImpl", params, feats,
+				"My document");
 
-		Document doc3 = Factory.newDocument("Height is 60 in. Weight is 150 lbs pulse rate 90 Pulse rate 90");
 
-		corpus.add(doc1);
-		corpus.add(doc2);
-		corpus.add(doc3);
+		corpus.add(doc);
 
 		ProcessingResource token = (ProcessingResource) Factory.createResource("gate.creole.tokeniser.DefaultTokeniser",
 				Factory.newFeatureMap());
@@ -83,57 +81,136 @@ public class TutorialApp {
 		pipeline.add(sspliter);
 		pipeline.execute();
 
-		AnnotationSetImpl ann = (AnnotationSetImpl) doc1.getAnnotations();
-		Iterator<Annotation> i = ann.get("Sentence").iterator();
-		Annotation annotation = i.next();
-		long start = annotation.getStartNode().getOffset();
-		long end = annotation.getEndNode().getOffset();
-		System.out.println("OUT: " + doc1.toString().substring((int) start, (int) end));
+		// AnnotationSetImpl ann = (AnnotationSetImpl) doc1.getAnnotations();
+		// Iterator<Annotation> i = ann.get("Sentence").iterator();
+		// Annotation annotation = i.next();
+		// long start = annotation.getStartNode().getOffset();
+		// long end = annotation.getEndNode().getOffset();
+		// System.out.println("OUT: " + doc1.toString().substring((int) start,
+		// (int) end));
 
-		// GET ALL ANNOTATIONS
-		Map<String, AnnotationSet> namedASes = doc2.getNamedAnnotationSets();
-		System.out.println("No. of named Annotation Sets:" + namedASes.size());
-
-		for (String setName : namedASes.keySet()) {
-			AnnotationSet aSet = namedASes.get(setName);
-			System.out.println("No. of Annotations for " + setName + ":" + aSet.size());
-
-			Set<String> annotTypes = aSet.getAllTypes();
-			for (String aType : annotTypes) {
-				System.out.println(" " + aType + ": " + aSet.get(aType).size());
-			}
-		}
+		// // GET ALL ANNOTATIONS
+		// Map<String, AnnotationSet> namedASes = doc2.getNamedAnnotationSets();
+		// System.out.println("No. of named Annotation Sets:" +
+		// namedASes.size());
+		//
+		// for (String setName : namedASes.keySet()) {
+		// AnnotationSet aSet = namedASes.get(setName);
+		// System.out.println("No. of Annotations for " + setName + ":" +
+		// aSet.size());
+		//
+		// Set<String> annotTypes = aSet.getAllTypes();
+		// for (String aType : annotTypes) {
+		// System.out.println(" " + aType + ": " + aSet.get(aType).size());
+		// }
+		// }
 
 		// GET URLS FROM A TAGS
-		AnnotationSet origMarkupsSet = doc2.getAnnotations("Original markups");
-		System.out.println("MARKUP SIZE (Original Markups): " + origMarkupsSet.size());
-		AnnotationSet anchorSet = origMarkupsSet.get("a");
-		System.out.println("Count a:" + anchorSet.size());
+		// AnnotationSet origMarkupsSet = doc2.getAnnotations("Original
+		// markups");
+		// System.out.println("MARKUP SIZE (Original Markups): " +
+		// origMarkupsSet.size());
+		// AnnotationSet anchorSet = origMarkupsSet.get("a");
+		// System.out.println("Count a:" + anchorSet.size());
+		//
+		// for (Annotation anchor : anchorSet) {
+		// String href = (String) anchor.getFeatures().get("href");
+		// if (href != null) {
+		// try {
+		// // System.out.println(new URL(doc2.getSourceUrl(), href));
+		// } catch (Exception ex) {
+		// // System.out.println(ex.toString());
+		// }
+		// }
+		// }
 
-		for (Annotation anchor : anchorSet) {
-			String href = (String) anchor.getFeatures().get("href");
-			if (href != null) {
-				try {
-					// System.out.println(new URL(doc2.getSourceUrl(), href));
-				} catch (Exception ex) {
-					// System.out.println(ex.toString());
+		// GET URLS FROM SENTENCE TAGS
+		AnnotationSet myMarkupsSet = doc.getAnnotations();
+		AnnotationSet sentenceSet = myMarkupsSet.get("Sentence");
+
+		int windowSize = 4;
+		int max = sentenceSet.size();
+		int current = 0;
+		
+		System.out.println("*** max: " + max + "; WindowSize: " + windowSize + "***");
+
+		Iterator<Annotation> iterator = sentenceSet.get("Sentence").iterator();
+
+		while (iterator.hasNext()) {
+			long start = 0;
+			long end = 0;
+
+			Annotation firstAnnotation = iterator.next();
+			start = firstAnnotation.getStartNode().getOffset();
+
+			if (windowSize == 1) {
+				end = firstAnnotation.getEndNode().getOffset();
+			} else {
+				// före spuuhlen
+				Iterator<Annotation> iteratorWindowSize = sentenceSet.get("Sentence").iterator();
+
+				System.out.println("Current: " + current + " of " + (max));
+
+				for (int i = 0; i <= (current + windowSize-1); i++) {
+
+					if (i >= max)
+						break;
+
+					Annotation lastAnnotation = iteratorWindowSize.next();
+					end = lastAnnotation.getEndNode().getOffset();
 				}
 			}
-		}
-		
-		// GET URLS FROM SENTENCE TAGS
-		AnnotationSet myMarkupsSet = doc2.getAnnotations("");
-		System.out.println("MARKUP SIZE (all Markups): " + myMarkupsSet.size());
-		AnnotationSet sentenceSet = myMarkupsSet.get("Sentence");
-		System.out.println("Count Sentences: " + sentenceSet.size());
-		
-		for (Annotation sentence : sentenceSet) {
+			current++;
 
-			long start1 = sentence.getStartNode().getOffset();
-			long end2 =  sentence.getEndNode().getOffset();
-			System.out.println(doc2.toString().substring((int)start1, (int)end2));
+			DocumentContent content = doc.getContent();
+			if(start>end) {
+				System.out.println("ERROR: start: " + start + ", end: " + end);
+				break;
+			}
+			String sentence = content.toString().substring((int) start, (int) end);
+			System.out.println(current + ": " + sentence.trim());
 		}
-		
+
+		// for(int count = 0; count>= maxSentence; count++) {
+		// long start= 0;
+		// long end = 0;
+		//
+		// Annotation annotation = iterator.next();
+		// start = annotation.getStartNode().getOffset();
+		//
+		//
+		//
+		//// for(int i = 0; i>=windowsSize; i++) {
+		//// Annotation annotation = iterator.next();
+		//// }
+		// // get start sentence
+		//
+		// // incrase to windows size
+		//
+		// // get end offset
+		//
+		// // cut sentence
+		//
+		//
+		//// AnnotationSetImpl ann = (AnnotationSetImpl) doc1.getAnnotations();
+		//// Iterator<Annotation> i = ann.get("Sentence").iterator();
+		//// Annotation annotation = i.next();
+		//// long start = annotation.getStartNode().getOffset();
+		//// long end = annotation.getEndNode().getOffset();
+		//
+		// }
+		//
+
+//		System.out.println("---------------");
+//		System.out.println("Elements: " + sentenceSet.size());
+//		
+//		for (Annotation sentence : sentenceSet) {
+//
+//			long start1 = sentence.getStartNode().getOffset();
+//			long end2 = sentence.getEndNode().getOffset();
+//			System.out.println(doc2.toString().substring((int) start1, (int) end2));
+//		}
+
 	}
 
 }
