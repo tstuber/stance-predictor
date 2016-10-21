@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -18,10 +19,21 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.LongPoint;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
+import org.apache.lucene.document.FieldType;
+import org.apache.lucene.document.Field.Store;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
+import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.index.IndexOptions;
+import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
+import org.apache.lucene.queryparser.classic.ParseException;
+import org.apache.lucene.queryparser.classic.QueryParser;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.store.Directory;
@@ -38,53 +50,36 @@ import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 public class IndexFiles {
 
 	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
-	private static final String DOC_PATH = GetConfigPropertyValues.getProperty("path_documents");
-	private static final boolean CREATE = true;
-	
-	private IndexFiles() {
+	// private static final String DOC_PATH = GetConfigPropertyValues.getProperty("path_documents");
+	private boolean CREATE = false;
+
+	public IndexFiles() {
+		
 	}
+	
+	public void indexSentences(ArrayList<String> sentenceList, String sourceUrl) {
 
-	/** Index all text files under a directory. */
-	public static void main(String[] args) {
-		String usage = "java org.apache.lucene.demo.IndexFiles" + " [-index INDEX_PATH] [-docs DOCS_PATH] [-update]\n\n"
-				+ "This indexes the documents in DOCS_PATH, creating a Lucene index"
-				+ "in INDEX_PATH that can be searched with SearchFiles";
-		String indexPath = INDEX_PATH;
-		String docsPath = DOC_PATH;
-		boolean create = CREATE;
-//		for (int i = 0; i < args.length; i++) {
-//			if ("-index".equals(args[i])) {
-//				indexPath = args[i + 1];
-//				i++;
-//			} else if ("-docs".equals(args[i])) {
-//				docsPath = args[i + 1];
-//				i++;
-//			} else if ("-update".equals(args[i])) {
-//				create = false;
-//			}
-//		}
-
-		if (docsPath == null) {
-			System.err.println("Usage: " + usage);
-			System.exit(1);
-		}
-
-		final Path docDir = Paths.get(docsPath);
-		if (!Files.isReadable(docDir)) {
-			System.out.println("Document directory '" + docDir.toAbsolutePath()
-					+ "' does not exist or is not readable, please check the path");
-			System.exit(1);
-		}
+		if (sentenceList == null)
+			return;
 
 		Date start = new Date();
 		try {
-			System.out.println("Indexing to directory '" + indexPath + "'...");
+			System.out.println("Indexing to directory '" + INDEX_PATH + "'...");
 
-			Directory dir = FSDirectory.open(Paths.get(indexPath));
+			Directory indexDirectory = FSDirectory.open(Paths.get(INDEX_PATH));
+			
+			
+			if (DirectoryReader.indexExists(indexDirectory))
+			{
+				CREATE = false;
+			} else {
+				CREATE = true;
+			}
+			
 			Analyzer analyzer = new StandardAnalyzer();
 			IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
 
-			if (create) {
+			if (CREATE) {
 				// Create a new index in the directory, removing any
 				// previously indexed documents:
 				iwc.setOpenMode(OpenMode.CREATE);
@@ -100,8 +95,9 @@ public class IndexFiles {
 			//
 			// iwc.setRAMBufferSizeMB(256.0);
 
-			IndexWriter writer = new IndexWriter(dir, iwc);
-			indexDocs(writer, docDir);
+			IndexWriter writer = new IndexWriter(indexDirectory, iwc);
+			
+			indexDoc(writer, sentenceList, sourceUrl);
 
 			// NOTE: if you want to maximize search performance,
 			// you can optionally call forceMerge here. This can be
@@ -111,7 +107,12 @@ public class IndexFiles {
 			//
 			// writer.forceMerge(1);
 
-			writer.close();
+			System.out.println("Nr of Docs: " + writer.numDocs());
+
+			// writer.commit();
+
+			if (writer.isOpen())
+				writer.close();
 
 			Date end = new Date();
 			System.out.println(end.getTime() - start.getTime() + " total milliseconds");
@@ -119,44 +120,97 @@ public class IndexFiles {
 		} catch (IOException e) {
 			System.out.println(" caught a " + e.getClass() + "\n with message: " + e.getMessage());
 		}
+
+		// FIND SOMETHING:
+
+		// try {
+		// String querystr = "boris";
+		//
+		// // the "title" arg specifies the default field to use
+		// // when no field is explicitly specified in the query.
+		// Directory dir = FSDirectory.open(Paths.get(INDEX_PATH));
+		// Analyzer analyzer = new StandardAnalyzer();
+		// Query q = new QueryParser("source", analyzer).parse(querystr);
+		//
+		// System.out.println(q.toString());
+		//
+		// // 3. search
+		// int hitsPerPage = 10;
+		// IndexReader reader;
+		//
+		// reader = DirectoryReader.open(dir);
+		//
+		// for (int i=0; i<reader.maxDoc(); i++) {
+		//
+		// Document doc = reader.document(i);
+		// System.out.println(doc.toString());
+		//
+		// // do something with docId here...
+		// }
+		//
+		//
+		//
+		//
+		// System.out.println("total docs: " + reader.numDocs());
+		// IndexSearcher searcher = new IndexSearcher(reader);
+		// TopDocs docs = searcher.search(q, hitsPerPage);
+		// ScoreDoc[] hits = docs.scoreDocs;
+		//
+		// // 4. display results
+		// System.out.println("Found " + hits.length + " hits.");
+		// for (int i = 0; i < hits.length; ++i) {
+		// int docId = hits[i].doc;
+		// Document d = searcher.doc(docId);
+		// System.out.println((i + 1) + ". " + d.get("source") + "\t" +
+		// d.get("content"));
+		// }
+		//
+		// } catch (IOException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// } catch (ParseException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+
 	}
 
-	/**
-	 * Indexes the given file using the given writer, or if a directory is
-	 * given, recurses over files and directories found under the given
-	 * directory.
-	 * 
-	 * NOTE: This method indexes one document per input file. This is slow. For
-	 * good throughput, put multiple documents into your input file(s). An
-	 * example of this is in the benchmark module, which can create "line doc"
-	 * files, one document per line, using the <a href=
-	 * "../../../../../contrib-benchmark/org/apache/lucene/benchmark/byTask/tasks/WriteLineDocTask.html"
-	 * >WriteLineDocTask</a>.
-	 * 
-	 * @param writer
-	 *            Writer to the index where the given file/dir info will be
-	 *            stored
-	 * @param path
-	 *            The file to index, or the directory to recurse into to find
-	 *            files to index
-	 * @throws IOException
-	 *             If there is a low-level I/O error
-	 */
-	static void indexDocs(final IndexWriter writer, Path path) throws IOException {
-		if (Files.isDirectory(path)) {
-			Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
-				@Override
-				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-					try {
-						indexDoc(writer, file, attrs.lastModifiedTime().toMillis());
-					} catch (IOException ignore) {
-						// don't index files that can't be read.
-					}
-					return FileVisitResult.CONTINUE;
+	void indexDoc(IndexWriter writer, ArrayList<String> sentenceList, String sourceUrl) {
+
+		for (String sentence : sentenceList) {
+
+			try {
+				Document doc = new Document();
+				
+
+		        TextField textField = new TextField(LuceneConstants.CONTENTS, sentence, Field.Store.YES);
+		        doc.add(textField);			
+
+				// use a string field for isbn because we don't want it
+				// tokenized
+				Field urlField = new StringField(LuceneConstants.SOURCE, sourceUrl, Field.Store.YES);
+				doc.add(urlField);
+
+				if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {
+					// New index, so we just add the document (no old document
+					// can
+					// be there):
+					writer.addDocument(doc);
+				} else {
+					// Existing index (an old copy of this document may have
+					// been
+					// indexed) so
+					// we use updateDocument instead to replace the old one
+					// matching
+					// the exact
+					// path, if present:
+					writer.updateDocument(new Term(LuceneConstants.SOURCE, sourceUrl), doc);
+
 				}
-			});
-		} else {
-			indexDoc(writer, path, Files.getLastModifiedTime(path).toMillis());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 

@@ -5,11 +5,16 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.Set;
+
 import gate.*;
 import gate.creole.SerialAnalyserController;
 import gate.util.GateException;
+import info.stuber.fhnw.thesis.collector.SourceLoader;
+import info.stuber.fhnw.thesis.lucene.IndexFiles;
 
 public class TutorialApp {
 
@@ -19,9 +24,17 @@ public class TutorialApp {
 	 * pdf
 	 * 
 	 */
+	static SourceLoader ls = null;
 
 	public static void main(String[] args)
 			throws GateException, InvocationTargetException, InterruptedException, IOException {
+
+		IndexFiles indexer = new IndexFiles();
+
+		// Load all URLs
+		ls = new SourceLoader();
+		Set<String> urlSet = null;
+		urlSet = (Set<String>) ls.readSourceFile();
 
 		Gate.init();
 
@@ -30,57 +43,119 @@ public class TutorialApp {
 		Gate.getCreoleRegister().registerDirectories(aPluginDir.toURI().toURL());
 
 		// MainFrame.getInstance().setVisible(true);
-//		SwingUtilities.invokeAndWait(new Runnable() {
-//			public void run() {
-//				MainFrame.getInstance().setVisible(true);
-//			}
-//		});
-		
+		// SwingUtilities.invokeAndWait(new Runnable() {
+		// public void run() {
+		// MainFrame.getInstance().setVisible(true);
+		// }
+		// });
+
 		gate.Corpus corpus = (Corpus) Factory.createResource("gate.corpora.CorpusImpl");
 
-		// FeatureMap params = Factory.newFeatureMap();
-		// params.put(Document.DOCUMENT_STRING_CONTENT_PARAMETER_NAME, "This is
-		// a document!");
-		// FeatureMap feats = Factory.newFeatureMap();
-		// feats.put("createdBy", "me!");
-		// Document doc1 = (Document)
-		// Factory.createResource("gate.corpora.DocumentImpl", params, feats,
-		// "My first document");
-		
 		// TODO: Test, if Archive-Org URL is existing, else take original one!
-		
+
 		HttpURLConnection connection = (HttpURLConnection) new URL("http://www.exelance.ch/").openConnection();
 		connection.setRequestMethod("HEAD");
 		int responseCode = connection.getResponseCode();
 		if (responseCode != 200) {
 			System.out.println("ERRRROR");
 		}
+		
+		 
+		int tmpCount = 0;
+		
+		for(String url : urlSet)
+		{
+			tmpCount++;
+			if(tmpCount > 2)
+				break;
+			
+			System.out.println(url);
+			
+			FeatureMap params = Factory.newFeatureMap();
+			// params.put(Document.DOCUMENT_STRING_CONTENT_PARAMETER_NAME, "This is home");
+			params.put(Document.DOCUMENT_URL_PARAMETER_NAME, url);
+			params.put(Document.DOCUMENT_ENCODING_PARAMETER_NAME, "UTF-8");
+			FeatureMap feats = Factory.newFeatureMap();
+			feats.put("Date", new Date());
+			Document doc = (Document) Factory.createResource("gate.corpora.DocumentImpl", params, feats, "Document_"+tmpCount);
 
-		FeatureMap params = Factory.newFeatureMap();
-		params.put(Document.DOCUMENT_STRING_CONTENT_PARAMETER_NAME, "This is home");
-		params.put(Document.DOCUMENT_URL_PARAMETER_NAME, "http://www.telegraph.co.uk/news/politics/conservative/10618693/Conservatives-likely-to-reduce-top-rate-of-tax-says-Boris-Johnson.html");
-		params.put(Document.DOCUMENT_ENCODING_PARAMETER_NAME, "UTF-8");
-		FeatureMap feats = Factory.newFeatureMap();
-		feats.put("Date", new Date());
-		Document doc = (Document) Factory.createResource("gate.corpora.DocumentImpl", params, feats,
-				"My document");
+			corpus.add(doc);
+
+			ProcessingResource token = (ProcessingResource) Factory.createResource("gate.creole.tokeniser.DefaultTokeniser",
+					Factory.newFeatureMap());
+			ProcessingResource sspliter = (ProcessingResource) Factory
+					.createResource("gate.creole.splitter.SentenceSplitter", Factory.newFeatureMap());
+
+			SerialAnalyserController pipeline = (SerialAnalyserController) Factory.createResource(
+					"gate.creole.SerialAnalyserController", Factory.newFeatureMap(), Factory.newFeatureMap(), "ANNIE");
+			pipeline.setCorpus(corpus);
+
+			pipeline.add(token);
+			pipeline.add(sspliter);
+			pipeline.execute();
+
+			// GET URLS FROM SENTENCE TAGS
+			AnnotationSet myMarkupsSet = doc.getAnnotations();
+			AnnotationSet sentenceSet = myMarkupsSet.get("Sentence");
+
+			int windowSize = 4;
+			int max = sentenceSet.size();
+			int current = 0;
+
+			System.out.println("*** max: " + max + "; WindowSize: " + windowSize + "***");
+
+			Iterator<Annotation> iterator = sentenceSet.get("Sentence").iterator();
+			ArrayList<String> sentenceList = new ArrayList<String>();
+
+			while (iterator.hasNext()) {
+				long start = 0;
+				long end = 0;
+
+				Annotation firstAnnotation = iterator.next();
+				start = firstAnnotation.getStartNode().getOffset();
+
+				if (windowSize == 1) {
+					end = firstAnnotation.getEndNode().getOffset();
+				} else {
+					// före spuuhlen
+					Iterator<Annotation> iteratorWindowSize = sentenceSet.get("Sentence").iterator();
+
+					// System.out.println("Current: " + current + " of " + (max));
+
+					for (int i = 0; i <= (current + windowSize - 1); i++) {
+
+						if (i >= max)
+							break;
+
+						Annotation lastAnnotation = iteratorWindowSize.next();
+						end = lastAnnotation.getEndNode().getOffset();
+					}
+				}
+				current++;
+
+				DocumentContent content = doc.getContent();
+				
+				if(start>end)
+				{
+					System.out.println(url);
+					System.out.println("Start: " + start + ", end: " + end);
+					break;
+				}
+				
+				String sentence = content.toString().substring((int) start, (int) end);
+				sentenceList.add(sentence);
+				// System.out.println(current + ": " + sentence.trim());
+			}
+
+			corpus.remove(doc);
+			
+			System.out.println("Finish");
+			// Store to Lucene
 
 
-		corpus.add(doc);
-
-		ProcessingResource token = (ProcessingResource) Factory.createResource("gate.creole.tokeniser.DefaultTokeniser",
-				Factory.newFeatureMap());
-		ProcessingResource sspliter = (ProcessingResource) Factory
-				.createResource("gate.creole.splitter.SentenceSplitter", Factory.newFeatureMap());
-
-		SerialAnalyserController pipeline = (SerialAnalyserController) Factory.createResource(
-				"gate.creole.SerialAnalyserController", Factory.newFeatureMap(), Factory.newFeatureMap(), "ANNIE");
-		pipeline.setCorpus(corpus);
-
-		pipeline.add(token);
-		pipeline.add(sspliter);
-		pipeline.execute();
-
+			indexer.indexSentences(sentenceList, url);
+		}
+	
 		// AnnotationSetImpl ann = (AnnotationSetImpl) doc1.getAnnotations();
 		// Iterator<Annotation> i = ann.get("Sentence").iterator();
 		// Annotation annotation = i.next();
@@ -124,53 +199,6 @@ public class TutorialApp {
 		// }
 		// }
 
-		// GET URLS FROM SENTENCE TAGS
-		AnnotationSet myMarkupsSet = doc.getAnnotations();
-		AnnotationSet sentenceSet = myMarkupsSet.get("Sentence");
-
-		int windowSize = 4;
-		int max = sentenceSet.size();
-		int current = 0;
-		
-		System.out.println("*** max: " + max + "; WindowSize: " + windowSize + "***");
-
-		Iterator<Annotation> iterator = sentenceSet.get("Sentence").iterator();
-
-		while (iterator.hasNext()) {
-			long start = 0;
-			long end = 0;
-
-			Annotation firstAnnotation = iterator.next();
-			start = firstAnnotation.getStartNode().getOffset();
-
-			if (windowSize == 1) {
-				end = firstAnnotation.getEndNode().getOffset();
-			} else {
-				// före spuuhlen
-				Iterator<Annotation> iteratorWindowSize = sentenceSet.get("Sentence").iterator();
-
-				System.out.println("Current: " + current + " of " + (max));
-
-				for (int i = 0; i <= (current + windowSize-1); i++) {
-
-					if (i >= max)
-						break;
-
-					Annotation lastAnnotation = iteratorWindowSize.next();
-					end = lastAnnotation.getEndNode().getOffset();
-				}
-			}
-			current++;
-
-			DocumentContent content = doc.getContent();
-			if(start>end) {
-				System.out.println("ERROR: start: " + start + ", end: " + end);
-				break;
-			}
-			String sentence = content.toString().substring((int) start, (int) end);
-			System.out.println(current + ": " + sentence.trim());
-		}
-
 		// for(int count = 0; count>= maxSentence; count++) {
 		// long start= 0;
 		// long end = 0;
@@ -201,15 +229,16 @@ public class TutorialApp {
 		// }
 		//
 
-//		System.out.println("---------------");
-//		System.out.println("Elements: " + sentenceSet.size());
-//		
-//		for (Annotation sentence : sentenceSet) {
-//
-//			long start1 = sentence.getStartNode().getOffset();
-//			long end2 = sentence.getEndNode().getOffset();
-//			System.out.println(doc2.toString().substring((int) start1, (int) end2));
-//		}
+		// System.out.println("---------------");
+		// System.out.println("Elements: " + sentenceSet.size());
+		//
+		// for (Annotation sentence : sentenceSet) {
+		//
+		// long start1 = sentence.getStartNode().getOffset();
+		// long end2 = sentence.getEndNode().getOffset();
+		// System.out.println(doc2.toString().substring((int) start1, (int)
+		// end2));
+		// }
 
 	}
 

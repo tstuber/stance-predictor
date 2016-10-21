@@ -13,11 +13,13 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
@@ -75,6 +77,8 @@ public class SearchFiles {
 		}
 
 		IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(index)));
+		System.out.println("maxDocs: " + reader.maxDoc());
+		System.out.println("numDocs: " + reader.numDocs());
 		IndexSearcher searcher = new IndexSearcher(reader);
 		Analyzer analyzer = new StandardAnalyzer();
 
@@ -121,7 +125,8 @@ public class SearchFiles {
 		}
 		reader.close();
 	}
-
+	
+	
 	/**
 	 * This demonstrates a typical paging search scenario, where the search
 	 * engine presents pages of size n to the user. The user can then go to the
@@ -171,7 +176,7 @@ public class SearchFiles {
 				String path = doc.get("path");
 				if (path != null) {
 					System.out.println((i + 1) + ". " + path);
-					String title = doc.get("title");
+					String title = doc.get("source");
 					if (title != null) {
 						System.out.println("   Title: " + doc.get("title"));
 					}

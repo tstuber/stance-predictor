@@ -19,7 +19,7 @@ public class SourceLoader {
 		list = new HashSet<String>();
 	}
 
-	public void readSourceFile() {
+	public Set<String> readSourceFile() {
 	
 		File f = new File(GetConfigPropertyValues.getProperty("path_codingurls"));
 		BufferedReader reader = null;
@@ -45,6 +45,8 @@ public class SourceLoader {
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
+		
+		return this.list;
 	}
 
 	public Set<String> getSources() {
