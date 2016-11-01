@@ -16,6 +16,9 @@ import gate.util.GateException;
 import info.stuber.fhnw.thesis.collector.SourceLoader;
 import info.stuber.fhnw.thesis.lucene.IndexFiles;
 
+/*
+ * Reads a website and extracts passages from it. The passages are then stored within a lucene index.
+ */
 public class TutorialApp {
 
 	/*
@@ -53,12 +56,12 @@ public class TutorialApp {
 
 		// TODO: Test, if Archive-Org URL is existing, else take original one!
 
-		HttpURLConnection connection = (HttpURLConnection) new URL("http://www.exelance.ch/").openConnection();
-		connection.setRequestMethod("HEAD");
-		int responseCode = connection.getResponseCode();
-		if (responseCode != 200) {
-			System.out.println("ERRRROR");
-		}
+//		HttpURLConnection connection = (HttpURLConnection) new URL("http://www.exelance.ch/").openConnection();
+//		connection.setRequestMethod("HEAD");
+//		int responseCode = connection.getResponseCode();
+//		if (responseCode != 200) {
+//			System.out.println("ERRRROR");
+//		}
 		
 		 
 		int tmpCount = 0;

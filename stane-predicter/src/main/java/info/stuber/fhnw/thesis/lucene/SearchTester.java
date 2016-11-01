@@ -30,7 +30,8 @@ public class SearchTester {
 		Directory index = FSDirectory.open(Paths.get(INDEX_PATH));
 
 		// 2. query
-		String querystr = args.length > 0 ? args[0] : "UKIP";
+		String issueStmt = "Only English MPs should have the right to vote on Issues that only affect England.";
+		String querystr = args.length > 0 ? args[0] : issueStmt; 
 
 		// the "title" arg specifies the default field to use
 		// when no field is explicitly specified in the query.
