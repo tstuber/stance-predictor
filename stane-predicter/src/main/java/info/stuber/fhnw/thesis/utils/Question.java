@@ -3,11 +3,11 @@ package info.stuber.fhnw.thesis.utils;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Questions {
+public class Question {
 
 	private static Map<Integer, String> questions;
 	
-	public static String getQuestion(int id)  {
+	public static String getQuestionById(int id)  {
 		
 		if(questions == null)
 			initQuestions();

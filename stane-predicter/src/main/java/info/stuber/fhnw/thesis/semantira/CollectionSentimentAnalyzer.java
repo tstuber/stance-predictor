@@ -28,6 +28,7 @@ public class CollectionSentimentAnalyzer {
 		String API_SECRET = "8496b5de-1a16-4842-8c57-1c01efe57854";
 
 		String configId = null;
+		String jobId = "TEST_COLLECTION_ID";
 
 		Session session = Session.createSession(API_KEY, API_SECRET);
         session.registerSerializer(serializer);
@@ -35,22 +36,26 @@ public class CollectionSentimentAnalyzer {
         session.setCallbackHandler(new CallbackHandler());
 	    
         Collection coll = new Collection();
-		coll.setId("TEST_COLLECTION_ID");
+		coll.setJobId(jobId);
+		coll.setId(jobId);
+		coll.setTag("This is a collection");
 		List<String> documents = new ArrayList<String>();
-		documents.add("This is fucking bad! Horror.");
-		documents.add("UKIP has no idea. This is really far from reality.");
+		documents.add("This is fucking bad! Horrible Results! What a shame!");
+		documents.add("This is simply brilliant! Well done. I fully agree!");
 		documents.add("Amazing idea. We should really do it that way. ");
 		coll.setDocuments(documents);
 
 		int status = session.queueCollection(coll, configId);
 		if (status == 202) 
 			System.out.println("Document queued successfully!");
+		else
+			System.out.println("FUUUCK");
 
 
 		List<CollAnalyticData> data = null;
 		for ( int i = 0; i <10; i++ )
 		{
-			data = session.getProcessedCollections(configId);
+			data = session.getProcessedCollectionsByJobId(jobId);
 			if (data != null && !data.isEmpty())
 			{
 				break;
@@ -65,13 +70,13 @@ public class CollectionSentimentAnalyzer {
 			}
 		}
 		
-		
+		System.out.println("CollectionSize: " + data.size());
 		CollAnalyticData col = null;
 		if( data != null && data.isEmpty() == false )
 		{
 			for (CollAnalyticData colAnalyticData : data)
 			{
-				if( colAnalyticData.getId().equals("TEST_COLLECTION_ID") )
+				if( colAnalyticData.getId().equals(jobId) )
 				{
 					col = colAnalyticData;
 				}
