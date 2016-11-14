@@ -22,7 +22,6 @@ import org.jsoup.select.Elements;
 import org.jsoup.select.NodeTraversor;
 import org.jsoup.select.NodeVisitor;
 
-import info.stuber.fhnw.thesis.utils.CrawlerUtils;
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
 public class WebCrawler {
