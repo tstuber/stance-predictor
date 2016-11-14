@@ -78,8 +78,6 @@ public class DocumentSentimentAnalyzer {
 			}
 		}
 
-		System.out.println(data.size());
-
 		DocAnalyticData doc = null;
 		if (data != null && data.isEmpty() == false) {
 			
