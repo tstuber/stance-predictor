@@ -39,6 +39,7 @@ import org.apache.lucene.index.Term;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
+import info.stuber.fhnw.thesis.collector.Coding;
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
 /**
@@ -57,14 +58,14 @@ public class IndexFiles {
 		
 	}
 	
-	public void indexSentences(ArrayList<String> sentenceList, String sourceUrl) {
+	public void indexSentences(ArrayList<String> sentenceList, Coding coding) {
 
 		if (sentenceList == null)
 			return;
 
 		Date start = new Date();
 		try {
-			System.out.println("Indexing to directory '" + INDEX_PATH + "'...");
+			// System.out.println("Indexing to directory '" + INDEX_PATH + "'...");
 
 			Directory indexDirectory = FSDirectory.open(Paths.get(INDEX_PATH));
 			
@@ -97,7 +98,7 @@ public class IndexFiles {
 
 			IndexWriter writer = new IndexWriter(indexDirectory, iwc);
 			
-			indexDoc(writer, sentenceList, sourceUrl);
+			indexDoc(writer, sentenceList, coding);
 
 			// NOTE: if you want to maximize search performance,
 			// you can optionally call forceMerge here. This can be
@@ -107,15 +108,15 @@ public class IndexFiles {
 			//
 			// writer.forceMerge(1);
 
-			System.out.println("Nr of Docs: " + writer.numDocs());
+			System.out.println("[INFO] Nr of Docs: " + writer.numDocs());
 
-			// writer.commit();
+			writer.commit();
 
 			if (writer.isOpen())
 				writer.close();
 
 			Date end = new Date();
-			System.out.println(end.getTime() - start.getTime() + " total milliseconds");
+			System.out.println("[INFO] DONE" + (end.getTime() - start.getTime()) + " total milliseconds");
 
 		} catch (IOException e) {
 			System.out.println(" caught a " + e.getClass() + "\n with message: " + e.getMessage());
@@ -175,7 +176,7 @@ public class IndexFiles {
 
 	}
 
-	void indexDoc(IndexWriter writer, ArrayList<String> sentenceList, String sourceUrl) {
+	void indexDoc(IndexWriter writer, ArrayList<String> sentenceList, Coding coding) {
 
 		for (String sentence : sentenceList) {
 
@@ -186,10 +187,13 @@ public class IndexFiles {
 		        TextField textField = new TextField(LuceneConstants.CONTENTS, sentence, Field.Store.YES);
 		        doc.add(textField);			
 
-				// use a string field for isbn because we don't want it
-				// tokenized
-				Field urlField = new StringField(LuceneConstants.SOURCE, sourceUrl, Field.Store.YES);
+				// use a string field for isbn because we don't want it tokenized
+				Field urlField = new StringField(LuceneConstants.SOURCE, coding.getSource(), Field.Store.YES);
+				Field partyField = new StringField(LuceneConstants.PARTY, Integer.toString(coding.getParty()) , Field.Store.YES);
+				Field questionField = new StringField(LuceneConstants.QUESTION, Integer.toString(coding.getQuestion()) , Field.Store.YES);
 				doc.add(urlField);
+				doc.add(partyField);
+				doc.add(questionField);
 
 				if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {
 					// New index, so we just add the document (no old document
@@ -204,62 +208,13 @@ public class IndexFiles {
 					// matching
 					// the exact
 					// path, if present:
-					writer.updateDocument(new Term(LuceneConstants.SOURCE, sourceUrl), doc);
+					// writer.updateDocument(new Term(LuceneConstants.SOURCE, coding.getSource()), doc);
+					writer.addDocument(doc);
 
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-		}
-	}
-
-	/** Indexes a single document */
-	static void indexDoc(IndexWriter writer, Path file, long lastModified) throws IOException {
-		try (InputStream stream = Files.newInputStream(file)) {
-			// make a new, empty document
-			Document doc = new Document();
-
-			// Add the path of the file as a field named "path". Use a
-			// field that is indexed (i.e. searchable), but don't tokenize
-			// the field into separate words and don't index term frequency
-			// or positional information:
-			Field pathField = new StringField("path", file.toString(), Field.Store.YES);
-			doc.add(pathField);
-
-			// Add the last modified date of the file a field named "modified".
-			// Use a LongPoint that is indexed (i.e. efficiently filterable with
-			// PointRangeQuery). This indexes to milli-second resolution, which
-			// is often too fine. You could instead create a number based on
-			// year/month/day/hour/minutes/seconds, down the resolution you
-			// require.
-			// For example the long value 2011021714 would mean
-			// February 17, 2011, 2-3 PM.
-			doc.add(new LongPoint("modified", lastModified));
-
-			// Add the contents of the file to a field named "contents". Specify
-			// a Reader,
-			// so that the text of the file is tokenized and indexed, but not
-			// stored.
-			// Note that FileReader expects the file to be in UTF-8 encoding.
-			// If that's not the case searching for special characters will
-			// fail.
-			doc.add(new TextField("contents",
-					new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))));
-
-			if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {
-				// New index, so we just add the document (no old document can
-				// be there):
-				System.out.println("adding " + file);
-				writer.addDocument(doc);
-			} else {
-				// Existing index (an old copy of this document may have been
-				// indexed) so
-				// we use updateDocument instead to replace the old one matching
-				// the exact
-				// path, if present:
-				System.out.println("updating " + file);
-				writer.updateDocument(new Term("path", file.toString()), doc);
 			}
 		}
 	}

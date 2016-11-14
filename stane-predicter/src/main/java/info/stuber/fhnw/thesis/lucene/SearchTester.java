@@ -24,13 +24,15 @@ public class SearchTester {
 	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
 
 	public static void main(String[] args) throws IOException, ParseException {
-		// FIND SOMETHING:
+
 
 		Analyzer analyzer = new StandardAnalyzer();
 		Directory index = FSDirectory.open(Paths.get(INDEX_PATH));
 
 		// 2. query
-		String issueStmt = "Only English MPs should have the right to vote on Issues that only affect England.";
+		// String issueStmt = "Only English MPs should have the right to vote on Issues that only affect England.";
+		String issueStmt = "The top rate of income tax should be reduced";
+		//String issueStmt = "block";
 		String querystr = args.length > 0 ? args[0] : issueStmt; 
 
 		// the "title" arg specifies the default field to use
@@ -53,7 +55,7 @@ public class SearchTester {
 		for (int i = 0; i < hits.length; ++i) {
 			int docId = hits[i].doc;
 			Document d = searcher.doc(docId);			
-			System.out.println((i + 1) + ". (" + hits[i].score + ")\t" + d.get(LuceneConstants.SOURCE) + "\t" + d.get(LuceneConstants.CONTENTS));
+			System.out.println((i + 1) + ". (" + hits[i].score + ")\t" + d.get(LuceneConstants.PARTY) + "\t" + d.get(LuceneConstants.SOURCE)  + "\n" + d.get(LuceneConstants.CONTENTS));
 		}
 
 		// reader can only be closed when there

@@ -16,7 +16,11 @@
 
 	<dependencies>
 
-
+		<dependency>
+			<groupId>com.semantria</groupId>
+			<artifactId>SemantriaJavaSDK</artifactId>
+			<version>4.2.92</version>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
