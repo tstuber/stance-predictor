@@ -28,36 +28,36 @@ public class DocumentSentimentAnalyzer {
 	private String version = "4.2";
 	static String API_KEY = "06758519-fdf0-4a36-a405-ff680b98db53";
 	static String API_SECRET = "8496b5de-1a16-4842-8c57-1c01efe57854";
-	
-	
+
 	public DocumentSentimentAnalyzer() {
-		
+
 	}
 
 	public static void main(String[] args) throws InterruptedException {
 
 		Party party = Party.UKIP;
-		int question = 5; 
-		
+		int question = 5;
+
 		DocumentSentimentAnalyzer analyzer = new DocumentSentimentAnalyzer();
 		analyzer.calculateSentiment(party, question);
 	}
-	
-	public void calculateSentiment(Party party, int questionId)
-	{
+
+	public PredictedResult calculateSentiment(Party party, int questionId) {
+		PredictedResult predictionResult = new PredictedResult(party, questionId);
 		SearchTester searcher = new SearchTester();
 		HashMap<Integer, String> res = searcher.getBestHits(party, questionId);
 
 		String configId = null;
 		Session session = Session.createSession(API_KEY, API_SECRET);
-		session.registerSerializer(serializer);		
+		session.registerSerializer(serializer);
 		session.setCallbackHandler(new CallbackHandler());
 
 		List<Document> tasks = new ArrayList<Document>();
 		for (int i = 0; i < 10; i++) {
 			tasks.add(new Document("BATCH_" + i, res.get(i)));
 		}
-		// tasks.add(new Document("QUESTION", Question.getQuestionById(questionId)));
+		// tasks.add(new Document("QUESTION",
+		// Question.getQuestionById(questionId)));
 
 		int status = session.QueueBatchOfDocuments(tasks, configId);
 		if (status == 202)
@@ -69,7 +69,7 @@ public class DocumentSentimentAnalyzer {
 			if (data != null && !data.isEmpty()) {
 				break;
 			}
- 
+
 			try {
 				Thread.sleep(5000L);
 			} catch (InterruptedException e) {
@@ -80,25 +80,36 @@ public class DocumentSentimentAnalyzer {
 
 		DocAnalyticData doc = null;
 		if (data != null && data.isEmpty() == false) {
-			
+
+			// Quercheck, kann irgendwann gelöscht werden!
 			List<Float> sentimentScores = new ArrayList<Float>();
+
 			for (DocAnalyticData docAnalyticData : data) {
 				if (docAnalyticData.getId().startsWith("BATCH_") || docAnalyticData.getId().equals("QUESTION")) {
 					doc = docAnalyticData;
-					System.out.println(doc.getId() + " SentiScore: " + doc.getSentimentScore()
-							+ "\tDocPolarity: " + doc.getSentimentPolarity() + "\t Text: " + doc.getSourceText());
+					System.out.println(doc.getId() + " SentiScore: " + doc.getSentimentScore() + "\tDocPolarity: "
+							+ doc.getSentimentPolarity() + "\t Text: " + doc.getSourceText());
 					sentimentScores.add(doc.getSentimentScore());
+					predictionResult.addItem(new PredictedResultItem(party.getId(), questionId, doc.getSentimentScore(),
+							doc.getSentimentPolarity()));
 				}
 			}
+
+			// Quercheck: Calculate Mean!
 			float sum = 0.0f;
 			for (Float value : sentimentScores) {
-		        sum += value;
-		    }
-		    float result = sum / sentimentScores.size();
-			
+				sum += value;
+			}
+			float result = sum / sentimentScores.size();
 			System.out.println("Overall SentimentScore: " + result);
+
+			// Verify matching data lists sizes!
+			if (predictionResult.size() != tasks.size())
+				System.out.println("WARNUNG! Task-Liste (" + tasks.size() + ") und Result-Liste ("
+						+ predictionResult.size() + "nicht gleich gross!");
 		}
 
+		return predictionResult;
 	}
 
 }
