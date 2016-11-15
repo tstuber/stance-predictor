@@ -69,7 +69,7 @@ public class DocumentSentimentAnalyzer {
 			if (data != null && !data.isEmpty()) {
 				break;
 			}
-
+ 
 			try {
 				Thread.sleep(5000L);
 			} catch (InterruptedException e) {
@@ -96,7 +96,7 @@ public class DocumentSentimentAnalyzer {
 		    }
 		    float result = sum / sentimentScores.size();
 			
-			System.out.println("Average " + result);
+			System.out.println("Overall SentimentScore: " + result);
 		}
 
 	}
