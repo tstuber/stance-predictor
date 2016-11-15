@@ -51,13 +51,14 @@ import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 public class IndexFiles {
 
 	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
-	// private static final String DOC_PATH = GetConfigPropertyValues.getProperty("path_documents");
+	// private static final String DOC_PATH =
+	// GetConfigPropertyValues.getProperty("path_documents");
 	private boolean CREATE = false;
 
 	public IndexFiles() {
-		
+
 	}
-	
+
 	public void indexSentences(ArrayList<String> sentenceList, Coding coding) {
 
 		if (sentenceList == null)
@@ -65,18 +66,14 @@ public class IndexFiles {
 
 		Date start = new Date();
 		try {
-			// System.out.println("Indexing to directory '" + INDEX_PATH + "'...");
-
 			Directory indexDirectory = FSDirectory.open(Paths.get(INDEX_PATH));
-			
-			
-			if (DirectoryReader.indexExists(indexDirectory))
-			{
+
+			if (DirectoryReader.indexExists(indexDirectory)) {
 				CREATE = false;
 			} else {
 				CREATE = true;
 			}
-			
+
 			Analyzer analyzer = new StandardAnalyzer();
 			IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
 
@@ -97,7 +94,7 @@ public class IndexFiles {
 			// iwc.setRAMBufferSizeMB(256.0);
 
 			IndexWriter writer = new IndexWriter(indexDirectory, iwc);
-			
+
 			indexDoc(writer, sentenceList, coding);
 
 			// NOTE: if you want to maximize search performance,
@@ -121,59 +118,6 @@ public class IndexFiles {
 		} catch (IOException e) {
 			System.out.println(" caught a " + e.getClass() + "\n with message: " + e.getMessage());
 		}
-
-		// FIND SOMETHING:
-
-		// try {
-		// String querystr = "boris";
-		//
-		// // the "title" arg specifies the default field to use
-		// // when no field is explicitly specified in the query.
-		// Directory dir = FSDirectory.open(Paths.get(INDEX_PATH));
-		// Analyzer analyzer = new StandardAnalyzer();
-		// Query q = new QueryParser("source", analyzer).parse(querystr);
-		//
-		// System.out.println(q.toString());
-		//
-		// // 3. search
-		// int hitsPerPage = 10;
-		// IndexReader reader;
-		//
-		// reader = DirectoryReader.open(dir);
-		//
-		// for (int i=0; i<reader.maxDoc(); i++) {
-		//
-		// Document doc = reader.document(i);
-		// System.out.println(doc.toString());
-		//
-		// // do something with docId here...
-		// }
-		//
-		//
-		//
-		//
-		// System.out.println("total docs: " + reader.numDocs());
-		// IndexSearcher searcher = new IndexSearcher(reader);
-		// TopDocs docs = searcher.search(q, hitsPerPage);
-		// ScoreDoc[] hits = docs.scoreDocs;
-		//
-		// // 4. display results
-		// System.out.println("Found " + hits.length + " hits.");
-		// for (int i = 0; i < hits.length; ++i) {
-		// int docId = hits[i].doc;
-		// Document d = searcher.doc(docId);
-		// System.out.println((i + 1) + ". " + d.get("source") + "\t" +
-		// d.get("content"));
-		// }
-		//
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// } catch (ParseException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-
 	}
 
 	void indexDoc(IndexWriter writer, ArrayList<String> sentenceList, Coding coding) {
@@ -182,15 +126,17 @@ public class IndexFiles {
 
 			try {
 				Document doc = new Document();
-				
 
-		        TextField textField = new TextField(LuceneConstants.CONTENTS, sentence, Field.Store.YES);
-		        doc.add(textField);			
+				TextField textField = new TextField(LuceneConstants.CONTENTS, sentence, Field.Store.YES);
+				doc.add(textField);
 
-				// use a string field for isbn because we don't want it tokenized
+				// use a string field for isbn because we don't want it
+				// tokenized
 				Field urlField = new StringField(LuceneConstants.SOURCE, coding.getSource(), Field.Store.YES);
-				Field partyField = new StringField(LuceneConstants.PARTY, Integer.toString(coding.getParty()) , Field.Store.YES);
-				Field questionField = new StringField(LuceneConstants.QUESTION, Integer.toString(coding.getQuestion()) , Field.Store.YES);
+				Field partyField = new StringField(LuceneConstants.PARTY, Integer.toString(coding.getParty()),
+						Field.Store.YES);
+				Field questionField = new StringField(LuceneConstants.QUESTION, Integer.toString(coding.getQuestion()),
+						Field.Store.YES);
 				doc.add(urlField);
 				doc.add(partyField);
 				doc.add(questionField);
@@ -208,7 +154,8 @@ public class IndexFiles {
 					// matching
 					// the exact
 					// path, if present:
-					// writer.updateDocument(new Term(LuceneConstants.SOURCE, coding.getSource()), doc);
+					// writer.updateDocument(new Term(LuceneConstants.SOURCE,
+					// coding.getSource()), doc);
 					writer.addDocument(doc);
 
 				}

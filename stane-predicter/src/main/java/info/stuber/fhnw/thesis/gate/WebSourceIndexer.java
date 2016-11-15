@@ -24,7 +24,7 @@ import info.stuber.fhnw.thesis.lucene.IndexFiles;
 /*
  * Reads a website and extracts passages from it. The passages are then stored within a lucene index.
  */
-public class TutorialApp {
+public class WebSourceIndexer {
 
 	private static final int WINDOW_SIZE = 4;
 	private static Set<Coding> errorCodings;
@@ -96,7 +96,6 @@ public class TutorialApp {
 				System.out.println("[SKIP2]: " + coding.toString());
 				errorCodings.add(coding);
 				continue;
-				// skip the current processing
 			}
 
 			ProcessingResource token = (ProcessingResource) Factory
