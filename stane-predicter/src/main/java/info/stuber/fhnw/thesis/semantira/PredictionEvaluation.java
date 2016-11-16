@@ -18,11 +18,15 @@ public class PredictionEvaluation {
 		return analyzer.calculateSentiment(party, questionId);
 	}
 
-	public boolean evaluateSingle(Party party, int questionId) {
+	public boolean evaluateSingle(Party party, int questionId) throws NotSupportedQuestionException {
 		boolean result = false;
 
 		PredictedResult predRes = analyzer.calculateSentiment(party, questionId);
 		ExpectedResult expRes = ExpectedResultsLoader.getResult(party, questionId);
+
+		if (expRes == null) {
+			throw new NotSupportedQuestionException("Not supported Question (" + questionId + ")");
+		}
 
 		float exp = expRes.getMedian();
 		float pre = predRes.getMean();
@@ -36,9 +40,11 @@ public class PredictionEvaluation {
 		else
 			result = false;
 
-		System.out.println("Party: " + party + "\tQuestion: " + questionId);
-		System.out.println("Expected Answer (Median): " + expRes.getMedian());
+		System.out.println("Party: \t" + party);
+		System.out.println("Question: \t" + questionId);
+		System.out.println("Expected Answer (Median): " + expRes.getMedian() + " (" + expRes.getMedianAsText() + ")");
 		System.out.println("Predicted Answer (Mean):  " + predRes.getMean());
+		System.out.println("Predicted Answer (Median):  " + predRes.getMedian());
 		System.out.println("Summary: " + result);
 
 		return result;

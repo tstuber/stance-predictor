@@ -13,7 +13,7 @@ public class PredictionEvaluationTest {
 	
 	PredictionEvaluation evaluator;
 	private Party PARTY = Party.CON;
-	private int QUESTION_ID = 1;
+	private int QUESTION_ID = 8;
 	
 	@Before
 	public void setup() {
@@ -22,6 +22,10 @@ public class PredictionEvaluationTest {
 
 	@Test
 	public void PredictionEvaluatorTest() {
-		evaluator.evaluateSingle(PARTY, QUESTION_ID);
+		try {
+			evaluator.evaluateSingle(PARTY, QUESTION_ID);
+		}catch (NotSupportedQuestionException ex) {
+			System.out.println(ex.toString());
+		}
 	}
 }
