@@ -56,8 +56,7 @@ public class DocumentSentimentAnalyzer {
 		for (int i = 0; i < 10; i++) {
 			tasks.add(new Document("BATCH_" + i, res.get(i)));
 		}
-		// tasks.add(new Document("QUESTION",
-		// Question.getQuestionById(questionId)));
+		// tasks.add(new Document("QUESTION", Question.getQuestionById(questionId)));
 
 		int status = session.QueueBatchOfDocuments(tasks, configId);
 		if (status == 202)

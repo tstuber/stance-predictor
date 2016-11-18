@@ -34,6 +34,16 @@ public class PredictedResult {
 		return this.resultItemList.size();
 	}
 	
+	public float getMax() {
+		float[] score = getScoreArray();
+		return score[score.length-1];
+		
+	}
+	
+	public float getMin() {
+		return getScoreArray()[0];
+	}
+	
 	public float getMean() {
 		float[] score = getScoreArray();
 	    float sum = 0;

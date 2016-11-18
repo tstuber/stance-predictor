@@ -21,7 +21,7 @@ import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
 public class DirtyLuceneWriter {
 
-	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
+	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index_test");
 	
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -60,6 +60,9 @@ public class DirtyLuceneWriter {
 
         // use a string field for isbn because we don't want it tokenized
         doc.add(new StringField(LuceneConstants.SOURCE, url, Field.Store.YES));
+        doc.add(new StringField(LuceneConstants.QUESTION, "1", Field.Store.YES));
+        doc.add(new StringField(LuceneConstants.PARTY, "4", Field.Store.YES));
+        doc.add(new StringField(LuceneConstants.PARTY, "3", Field.Store.YES));
         w.addDocument(doc);
     }
 

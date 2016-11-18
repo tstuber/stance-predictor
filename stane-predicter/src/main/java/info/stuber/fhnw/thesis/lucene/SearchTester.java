@@ -25,6 +25,7 @@ import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.springframework.aop.aspectj.AspectJAdviceParameterNameDiscoverer.AmbiguousBindingException;
 import org.w3c.dom.Element;
 
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
@@ -33,7 +34,8 @@ import info.stuber.fhnw.thesis.utils.Question;
 
 public class SearchTester {
 
-	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
+	// private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
+	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index_test");
 
 	public SearchTester() {
 
@@ -55,10 +57,13 @@ public class SearchTester {
 			Directory index = FSDirectory.open(Paths.get(INDEX_PATH));
 
 			// 2. query
-			String issueStmt = Question.getQuestionById(questionId);
+			// String issueStmt = Question.getQuestionById(questionId);
+			String issueStmt = "Donald";
 			int partyId = party.getId();
-			String special = issueStmt + " +party:" + partyId;
+			// String special = issueStmt + " +party:" + partyId;
+			String special = issueStmt;
 			Query q = new QueryParser(LuceneConstants.CONTENTS, analyzer).parse(special);
+			q = new QueryParser("contents", analyzer).parse("Donald +party:3");
 
 			System.out.println(q.toString());
 
@@ -81,6 +86,7 @@ public class SearchTester {
 				System.out.println((i + 1) + ". (" + hits[i].score + ") Party:" + d.get(LuceneConstants.PARTY)
 						+ " Question:" + d.get(LuceneConstants.QUESTION) + " URL:" + d.get(LuceneConstants.SOURCE)
 						+ "\n" + passage);
+				System.out.println(d.getFields(LuceneConstants.PARTY).length);
 				result.put(i, passage);
 			}
 

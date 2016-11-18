@@ -29,10 +29,6 @@ public class DownloadPreparer {
 		int count = 0;
 		for (Coding coding : codings) {
 
-//			count++;
-//			if (count > 5)
-//				break;
-
 			HttpURLConnection connection;
 			int httpStatus = 0;
 			String contentType;

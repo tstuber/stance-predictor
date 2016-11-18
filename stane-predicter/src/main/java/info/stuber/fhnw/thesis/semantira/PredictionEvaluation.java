@@ -42,9 +42,11 @@ public class PredictionEvaluation {
 
 		System.out.println("Party: \t" + party);
 		System.out.println("Question: \t" + questionId);
-		System.out.println("Expected Answer (Median): " + expRes.getMedian() + " (" + expRes.getMedianAsText() + ")");
-		System.out.println("Predicted Answer (Mean):  " + predRes.getMean());
-		System.out.println("Predicted Answer (Median):  " + predRes.getMedian());
+		System.out.println("Expected Answer (Median) : " + expRes.getMedian() + " (" + expRes.getMedianAsText() + ")");
+		System.out.println("Predicted Answer (Mean)  : " + predRes.getMean());
+		System.out.println("Predicted Answer (Median): " + predRes.getMedian());
+		System.out.println("Predicted Answer (Max)   : " + predRes.getMax());
+		System.out.println("Predicted Answer (Min)   : " + predRes.getMin());
 		System.out.println("Summary: " + result);
 
 		return result;

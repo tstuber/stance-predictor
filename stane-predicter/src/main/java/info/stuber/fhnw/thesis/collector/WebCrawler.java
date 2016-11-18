@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.helper.StringUtil;
 import org.jsoup.helper.Validate;
@@ -28,7 +31,7 @@ public class WebCrawler {
 
 	private static final String USER_AGENT = "Mozilla/5.0 (jsoup)";
 	private static final String WEB_ARCHIVE_URL = "https://web.archive.org/web/20160331/";
-	private static final int TIMEOUT = 5 * 1000;
+	private static final int TIMEOUT = 10 * 1000;
 	private static final String PATH_DOCUMENT = GetConfigPropertyValues.getProperty("path_documents");
 
 	private Set<String> sources = null;
@@ -45,6 +48,43 @@ public class WebCrawler {
 			urlList.add(doc);
 			index++;
 		}
+
+	}
+
+	public WebCrawler() {
+
+	}
+
+	public static void main(String[] args) throws MalformedURLException {
+		WebCrawler crawler = new WebCrawler();
+		crawler.scrapSites();
+	}
+
+	/*
+	 * Fehlerquellen: MalformedURLException SocketTimeoutException
+	 */
+	public void scrapSites() {
+
+		// TODO: Validate all URLs
+
+		String url = "http://www.scotsman.com/news/politics/top-stories/scottish-independence-backed-by-plaid-cymru-leader-1-3484494";
+		Coding coding = new Coding(7, 35, url);
+
+		Document doc = null;
+		HtmlToPlainText formatter = new HtmlToPlainText();
+
+		try {
+			doc = Jsoup.connect(coding.getSource()).followRedirects(true).userAgent(USER_AGENT).timeout(TIMEOUT).get();
+		} catch (org.jsoup.HttpStatusException httpex) {
+			httpex.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		coding.setContent(formatter.getPlainText(doc));
+
+		
+		Serializer.serializeCoding(coding);
 
 	}
 
@@ -125,9 +165,9 @@ public class WebCrawler {
 
 			// Try to write File to disk
 			File dir = new File(PATH_DOCUMENT);
-			if(!dir.exists())
+			if (!dir.exists())
 				dir.mkdir();
-			
+
 			String filename = PATH_DOCUMENT + entity.getFilename();
 			System.out.println("Target: " + filename);
 			writeToTextFile(filename, entity.getContent());

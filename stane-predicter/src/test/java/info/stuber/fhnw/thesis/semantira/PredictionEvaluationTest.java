@@ -12,8 +12,8 @@ import junit.framework.Assert;
 public class PredictionEvaluationTest {
 	
 	PredictionEvaluation evaluator;
-	private Party PARTY = Party.CON;
-	private int QUESTION_ID = 8;
+	private Party PARTY = Party.GREEN;
+	private int QUESTION_ID = 1;
 	
 	@Before
 	public void setup() {
