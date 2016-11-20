@@ -7,19 +7,19 @@ import java.util.List;
 
 public class Coding implements Serializable {
 
+	private static final long serialVersionUID = -8278147079109824018L;
 	private List<Integer> party;
 	private List<Integer> question;
-	private String source;
+	private URL sourceUrl;
 
 	private String mimeType;
 	private String encoding;
 	private URL targetUrl;
 	private int httpStatus;
 	private String content;
-	private static String newline = System.getProperty("line.separator");
-	// private static final long serialVersionUID = -55857686305273843L;
+	private Exception exception;
 
-	public Coding(int party, int question, String source) {
+	public Coding(int party, int question, URL sourceUrl) {
 
 		if (this.party == null)
 			this.party = new ArrayList<Integer>();
@@ -29,11 +29,12 @@ public class Coding implements Serializable {
 
 		this.party.add(party);
 		this.question.add(question);
-		this.source = source;
+		this.sourceUrl = sourceUrl;
 		this.mimeType = "";
 		this.encoding = "";
 		this.targetUrl = null;
 		this.httpStatus = 0;
+		this.setException(null);
 	}
 
 	public List<Integer> getParty() {
@@ -62,8 +63,8 @@ public class Coding implements Serializable {
 			this.question.add(questionId);
 	}
 
-	public String getSource() {
-		return this.source;
+	public URL getSourceUrl() {
+		return this.sourceUrl;
 	}
 
 	public void setMimeType(String mimeType) {
@@ -111,10 +112,10 @@ public class Coding implements Serializable {
 	}
 
 	public String toString() {
-		return "[Code: " + this.getHttpStatus() + "] TargetUrl: " + this.getTargetUrl() + " URL: " + this.source;
+		return "[Code: " + this.getHttpStatus() + "] TargetUrl: " + this.getTargetUrl() + " URL: " + this.sourceUrl;
 	}
 
-	public void printDebug() {
+	public String printDebug() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Question: ");
 		for (int question : this.question) {
@@ -126,8 +127,17 @@ public class Coding implements Serializable {
 			sb.append(party + ",");
 		}
 
-		sb.append(" URL: " + this.source);
+		sb.append(" URL: " + this.sourceUrl);
 
 		System.out.println(sb.toString());
+		return sb.toString();
+	}
+
+	public Exception getException() {
+		return exception;
+	}
+
+	public void setException(Exception exception) {
+		this.exception = exception;
 	}
 }

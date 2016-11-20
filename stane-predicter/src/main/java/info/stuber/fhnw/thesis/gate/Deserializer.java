@@ -35,12 +35,12 @@ public class Deserializer {
 		try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get(PATH_DOCUMENT))) {
 			for (Path path : directoryStream) {
 				fileNames.add(path.getFileName().toString());
-				
+
 			}
 		} catch (IOException ex) {
 		}
-		
-		for(String path : fileNames) {
+
+		for (String path : fileNames) {
 			objects.add(deserializeCoding(path));
 		}
 
@@ -54,7 +54,7 @@ public class Deserializer {
 			FileInputStream fius = new FileInputStream(PATH_DOCUMENT + fileName);
 			ObjectInputStream ois = new ObjectInputStream(fius);
 			Coding coding = (Coding) ois.readObject();
-			coding.printDebug();
+			// coding.printDebug();
 			ois.close();
 
 		} catch (Exception ex) {

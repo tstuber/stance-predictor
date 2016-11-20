@@ -132,7 +132,7 @@ public class IndexFiles {
 
 				// use a string field for isbn because we don't want it
 				// tokenized
-				Field urlField = new StringField(LuceneConstants.SOURCE, coding.getSource(), Field.Store.YES);
+				Field urlField = new StringField(LuceneConstants.SOURCE, coding.getSourceUrl(), Field.Store.YES);
 				Field partyField = new StringField(LuceneConstants.PARTY, Integer.toString(coding.getParty()),
 						Field.Store.YES);
 				Field questionField = new StringField(LuceneConstants.QUESTION, Integer.toString(coding.getQuestion()),

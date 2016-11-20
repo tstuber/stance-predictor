@@ -3,32 +3,33 @@ package info.stuber.fhnw.thesis.collector;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
 public class SourceLoader {
 
-	private Set<Coding> list = null;
+	private List<Coding> list = null;
 	int sameSourceCount = 0;
 	int sameEverythingCount = 0;
 
 	public SourceLoader() {
-		list = new HashSet<Coding>();
+		list = new ArrayList<Coding>();
 		list = readSourceFile();
 	}
 
 	public static void main(String[] args) {
 		SourceLoader loader = new SourceLoader();
-		loader.print();
+		// loader.print();
 
 	}
 
-	private Set<Coding> readSourceFile() {
+	private List<Coding> readSourceFile() {
 
 		File f = new File(GetConfigPropertyValues.getProperty("path_codingurls"));
 		BufferedReader reader = null;
@@ -54,12 +55,21 @@ public class SourceLoader {
 				if (values.length == 8) {
 					int party = Integer.parseInt(values[1]);
 					int question = Integer.parseInt(values[3]);
-					String source = values[7].trim();
+					URL source = null;
+					
+					try {
+						source = new URL(values[7].trim());	
+					} catch (MalformedURLException mal) {
+						String error = "URL: " + source + " Party:"+party+" Question:"+question;
+						System.out.println(error);
+						continue;
+					}
+					
 					boolean existing = false;
 
 					// check if url is already known
 					for (Coding existingCoding : this.list) {
-						if (source.equals(existingCoding.getSource())) {
+						if (source.equals(existingCoding.getSourceUrl())) {
 							existing = true;
 
 							if (!existingCoding.containsParty(party)) {
@@ -77,7 +87,9 @@ public class SourceLoader {
 					}
 				}
 			}
-		} catch (Exception ex) {
+		} 
+		
+		catch (Exception ex) {
 			System.out.println(ex);
 		}
 
@@ -94,7 +106,7 @@ public class SourceLoader {
 		System.out.println("Total: " + getCodingCount());
 	}
 
-	public Set<Coding> getCodings() {
+	public List<Coding> getCodings() {
 		return this.list;
 	}
 
