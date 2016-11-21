@@ -1,4 +1,4 @@
-package info.stuber.fhnw.thesis.lucene;
+package info.stuber.fhnw.thesis.gate;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,6 +40,7 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
 import info.stuber.fhnw.thesis.collector.Coding;
+import info.stuber.fhnw.thesis.lucene.LuceneConstants;
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
 /**
@@ -50,13 +51,13 @@ import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
  */
 public class IndexFiles {
 
-	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
 	// private static final String DOC_PATH =
 	// GetConfigPropertyValues.getProperty("path_documents");
 	private boolean CREATE = false;
+	private String indexPath;
 
-	public IndexFiles() {
-
+	public IndexFiles(String indexPath) {
+		this.indexPath = indexPath;
 	}
 
 	public void indexSentences(ArrayList<String> sentenceList, Coding coding) {
@@ -66,7 +67,7 @@ public class IndexFiles {
 
 		Date start = new Date();
 		try {
-			Directory indexDirectory = FSDirectory.open(Paths.get(INDEX_PATH));
+			Directory indexDirectory = FSDirectory.open(Paths.get(this.indexPath));
 
 			if (DirectoryReader.indexExists(indexDirectory)) {
 				CREATE = false;
@@ -97,18 +98,9 @@ public class IndexFiles {
 
 			indexDoc(writer, sentenceList, coding);
 
-			// NOTE: if you want to maximize search performance,
-			// you can optionally call forceMerge here. This can be
-			// a terribly costly operation, so generally it's only
-			// worth it when your index is relatively static (ie
-			// you're done adding documents to it):
-			//
-			// writer.forceMerge(1);
-
 			System.out.println("[INFO] Nr of Docs: " + writer.numDocs());
 
 			writer.commit();
-
 			if (writer.isOpen())
 				writer.close();
 

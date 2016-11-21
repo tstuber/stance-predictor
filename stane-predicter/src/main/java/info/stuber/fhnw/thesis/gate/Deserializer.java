@@ -23,8 +23,8 @@ public class Deserializer {
 
 	public static void main(String args[]) {
 
-		int size = Deserializer.deserializeAllCoding().size();
-		System.out.println(size + " Files deserialized");
+		List<Coding> codings = Deserializer.deserializeAllCoding();
+		System.out.println(codings.size() + " Files deserialized");
 	}
 
 	public static List<Coding> deserializeAllCoding() {
@@ -49,18 +49,18 @@ public class Deserializer {
 	}
 
 	public static Coding deserializeCoding(String fileName) {
-
+		Coding coding = null;
 		try {
 			FileInputStream fius = new FileInputStream(PATH_DOCUMENT + fileName);
 			ObjectInputStream ois = new ObjectInputStream(fius);
-			Coding coding = (Coding) ois.readObject();
+			coding = (Coding) ois.readObject();
 			// coding.printDebug();
 			ois.close();
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		return null;
+		return coding;
 	}
 
 }
