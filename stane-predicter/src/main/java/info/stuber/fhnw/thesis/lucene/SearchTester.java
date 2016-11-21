@@ -57,13 +57,10 @@ public class SearchTester {
 			Directory index = FSDirectory.open(Paths.get(INDEX_PATH));
 
 			// 2. query
-			// String issueStmt = Question.getQuestionById(questionId);
-			String issueStmt = "Donald";
+			String issueStmt = Question.getQuestionById(questionId);
 			int partyId = party.getId();
-			// String special = issueStmt + " +party:" + partyId;
-			String special = issueStmt;
+			String special = issueStmt + " +party:" + partyId;
 			Query q = new QueryParser(LuceneConstants.CONTENTS, analyzer).parse(special);
-			q = new QueryParser("contents", analyzer).parse("Donald +party:3");
 
 			System.out.println(q.toString());
 

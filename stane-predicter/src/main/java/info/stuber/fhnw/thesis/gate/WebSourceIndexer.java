@@ -73,11 +73,12 @@ public class WebSourceIndexer {
 		// load serialized files
 		List<Coding> codings = Deserializer.deserializeAllCoding();
 
+		IndexFiles index = new IndexFiles(INDEX_PATH);
 		WebSourceIndexer indexer = new WebSourceIndexer();
 		for(Coding coding : codings) {
 			coding.printDebug();
-			List<String> sentences = indexer.splitSentence(coding);
-			// TODO: LUCENE INDEX
+			List<String> sentenceList = indexer.splitSentence(coding);
+			index.indexSentences(sentenceList, coding);
 		}		
 	}
 
