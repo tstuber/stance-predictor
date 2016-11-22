@@ -26,16 +26,16 @@ import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
  */
 public class WebSourceIndexer {
 
+	private int windowSize = 0;
 	private static final int WINDOW_SIZE = Integer.parseInt(GetConfigPropertyValues.getProperty("window_size"));
 	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
 	private static final int MIN_SENTENCE_LENGTH = 5;
-	private static Set<Coding> errorCodings;
 	private IndexFiles indexer = null;
 
 	private ProcessingResource token = null;
 	private ProcessingResource sspliter = null;
 	private SerialAnalyserController pipeline = null;
-	private Corpus corpus = null; 
+	private Corpus corpus = null;
 
 	/*
 	 * Finally:
@@ -46,7 +46,6 @@ public class WebSourceIndexer {
 
 	public WebSourceIndexer() throws GateException, MalformedURLException {
 		indexer = new IndexFiles(INDEX_PATH);
-		errorCodings = new HashSet<Coding>();
 		Gate.init();
 
 		File pluginsDir = Gate.getPluginsHome();
@@ -58,7 +57,7 @@ public class WebSourceIndexer {
 		this.sspliter = (ProcessingResource) Factory.createResource("gate.creole.splitter.SentenceSplitter",
 				Factory.newFeatureMap());
 
-
+		this.windowSize = WINDOW_SIZE;
 
 		// MainFrame.getInstance().setVisible(true);
 		// SwingUtilities.invokeAndWait(new Runnable() {
@@ -71,26 +70,38 @@ public class WebSourceIndexer {
 	public static void main(String[] args)
 			throws InvocationTargetException, GateException, InterruptedException, IOException {
 		// load serialized files
+		
+		long start = System.currentTimeMillis();
+		
 		List<Coding> codings = Deserializer.deserializeAllCoding();
 
 		IndexFiles index = new IndexFiles(INDEX_PATH);
 		WebSourceIndexer indexer = new WebSourceIndexer();
-		for(Coding coding : codings) {
+		for (Coding coding : codings) {
 			coding.printDebug();
-			List<String> sentenceList = indexer.splitSentence(coding);
+			List<String> sentenceList = indexer.splitSentence(coding, 2);
 			index.indexSentences(sentenceList, coding);
-		}		
+		}
+		
+		long end = System.currentTimeMillis();
+		System.out.println("Time needed: " + (end-start));
+	}
+
+	public List<String> splitSentence(Coding coding, int windowSize)
+			throws InvocationTargetException, GateException, InterruptedException, IOException {
+		this.windowSize = windowSize;
+		return splitSentence(coding);
 	}
 
 	public List<String> splitSentence(Coding coding)
 			throws GateException, InvocationTargetException, InterruptedException, IOException {
-				
+
 		Document doc = null;
 		ArrayList<String> sentenceList = new ArrayList<String>();
-		
+
 		this.pipeline = (SerialAnalyserController) Factory.createResource("gate.creole.SerialAnalyserController",
 				Factory.newFeatureMap(), Factory.newFeatureMap(), "ANNIE");
-		
+
 		this.corpus = (Corpus) Factory.createResource("gate.corpora.CorpusImpl");
 
 		FeatureMap params = Factory.newFeatureMap();
@@ -106,7 +117,7 @@ public class WebSourceIndexer {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			coding.printDebug();
-			return null; 
+			return null;
 		}
 
 		this.pipeline.setCorpus(corpus);
@@ -127,11 +138,11 @@ public class WebSourceIndexer {
 
 			start = annotation.getStartNode().getOffset();
 
-			if (WINDOW_SIZE == 1) {
+			if (this.windowSize == 1) {
 				end = annotation.getEndNode().getOffset();
 			} else {
 				// get later annotation, based on index access.
-				int endIndex = index + WINDOW_SIZE - 1;
+				int endIndex = index + this.windowSize - 1;
 				if (endIndex >= maxAnnotations) {
 					endIndex = maxAnnotations - 1;
 				}
@@ -142,12 +153,12 @@ public class WebSourceIndexer {
 			String sentence = content.toString().substring((int) start, (int) end);
 			sentence = sentence.replace("\n", "").replace("\r", "");
 
-			if (sentence.length() < MIN_SENTENCE_LENGTH * WINDOW_SIZE) {
+			if (sentence.length() < MIN_SENTENCE_LENGTH * this.windowSize) {
 				// do not add it to index, can not contain
 			} else {
 				sentenceList.add(sentence);
 			}
-		//	System.out.println(index + ": " + sentence);
+			// System.out.println(index + ": " + sentence);
 		}
 
 		corpus.remove(doc);

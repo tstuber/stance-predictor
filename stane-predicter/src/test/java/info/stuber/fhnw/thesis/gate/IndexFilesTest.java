@@ -37,6 +37,27 @@ public class IndexFilesTest {
 	public TemporaryFolder testFolder = new TemporaryFolder();
 
 	@Test
+	public void compareIndexes() {
+		
+		Searcher searcher_ws1 = new Searcher(new File("C:/Temp/webcrawler_index_ws1"));
+		SearchResults res_ws1 = searcher_ws1.search("UKIP foreign policy", 4);
+		
+		Searcher searcher_ws2 = new Searcher(new File("C:/Temp/webcrawler_index_ws2"));
+		SearchResults res_ws2 = searcher_ws2.search("UKIP foreign policy", 4);
+		
+		Searcher searcher_ws3 = new Searcher(new File("C:/Temp/webcrawler_index_ws3"));
+		SearchResults res_ws3 = searcher_ws3.search("UKIP foreign policy", 4);
+		
+		Searcher searcher_ws4 = new Searcher(new File("C:/Temp/webcrawler_index_ws4"));
+		SearchResults res_ws4 = searcher_ws4.search("UKIP foreign policy", 4);
+		
+		System.out.println(res_ws1.getNumDocs());
+		System.out.println(res_ws2.getNumDocs());
+		System.out.println(res_ws3.getNumDocs());
+		System.out.println(res_ws4.getNumDocs());
+	}
+	
+	@Test
 	public void CreateNewIndex() throws IOException {
 
 		// Arrange.

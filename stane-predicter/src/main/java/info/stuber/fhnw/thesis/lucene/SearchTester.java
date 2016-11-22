@@ -35,7 +35,7 @@ import info.stuber.fhnw.thesis.utils.Question;
 public class SearchTester {
 
 	// private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
-	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index_test");
+	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
 
 	public SearchTester() {
 

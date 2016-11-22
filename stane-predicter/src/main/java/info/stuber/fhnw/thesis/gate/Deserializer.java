@@ -23,8 +23,11 @@ public class Deserializer {
 
 	public static void main(String args[]) {
 
-		List<Coding> codings = Deserializer.deserializeAllCoding();
-		System.out.println(codings.size() + " Files deserialized");
+		Coding coding = Deserializer.deserializeCoding("3c399158-04d2-436d-8912-804581baaa50.ser");
+		System.out.println(coding.getContent());
+		
+		//List<Coding> codings = Deserializer.deserializeAllCoding();
+		// System.out.println(codings.size() + " Files deserialized");
 	}
 
 	public static List<Coding> deserializeAllCoding() {
@@ -55,6 +58,11 @@ public class Deserializer {
 			ObjectInputStream ois = new ObjectInputStream(fius);
 			coding = (Coding) ois.readObject();
 			// coding.printDebug();
+			
+			// TODO: Make that aktive
+			if(coding.getContent() != null)
+				coding.setContent(coding.getContent().replace("\n", "").replace("\r", ""));
+			
 			ois.close();
 
 		} catch (Exception ex) {

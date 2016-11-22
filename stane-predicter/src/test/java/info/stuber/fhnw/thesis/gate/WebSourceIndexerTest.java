@@ -33,14 +33,26 @@ public class WebSourceIndexerTest {
 	}
 	
 	@Test
-	public void CodingWithContent_Test()throws InvocationTargetException, GateException, InterruptedException, IOException {
+	public void CodingWithContentAndWindowSize4_Test()throws InvocationTargetException, GateException, InterruptedException, IOException {
 		Coding coding = new Coding(1,1,new URL("http://www.fhnw.ch"));
 		coding.setContent("Document splitter test. Second sentence. Last one. And nother one. And one more.");
 		
-		List<String> result = indexer.splitSentence(coding);
+		List<String> result = indexer.splitSentence(coding, 4);
 		
 		Assert.assertNotNull(result);
 		// Depending on windows size and max Sentence lenght the result size will vary. 
-		Assert.assertTrue(result.size() > 1);
+		Assert.assertTrue(result.size() == 4);
+	}
+	
+	@Test
+	public void CodingWithContentAndWindowSize1_Test()throws InvocationTargetException, GateException, InterruptedException, IOException {
+		Coding coding = new Coding(1,1,new URL("http://www.fhnw.ch"));
+		coding.setContent("Document splitter test. Second sentence. Last one. And nother one. And one more.");
+		
+		List<String> result = indexer.splitSentence(coding, 1);
+		
+		Assert.assertNotNull(result);
+		// Depending on windows size and max Sentence lenght the result size will vary. 
+		Assert.assertTrue(result.size() == 5);
 	}
 }
