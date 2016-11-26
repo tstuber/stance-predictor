@@ -1,5 +1,6 @@
 package info.stuber.fhnw.thesis.semantira;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import info.stuber.fhnw.thesis.utils.ExpectedResultsLoader;
@@ -14,51 +15,92 @@ public class PredictionEvaluation {
 		analyzer = new DocumentSentimentAnalyzer();
 	}
 
-	public PredictedResult TestSingle(Party party, int questionId) {
-		return analyzer.calculateSentiment(party, questionId);
+	public PredictedResult TestSingle(Party party, int questionId, int windowSize) {
+		return analyzer.calculateSentiment(party, questionId, windowSize);
 	}
 
-	public boolean evaluateSingle(Party party, int questionId) throws NotSupportedQuestionException {
-		boolean result = false;
+	/***
+	 * Evaluates a specific question for a specific party.
+	 * 
+	 * @param party
+	 * @param questionId
+	 * @param windowSize
+	 * @return
+	 * @throws NotSupportedQuestionException
+	 */
+	public List<EvalResult> evaluateSingle(Party party, int questionId, int windowSize) {
 
-		PredictedResult predRes = analyzer.calculateSentiment(party, questionId);
-		ExpectedResult expRes = ExpectedResultsLoader.getResult(party, questionId);
+		ExpectedResult expectedResult = ExpectedResultsLoader.getSingleResult(party, questionId);
+		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
 
-		if (expRes == null) {
-			throw new NotSupportedQuestionException("Not supported Question (" + questionId + ")");
+		PredictedResult predRes = analyzer.calculateSentiment(party, questionId, windowSize);
+		evaluationResults
+				.add(new EvalResult(party.getId(), questionId, expectedResult.getAnswer(), predRes.getAnswer()));
+
+		return evaluationResults;
+	}
+
+	/**
+	 * Evaluates a specific question along all parties.
+	 * 
+	 * @param question
+	 * @param windowSize
+	 * @return
+	 */
+	public List<EvalResult> CompareQuestion(int question, int windowSize) {
+
+		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getResultsByQuestion(question);
+		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
+
+		for (ExpectedResult expRes : expectedResults) {
+			Party party = Party.fromInteger(expRes.getParty());
+			PredictedResult predRes = analyzer.calculateSentiment(party, question, windowSize);
+			evaluationResults.add(new EvalResult(party.getId(), question, expRes.getAnswer(), predRes.getAnswer()));
 		}
 
-		float exp = expRes.getMedian();
-		float pre = predRes.getMean();
-
-		if (exp >= 4 && pre < -0.25)
-			result = true;
-		else if (exp <= 2 && pre > 0.25)
-			result = true;
-		else if (exp == 3 && (pre >= 0.25 || pre <= 0.25))
-			result = true;
-		else
-			result = false;
-
-		System.out.println("Party: \t" + party);
-		System.out.println("Question: \t" + questionId);
-		System.out.println("Expected Answer (Median) : " + expRes.getMedian() + " (" + expRes.getMedianAsText() + ")");
-		System.out.println("Predicted Answer (Mean)  : " + predRes.getMean());
-		System.out.println("Predicted Answer (Median): " + predRes.getMedian());
-		System.out.println("Predicted Answer (Max)   : " + predRes.getMax());
-		System.out.println("Predicted Answer (Min)   : " + predRes.getMin());
-		System.out.println("Summary: " + result);
-
-		return result;
+		return evaluationResults;
 	}
 
-	public void CompareQuestion() {
+	/**
+	 * Evaluation all question of a specific party.
+	 * 
+	 * @param party
+	 * @param windowSize
+	 * @return
+	 */
+	public List<EvalResult> compareParty(Party party, int windowSize) {
+
+		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getResultsByParty(party);
+		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
+
+		for (ExpectedResult expRes : expectedResults) {
+			int question = expRes.getQuestion();
+			PredictedResult predRes = analyzer.calculateSentiment(party, question, windowSize);
+			evaluationResults.add(new EvalResult(party.getId(), question, expRes.getAnswer(), predRes.getAnswer()));
+		}
+
+		return evaluationResults;
 	}
 
-	public void CompareParty() {
-	}
+	/***
+	 * Evaluation all questions and all parties.
+	 * 
+	 * @param windowSize
+	 * @return
+	 */
+	public List<EvalResult> CompareAll(int windowSize) {
 
-	public void CompareAll() {
+		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getAllResults();
+		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
+
+		for (ExpectedResult expRes : expectedResults) {
+			int question = expRes.getQuestion();
+			Party party = Party.fromInteger(expRes.getParty());
+			PredictedResult predRes = analyzer.calculateSentiment(party, question, windowSize);
+			evaluationResults.add(new EvalResult(party.getId(), question, expRes.getAnswer(), predRes.getAnswer()));
+		}
+
+		return evaluationResults;
 	}
 
 }

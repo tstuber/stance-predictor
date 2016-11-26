@@ -19,6 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.lucene.search.ScoreDoc;
+
 public class DocumentSentimentAnalyzer {
 
 	private static final int TIMEOUT_BEFORE_GETTING_RESPONSE = 2000; // in
@@ -36,16 +38,18 @@ public class DocumentSentimentAnalyzer {
 	public static void main(String[] args) throws InterruptedException {
 
 		Party party = Party.UKIP;
-		int question = 5;
+		int question = 1;
+		int windowSize = 1;
 
 		DocumentSentimentAnalyzer analyzer = new DocumentSentimentAnalyzer();
-		analyzer.calculateSentiment(party, question);
+		analyzer.calculateSentiment(party, question, windowSize);
 	}
 
-	public PredictedResult calculateSentiment(Party party, int questionId) {
+	public PredictedResult calculateSentiment(Party party, int questionId, int windowSize) {
 		PredictedResult predictionResult = new PredictedResult(party, questionId);
 		SearchTester searcher = new SearchTester();
-		HashMap<Integer, String> res = searcher.getBestHits(party, questionId);
+		HashMap<Integer, String> res = searcher.getBestHits(party, questionId, windowSize);
+		// ScoreDoc[] hits = searcher.retrieveTopDocs(party, questionId, windowSize);
 
 		String configId = null;
 		Session session = Session.createSession(API_KEY, API_SECRET);

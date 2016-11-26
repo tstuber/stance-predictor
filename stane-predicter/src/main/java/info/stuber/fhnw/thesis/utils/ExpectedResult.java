@@ -4,14 +4,14 @@ public class ExpectedResult {
 
 	private Party party;
 	private int question;
-	private float median; // Round 2
+	private int answer; // Round 2
 	private float agreement; // Round 2
 
-	public ExpectedResult(int party, int question, float median, float agreement) {
+	public ExpectedResult(int party, int question, int answer, float agreement) {
 
 		this.party = Party.fromInteger(party);
 		this.question = question;
-		this.median = median;
+		this.answer = answer;
 		this.agreement = agreement;
 	}
 
@@ -23,8 +23,8 @@ public class ExpectedResult {
 		return question;
 	}
 
-	public float getMedian() {
-		return median;
+	public int getAnswer() {
+		return answer;
 	}
 
 	public float getAgreement() {
@@ -35,39 +35,34 @@ public class ExpectedResult {
 
 		String sentiment = "neutral";
 
-		if (median > 3.1 && median < 5.9)
+		if (answer == 4 || answer == 5)
 			sentiment = "disagreement";
-		if (median < 2.9)
+		if (answer == 1 || answer == 2)
 			sentiment = "agreement";
 
 		return sentiment;
 
 	}
 
-	public String getMedianAsText() {
+	public String getAnswerAsText() {
 		StringBuilder sb = new StringBuilder();
-		switch (Math.round(this.median * 10)) {
-		case 10:
-		case 15:
+		switch (this.answer) {
+		case 1:
 			sb.append("Total Agreement");
 			break;
-		case 20:
-		case 25:
+		case 2:
 			sb.append("Agreement");
 			break;
-		case 30:
+		case 3:
 			sb.append("Neutral");
 			break;
-		case 35:
-		case 40:
+		case 4:
 			sb.append("Disagreement");
 			break;
-		case 45:
-		case 50:
+		case 5:
 			sb.append("Total Disagreement");
 			break;
-		case 55:
-		case 60:
+		case 6:
 			sb.append("No opinion");
 			break;
 		}

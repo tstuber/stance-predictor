@@ -34,9 +34,6 @@ import info.stuber.fhnw.thesis.utils.Question;
 
 public class SearchTester {
 
-	// private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
-	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index");
-
 	public SearchTester() {
 
 	}
@@ -44,17 +41,72 @@ public class SearchTester {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		SearchTester tester = new SearchTester();
-		tester.getBestHits(Party.UKIP, 1);
+		tester.getBestHits(Party.UKIP, 1, 2);
 	}
 
-	public HashMap<Integer,String> getBestHits(Party party, int questionId) {
+	public ScoreDoc[] retrieveTopDocs(Party party, int questionId, int windowSize) {
+		ScoreDoc[] hits = null;
 
-		HashMap<Integer,String> result = new HashMap<Integer, String>();
+		String indexPath = getPathOfIndex(windowSize);
+
+		try {
+
+			Analyzer analyzer = new StandardAnalyzer();
+			Directory index = FSDirectory.open(Paths.get(indexPath));
+
+			// 2. query
+			String issueStmt = Question.getQuestionById(questionId);
+			int partyId = party.getId();
+			String special = issueStmt + " +party:" + partyId;
+			Query q = new QueryParser(LuceneConstants.CONTENTS, analyzer).parse(special);
+
+			System.out.println(q.toString());
+
+			// 3. search
+			int hitsPerPage = LuceneConstants.MAX_SEARCH;
+			IndexReader reader = DirectoryReader.open(index);
+			IndexSearcher searcher = new IndexSearcher(reader);
+			TopDocs docs = searcher.search(q, hitsPerPage);
+			hits = docs.scoreDocs;
+
+			System.out.println("maxDocs: " + reader.maxDoc());
+			System.out.println("numDocs: " + reader.numDocs());
+
+			// 4. display results
+			System.out.println("Found " + hits.length + " hits.");
+			for (int i = 0; i < hits.length; ++i) {
+				int docId = hits[i].doc;
+				Document d = searcher.doc(docId);
+				String passage = d.get(LuceneConstants.CONTENTS).replace("\n", "").replace("\r", "");
+				System.out.println((i + 1) + ". (" + hits[i].score + ") Party:" + d.get(LuceneConstants.PARTY)
+						+ " Question:" + d.get(LuceneConstants.QUESTION) + " URL:" + d.get(LuceneConstants.SOURCE)
+						+ "\n" + passage);
+			}
+
+			// reader can only be closed when there
+			// is no need to access the documents any more.
+			reader.close();
+
+		} catch (IOException ex) {
+			System.out.println(ex.toString());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return hits;
+	}
+
+	public HashMap<Integer, String> getBestHits(Party party, int questionId, int windowSize) {
+
+		HashMap<Integer, String> result = new HashMap<Integer, String>();
+
+		String indexPath = getPathOfIndex(windowSize);
 		
 		try {
 
 			Analyzer analyzer = new StandardAnalyzer();
-			Directory index = FSDirectory.open(Paths.get(INDEX_PATH));
+			Directory index = FSDirectory.open(Paths.get(indexPath));
 
 			// 2. query
 			String issueStmt = Question.getQuestionById(questionId);
@@ -83,7 +135,7 @@ public class SearchTester {
 				System.out.println((i + 1) + ". (" + hits[i].score + ") Party:" + d.get(LuceneConstants.PARTY)
 						+ " Question:" + d.get(LuceneConstants.QUESTION) + " URL:" + d.get(LuceneConstants.SOURCE)
 						+ "\n" + passage);
-				System.out.println(d.getFields(LuceneConstants.PARTY).length);
+
 				result.put(i, passage);
 			}
 
@@ -99,5 +151,13 @@ public class SearchTester {
 		}
 
 		return result;
+	}
+
+	public String getPathOfIndex(int windowSize) {
+
+		if (windowSize > 0 && windowSize <= 4)
+			return GetConfigPropertyValues.getProperty("path_index_ws" + windowSize);
+		else
+			return null;
 	}
 }

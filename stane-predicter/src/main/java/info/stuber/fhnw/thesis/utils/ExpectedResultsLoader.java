@@ -19,7 +19,7 @@ public class ExpectedResultsLoader {
 
 	}
 
-	public static List<ExpectedResult> getResultList() {
+	public static List<ExpectedResult> getAllResults() {
 
 		if (resultList == null)
 			readSource();
@@ -27,7 +27,7 @@ public class ExpectedResultsLoader {
 		return resultList;
 	}
 	
-	public static ExpectedResult getResult(Party party, int questionId) {
+	public static ExpectedResult getSingleResult(Party party, int questionId) {
 		if (resultList == null)
 			readSource();
 		
@@ -39,6 +39,37 @@ public class ExpectedResultsLoader {
 		
 		return null;
 	}
+	
+	public static List<ExpectedResult> getResultsByParty(Party party) {
+		if (resultList == null)
+			readSource();
+		
+		List<ExpectedResult> resultsByParty = new ArrayList<ExpectedResult>();
+		
+		for(ExpectedResult expected : resultList) {
+			if(expected.getParty() == party.getId()) {
+				resultsByParty.add(expected);
+			}
+		}
+		
+		return resultsByParty;
+	}
+	
+	public static List<ExpectedResult> getResultsByQuestion(int questionId) {
+		if (resultList == null)
+			readSource();
+		
+		List<ExpectedResult> resultsByQuestion = new ArrayList<ExpectedResult>();
+		
+		for(ExpectedResult expected : resultList) {
+			if(expected.getQuestion() == questionId) {
+				resultsByQuestion.add(expected);
+			}
+		}
+		
+		return resultsByQuestion;
+	}
+
 
 	private static void readSource() {
 		resultList = new ArrayList<ExpectedResult>();
@@ -64,10 +95,10 @@ public class ExpectedResultsLoader {
 				if (values.length == 6) {
 					int party = Integer.parseInt(values[0]);
 					int question = Integer.parseInt(values[1]);
-					float median = Float.parseFloat(values[4]);
+					int answer = Integer.parseInt(values[4]);
 					float agreement = Float.parseFloat(values[5]);
 
-					ExpectedResult result = new ExpectedResult(party, question, median, agreement);
+					ExpectedResult result = new ExpectedResult(party, question, answer, agreement);
 					resultList.add(result);
 				}
 			}

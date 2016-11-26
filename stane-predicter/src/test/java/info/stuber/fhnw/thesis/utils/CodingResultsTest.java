@@ -11,7 +11,7 @@ public class CodingResultsTest {
 	@Test
 	public void ReadFileTest() {
 		
-		List<ExpectedResult> res = ExpectedResultsLoader.getResultList();
+		List<ExpectedResult> res = ExpectedResultsLoader.getAllResults();
 		
 		Assert.assertNotNull(res);
 		Assert.assertTrue(res.size() == 224);
@@ -19,24 +19,24 @@ public class CodingResultsTest {
 	
 	@Test
 	public void ReadFirstResultTest() {
-		List<ExpectedResult> res = ExpectedResultsLoader.getResultList();
+		List<ExpectedResult> res = ExpectedResultsLoader.getAllResults();
 		
 		Assert.assertNotNull(res);
 		Assert.assertTrue(res.get(0).getParty() == 1);
 		Assert.assertTrue(res.get(0).getQuestion() == 1);
-		Assert.assertTrue(res.get(0).getMedian() == 1.0f);
+		Assert.assertTrue(res.get(0).getAnswer() == 1.0f);
 		Assert.assertTrue(res.get(0).getAgreement() == 1.0f);
 	}
 	
 	@Test
 	public void ReadSingleExpectedTest() {
 		
-		ExpectedResult res = ExpectedResultsLoader.getResult(Party.CON, 1);
+		ExpectedResult res = ExpectedResultsLoader.getSingleResult(Party.CON, 1);
 		
 		Assert.assertNotNull(res);
 		Assert.assertTrue(res.getParty() == 1);
 		Assert.assertTrue(res.getQuestion() == 1);
-		Assert.assertTrue(res.getMedian() == 1.0f);
+		Assert.assertTrue(res.getAnswer() == 1.0f);
 		Assert.assertTrue(res.getAgreement() == 1.0f);
 		Assert.assertTrue(res.getSentiment().equals("agreement"));
 	}
