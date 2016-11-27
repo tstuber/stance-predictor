@@ -16,7 +16,7 @@ public class EvalResult {
 
 	public String toString() {
 
-		return party + "\t" + question + "\t\t" + expectedAnswer + "\t" + predictedAnswer;
+		return party + "\t" + question + "\t\t" + expectedAnswer + "\t" + predictedAnswer + "\t" + isSuccess();
 	}
 	
 	public boolean isSuccess() {

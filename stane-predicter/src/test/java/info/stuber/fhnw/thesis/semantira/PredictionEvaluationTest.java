@@ -13,8 +13,8 @@ public class PredictionEvaluationTest {
 
 	PredictionEvaluation evaluator;
 	private Party PARTY = Party.UKIP;
-	private int QUESTION_ID = 1;
-	private int WINDOW_SIZE = 2;
+	private int QUESTION_ID = 10;
+	private int WINDOW_SIZE = 1;
 
 	@Before
 	public void setup() {
@@ -50,7 +50,7 @@ public class PredictionEvaluationTest {
 	}
 
 	private void printResult(List<EvalResult> results) {
-		System.out.println("Party\tQuestion\tExp\tPred");
+		System.out.println("Party\tQuestion\tExp\tPred\tisSuccess");
 		
 		int success = 0;
 		for (EvalResult res : results) {

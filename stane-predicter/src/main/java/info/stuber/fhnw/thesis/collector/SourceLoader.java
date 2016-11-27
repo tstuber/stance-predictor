@@ -12,19 +12,23 @@ import java.util.List;
 
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
-public class SourceLoader {
+public class SourceLoader implements ISourceLoader {
 
-	private List<Coding> list = null;
+	private List<Coding> codings = null;
 	int sameSourceCount = 0;
 	int sameEverythingCount = 0;
 
 	public SourceLoader() {
-		list = new ArrayList<Coding>();
-		list = readSourceFile();
+		this.codings = new ArrayList<Coding>();
+		this.codings = readSourceFile();
+	}
+	
+	public SourceLoader(List<Coding> codings) {
+		this.codings = codings;
 	}
 
 	public static void main(String[] args) {
-		SourceLoader loader = new SourceLoader();
+		ISourceLoader loader = new SourceLoader();
 		// loader.print();
 
 	}
@@ -68,7 +72,7 @@ public class SourceLoader {
 					boolean existing = false;
 
 					// check if url is already known
-					for (Coding existingCoding : this.list) {
+					for (Coding existingCoding : this.codings) {
 						if (source.equals(existingCoding.getSourceUrl())) {
 							existing = true;
 
@@ -83,7 +87,7 @@ public class SourceLoader {
 					}
 
 					if (!existing) {
-						this.list.add(new Coding(party, question, source));
+						this.codings.add(new Coding(party, question, source));
 					}
 				}
 			}
@@ -95,23 +99,35 @@ public class SourceLoader {
 
 		System.out.println("Sources Files loaded.");
 
-		return this.list;
+		return this.codings;
 	}
 
+	/* (non-Javadoc)
+	 * @see info.stuber.fhnw.thesis.collector.ISourceLoader#print()
+	 */
+	@Override
 	public void print() {
-		for (Coding coding : this.list) {
+		for (Coding coding : this.codings) {
 			coding.printDebug();
 		}
 		System.out.println();
 		System.out.println("Total: " + getCodingCount());
 	}
 
+	/* (non-Javadoc)
+	 * @see info.stuber.fhnw.thesis.collector.ISourceLoader#getCodings()
+	 */
+	@Override
 	public List<Coding> getCodings() {
-		return this.list;
+		return this.codings;
 	}
 
+	/* (non-Javadoc)
+	 * @see info.stuber.fhnw.thesis.collector.ISourceLoader#getCodingCount()
+	 */
+	@Override
 	public int getCodingCount() {
-		return this.list.size();
+		return this.codings.size();
 	}
 
 }

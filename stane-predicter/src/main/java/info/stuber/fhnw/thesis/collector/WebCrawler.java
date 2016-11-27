@@ -40,7 +40,11 @@ public class WebCrawler {
 
 	public WebCrawler() {
 
-		SourceLoader loader = new SourceLoader();
+		ISourceLoader loader = new SourceLoader();
+		codings = loader.getCodings();
+	}
+	
+	public WebCrawler(ISourceLoader loader) {
 		codings = loader.getCodings();
 	}
 
@@ -104,6 +108,9 @@ public class WebCrawler {
 						coding.setException(ex);
 					}
 				}
+				System.out.println();
+				System.out.println(doc);
+				System.out.println();
 
 				if (doc != null) {
 					coding.setContent(getPlainText(doc));
@@ -143,7 +150,7 @@ public class WebCrawler {
 
 	// the formatting rules, implemented in a breadth-first DOM traverse
 	private class FormattingVisitor implements NodeVisitor {
-		private static final int maxWidth = 80;
+		private static final int maxWidth = 100000;
 		private int width = 0;
 		private StringBuilder accum = new StringBuilder(); // holds the
 															// accumulated text

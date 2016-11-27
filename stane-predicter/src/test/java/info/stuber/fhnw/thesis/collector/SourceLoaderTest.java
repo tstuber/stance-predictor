@@ -6,8 +6,8 @@ import org.junit.Test;
 public class SourceLoaderTest {
 	
 	@Test
-	public void SourceLoaderTest() {
-		SourceLoader loader = new SourceLoader();
+	public void SourceLoader_Test() {
+		ISourceLoader loader = new SourceLoader();
 		
 		Assert.assertNotNull(loader);
 		System.out.println(loader.getCodingCount());

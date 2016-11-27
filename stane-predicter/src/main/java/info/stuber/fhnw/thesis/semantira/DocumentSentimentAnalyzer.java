@@ -15,6 +15,7 @@ import info.stuber.fhnw.thesis.utils.Question;
 import info.stuber.fhnw.thesis.utils.Party;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -83,15 +84,18 @@ public class DocumentSentimentAnalyzer {
 
 		DocAnalyticData doc = null;
 		if (data != null && data.isEmpty() == false) {
+			
 
 			// Quercheck, kann irgendwann gelöscht werden!
 			List<Float> sentimentScores = new ArrayList<Float>();
 
+			Collections.sort(data, new DocAnalyticDataComparator());
+			
 			for (DocAnalyticData docAnalyticData : data) {
 				if (docAnalyticData.getId().startsWith("BATCH_") || docAnalyticData.getId().equals("QUESTION")) {
 					doc = docAnalyticData;
-					System.out.println(doc.getId() + " SentiScore: " + doc.getSentimentScore() + "\tDocPolarity: "
-							+ doc.getSentimentPolarity() + "\t Text: " + doc.getSourceText());
+					System.out.println(doc.getId() + "\tDocPolarity: "
+							+ doc.getSentimentPolarity() + " \tSentiScore: " + doc.getSentimentScore() + "\t Text: " + doc.getSourceText());
 					sentimentScores.add(doc.getSentimentScore());
 					predictionResult.addItem(new PredictedResultItem(party.getId(), questionId, doc.getSentimentScore(),
 							doc.getSentimentPolarity()));

@@ -8,16 +8,16 @@ import java.util.List;
 public class Coding implements Serializable {
 
 	private static final long serialVersionUID = -8278147079109824018L;
+	private String content;
+	private String encoding;
+	private Exception exception;
+
+	private int httpStatus;
+	private String mimeType;
 	private List<Integer> party;
 	private List<Integer> question;
 	private URL sourceUrl;
-
-	private String mimeType;
-	private String encoding;
 	private URL targetUrl;
-	private int httpStatus;
-	private String content;
-	private Exception exception;
 
 	public Coding(int party, int question, URL sourceUrl) {
 
@@ -37,25 +37,9 @@ public class Coding implements Serializable {
 		this.setException(null);
 	}
 
-	public List<Integer> getParty() {
-		return this.party;
-	}
-
 	public void addParty(int party) {
 		if (!this.party.contains(party))
 			this.party.add(party);
-	}
-
-	public List<Integer> getQuestion() {
-		return this.question;
-	}
-
-	public boolean containsQuestion(int questionId) {
-		return this.question.contains(questionId);
-	}
-
-	public boolean containsParty(int party) {
-		return this.party.contains(party);
 	}
 
 	public void addQuestion(int questionId) {
@@ -63,47 +47,12 @@ public class Coding implements Serializable {
 			this.question.add(questionId);
 	}
 
-	public URL getSourceUrl() {
-		return this.sourceUrl;
+	public boolean containsParty(int party) {
+		return this.party.contains(party);
 	}
 
-	public void setMimeType(String mimeType) {
-		this.mimeType = mimeType;
-	}
-
-	public String getMimeType() {
-		return this.mimeType;
-	}
-
-	public String getEncoding() {
-		return encoding;
-	}
-
-	public void setEncoding(String encoding) {
-		if (encoding.contains("charset="))
-			this.encoding = encoding.split("=")[1];
-		else
-			this.encoding = encoding;
-	}
-
-	public URL getTargetUrl() {
-		return targetUrl;
-	}
-
-	public void setTargetUrl(URL targetUrl) {
-		this.targetUrl = targetUrl;
-	}
-
-	public int getHttpStatus() {
-		return httpStatus;
-	}
-
-	public void setHttpStatus(int httpStatus) {
-		this.httpStatus = httpStatus;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
+	public boolean containsQuestion(int questionId) {
+		return this.question.contains(questionId);
 	}
 
 	public String getContent() {
@@ -111,8 +60,36 @@ public class Coding implements Serializable {
 		return this.content;
 	}
 
-	public String toString() {
-		return "[Code: " + this.getHttpStatus() + "] TargetUrl: " + this.getTargetUrl() + " URL: " + this.sourceUrl;
+	public String getEncoding() {
+		return encoding;
+	}
+
+	public Exception getException() {
+		return exception;
+	}
+
+	public int getHttpStatus() {
+		return httpStatus;
+	}
+
+	public String getMimeType() {
+		return this.mimeType;
+	}
+
+	public List<Integer> getParty() {
+		return this.party;
+	}
+
+	public List<Integer> getQuestion() {
+		return this.question;
+	}
+
+	public URL getSourceUrl() {
+		return this.sourceUrl;
+	}
+
+	public URL getTargetUrl() {
+		return targetUrl;
 	}
 
 	public String printDebug() {
@@ -133,11 +110,34 @@ public class Coding implements Serializable {
 		return sb.toString();
 	}
 
-	public Exception getException() {
-		return exception;
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public void setEncoding(String encoding) {
+		if (encoding.contains("charset="))
+			this.encoding = encoding.split("=")[1];
+		else
+			this.encoding = encoding;
 	}
 
 	public void setException(Exception exception) {
 		this.exception = exception;
+	}
+
+	public void setHttpStatus(int httpStatus) {
+		this.httpStatus = httpStatus;
+	}
+
+	public void setMimeType(String mimeType) {
+		this.mimeType = mimeType;
+	}
+
+	public void setTargetUrl(URL targetUrl) {
+		this.targetUrl = targetUrl;
+	}
+
+	public String toString() {
+		return "[Code: " + this.getHttpStatus() + "] TargetUrl: " + this.getTargetUrl() + " URL: " + this.sourceUrl;
 	}
 }

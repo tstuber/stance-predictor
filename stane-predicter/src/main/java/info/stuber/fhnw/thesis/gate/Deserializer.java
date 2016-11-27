@@ -61,7 +61,8 @@ public class Deserializer {
 			
 			// TODO: Make that aktive
 			if(coding.getContent() != null)
-				coding.setContent(coding.getContent().replace("\n", "").replace("\r", ""));
+				coding.setContent(coding.getContent());
+				//coding.setContent(coding.getContent().replace("\n", "").replace("\r", ""));
 			
 			ois.close();
 
