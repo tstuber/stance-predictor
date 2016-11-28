@@ -12,9 +12,11 @@ import junit.framework.Assert;
 public class PredictionEvaluationTest {
 
 	PredictionEvaluation evaluator;
-	private Party PARTY = Party.UKIP;
-	private int QUESTION_ID = 10;
-	private int WINDOW_SIZE = 1;
+	private Party PARTY = Party.fromInteger(6);
+	private int QUESTION_ID = 17;
+	private int WINDOW_SIZE = 4;
+	
+	// TO large Sample to send: Party 3, Question 23, Window Size 4
 
 	@Before
 	public void setup() {

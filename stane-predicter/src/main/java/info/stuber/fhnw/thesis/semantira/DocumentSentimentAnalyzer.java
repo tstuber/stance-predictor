@@ -50,7 +50,8 @@ public class DocumentSentimentAnalyzer {
 		PredictedResult predictionResult = new PredictedResult(party, questionId);
 		SearchTester searcher = new SearchTester();
 		HashMap<Integer, String> res = searcher.getBestHits(party, questionId, windowSize);
-		// ScoreDoc[] hits = searcher.retrieveTopDocs(party, questionId, windowSize);
+		// ScoreDoc[] hits = searcher.retrieveTopDocs(party, questionId,
+		// windowSize);
 
 		String configId = null;
 		Session session = Session.createSession(API_KEY, API_SECRET);
@@ -61,7 +62,8 @@ public class DocumentSentimentAnalyzer {
 		for (int i = 0; i < 10; i++) {
 			tasks.add(new Document("BATCH_" + i, res.get(i)));
 		}
-		// tasks.add(new Document("QUESTION", Question.getQuestionById(questionId)));
+		// tasks.add(new Document("QUESTION",
+		// Question.getQuestionById(questionId)));
 
 		int status = session.QueueBatchOfDocuments(tasks, configId);
 		if (status == 202)
@@ -81,26 +83,51 @@ public class DocumentSentimentAnalyzer {
 										// File | Settings | File Templates.
 			}
 		}
-
+		
 		DocAnalyticData doc = null;
 		if (data != null && data.isEmpty() == false) {
-			
 
 			// Quercheck, kann irgendwann gelöscht werden!
 			List<Float> sentimentScores = new ArrayList<Float>();
 
 			Collections.sort(data, new DocAnalyticDataComparator());
-			
+			StringBuilder sb = new StringBuilder();
+
 			for (DocAnalyticData docAnalyticData : data) {
 				if (docAnalyticData.getId().startsWith("BATCH_") || docAnalyticData.getId().equals("QUESTION")) {
 					doc = docAnalyticData;
-					System.out.println(doc.getId() + "\tDocPolarity: "
-							+ doc.getSentimentPolarity() + " \tSentiScore: " + doc.getSentimentScore() + "\t Text: " + doc.getSourceText());
-					sentimentScores.add(doc.getSentimentScore());
-					predictionResult.addItem(new PredictedResultItem(party.getId(), questionId, doc.getSentimentScore(),
-							doc.getSentimentPolarity()));
+					System.out.println(doc.getId() + "\tDocPolarity: " + doc.getSentimentPolarity() + " \tSentiScore: "
+							+ doc.getSentimentScore() + "\t Text: " + doc.getSourceText());
+
+					// Only get the elements with sentiment
+					if (doc.getSentimentScore() != 0.0f) {
+						sentimentScores.add(doc.getSentimentScore());
+						predictionResult.addItem(new PredictedResultItem(party.getId(), questionId,
+								doc.getSentimentScore(), doc.getSentimentPolarity()));
+						sb.append(doc.getId() + "\tDocPolarity: " + doc.getSentimentPolarity() + " \tSentiScore: "
+								+ doc.getSentimentScore() + "\t Text: " + doc.getSourceText() + "\n");
+
+//						if (doc.getOpinions() != null && !doc.getOpinions().isEmpty()) {
+//							System.out.println("Quote: " + doc.getOpinions().get(0).getQuotation());
+//							System.out.println("Polarity: " + doc.getOpinions().get(0).getSentimentPolarity());
+//						}
+//
+//						if (doc.getModelSentiment() != null) {
+//							System.out.println("Neg" + doc.getModelSentiment().getNegativeScore());
+//							System.out.println("Neu" + doc.getModelSentiment().getMixedScore());
+//							System.out.println("Pos" + doc.getModelSentiment().getPositiveScore());
+//						}
+//						
+//						if(doc.getEntities() != null && !doc.getEntities().isEmpty()) {
+//							System.out.println("title:" + doc.getEntities().get(0).getTitle());
+//							System.out.println("title:" + doc.getEntities().get(0).getSentimentScore());
+//						}
+					}
 				}
 			}
+
+			System.out.println("Only Ratings with Sentiment");
+			System.out.println(sb.toString());
 
 			// Quercheck: Calculate Mean!
 			float sum = 0.0f;
@@ -110,10 +137,6 @@ public class DocumentSentimentAnalyzer {
 			float result = sum / sentimentScores.size();
 			System.out.println("Overall SentimentScore: " + result);
 
-			// Verify matching data lists sizes!
-			if (predictionResult.size() != tasks.size())
-				System.out.println("WARNUNG! Task-Liste (" + tasks.size() + ") und Result-Liste ("
-						+ predictionResult.size() + "nicht gleich gross!");
 		}
 
 		return predictionResult;
