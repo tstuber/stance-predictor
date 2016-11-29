@@ -15,6 +15,13 @@ public class Question {
 		return questions.get(id);
 	}
 	
+	public static Map<Integer, String> getAllQuestions() {
+		if(questions == null)
+			initQuestions();
+		
+		return questions;
+	}
+	
 	private static void initQuestions() {
 		questions = new HashMap<Integer, String>();
 		
