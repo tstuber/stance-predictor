@@ -72,6 +72,7 @@ public class ExpectedResultsLoader {
 
 
 	private static void readSource() {
+		System.out.println("Reading source files for expected results");
 		resultList = new ArrayList<ExpectedResult>();
 		File f = new File(GetConfigPropertyValues.getProperty("path_codingresults"));
 		BufferedReader reader = null;
