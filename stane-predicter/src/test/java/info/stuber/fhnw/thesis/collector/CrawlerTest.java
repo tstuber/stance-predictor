@@ -15,6 +15,7 @@ import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
 import org.jsoup.select.NodeTraversor;
 import org.jsoup.select.NodeVisitor;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CrawlerTest {
@@ -24,6 +25,7 @@ public class CrawlerTest {
 	private static final int TIMEOUT = 10 * 1000;
 
 	@Test
+	@Ignore("Rather integration test. ")
 	public void estsfesf() throws IOException {
 		String url = "http://www.bbc.com/news/uk-politics-29642613";
 		Document doc = Jsoup.connect(url).followRedirects(true).userAgent(USER_AGENT).timeout(TIMEOUT).get();

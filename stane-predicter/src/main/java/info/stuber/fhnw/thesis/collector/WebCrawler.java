@@ -92,11 +92,13 @@ public class WebCrawler {
 				// Normal Processing - get source from Web.
 				try {
 					doc = Jsoup.connect(url).followRedirects(true).userAgent(USER_AGENT).timeout(TIMEOUT).get();
+					coding.setUsedUrl(url);
 				} catch (IOException ex) {
 					if (ex.toString().contains("404"))
 						try {
 							doc = Jsoup.connect(WEB_ARCHIVE_URL + url).followRedirects(true).userAgent(USER_AGENT)
 									.timeout(TIMEOUT).get();
+							coding.setUsedUrl(WEB_ARCHIVE_URL + url);
 						} catch (Exception e) {
 							coding.printDebug();
 							e.printStackTrace();
@@ -108,9 +110,6 @@ public class WebCrawler {
 						coding.setException(ex);
 					}
 				}
-				System.out.println();
-				System.out.println(doc);
-				System.out.println();
 
 				if (doc != null) {
 					coding.setContent(getPlainText(doc));

@@ -5,12 +5,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class WebCrawlerTest {
 
 	
 	@Test
+	@Ignore("Is rather Integration-Test")
 	public void WebCrawler_GetSingleURLTest() throws MalformedURLException {
 		// Arrange.
 		URL url = new URL("http://www.bbc.com/news/uk-politics-29642613");

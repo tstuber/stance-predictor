@@ -11,7 +11,6 @@ public class SourceLoaderTest {
 		
 		Assert.assertNotNull(loader);
 		System.out.println(loader.getCodingCount());
-		Assert.assertTrue(loader.getCodingCount() > 100);
+		Assert.assertTrue(loader.getCodingCount() > 400);
 	}
-
 }
