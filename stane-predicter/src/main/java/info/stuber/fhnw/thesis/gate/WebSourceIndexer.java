@@ -27,8 +27,8 @@ import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 public class WebSourceIndexer {
 
 	private int windowSize = 0;
-	private static final int WINDOW_SIZE = Integer.parseInt(GetConfigPropertyValues.getProperty("window_size_4"));
-	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index_ws4");
+	private static final int WINDOW_SIZE = Integer.parseInt(GetConfigPropertyValues.getProperty("window_size_1"));
+	private static final String INDEX_PATH = GetConfigPropertyValues.getProperty("path_index_ws1");
 	private static final int MIN_SENTENCE_LENGTH = 5;
 	private IndexFiles indexer = null;
 
@@ -70,9 +70,9 @@ public class WebSourceIndexer {
 	public static void main(String[] args)
 			throws InvocationTargetException, GateException, InterruptedException, IOException {
 		// load serialized files
-		
+
 		long start = System.currentTimeMillis();
-		
+
 		List<Coding> codings = Deserializer.deserializeAllCoding();
 
 		IndexFiles index = new IndexFiles(INDEX_PATH);
@@ -82,11 +82,11 @@ public class WebSourceIndexer {
 			List<String> sentenceList = indexer.splitSentence(coding, WINDOW_SIZE);
 			index.indexSentences(sentenceList, coding);
 		}
-		
+
 		long end = System.currentTimeMillis();
-		System.out.println("Time needed: " + (end-start));
+		System.out.println("Time needed: " + (end - start));
 		System.out.println("WindowSize: " + WINDOW_SIZE);
-		System.out.println("Index: " + INDEX_PATH );
+		System.out.println("Index: " + INDEX_PATH);
 	}
 
 	public List<String> splitSentence(Coding coding, int windowSize)
@@ -156,11 +156,12 @@ public class WebSourceIndexer {
 			sentence = sentence.replace("\n", "").replace("\r", "");
 
 			if (sentence.length() < MIN_SENTENCE_LENGTH * this.windowSize) {
-				// do not add it to index, can not contain
+				// do not add, has not enough characters. 
+			} else if (!sentence.contains(" ")) {
+				// Do not add, does not contain a space!
 			} else {
 				sentenceList.add(sentence);
 			}
-			// System.out.println(index + ": " + sentence);
 		}
 
 		corpus.remove(doc);
