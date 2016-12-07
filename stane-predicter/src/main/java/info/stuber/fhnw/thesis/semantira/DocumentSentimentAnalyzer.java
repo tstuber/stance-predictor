@@ -10,6 +10,7 @@ import com.semantria.mapping.configuration.*;
 import com.semantria.mapping.output.*;
 import com.semantria.serializer.JsonSerializer;
 
+import info.stuber.fhnw.thesis.lucene.SearchResult;
 import info.stuber.fhnw.thesis.lucene.SearchTester;
 import info.stuber.fhnw.thesis.utils.Question;
 import info.stuber.fhnw.thesis.utils.Party;
@@ -43,9 +44,76 @@ public class DocumentSentimentAnalyzer {
 		int windowSize = 1;
 
 		DocumentSentimentAnalyzer analyzer = new DocumentSentimentAnalyzer();
-		analyzer.calculateSentiment(party, question, windowSize);
+		// analyzer.calculateSentiment(party, question, windowSize);
+		PredictedResult res = analyzer.returningHitScoreToCalculateToWeightScore(party, question, windowSize);
+		System.out.println(res.getMean());
 	}
 
+	public PredictedResult returningHitScoreToCalculateToWeightScore(Party party, int questionId, int windowSize) {
+
+		PredictedResult predictionResult = new PredictedResult(party, questionId);
+		SearchTester searcher = new SearchTester();
+		List<SearchResult> searchResults = searcher.retrieveTopDocs(party, questionId, windowSize);
+
+		// Prepare documents to process.
+		String configId = null;
+		Session session = Session.createSession(API_KEY, API_SECRET);
+		session.registerSerializer(serializer);
+		session.setCallbackHandler(new CallbackHandler());
+
+		List<Document> tasks = new ArrayList<Document>();
+		for (SearchResult res : searchResults) {
+			tasks.add(new Document("BATCH_" + res.getRanking(), res.getPassage()));
+		}
+
+		// VERIFY
+		int status = session.QueueBatchOfDocuments(tasks, configId);
+		if (status == 202)
+			System.out.println("Document queued successfully!");
+
+		List<DocAnalyticData> data = null;
+		for (int i = 0; i < 5; i++) {
+			data = session.getProcessedDocuments(configId);
+			if (data != null && !data.isEmpty()) {
+				break;
+			}
+
+			try {
+				Thread.sleep(5000L);
+			} catch (InterruptedException e) {
+				e.printStackTrace(); // To change body of catch statement use
+										// File | Settings | File Templates.
+			}
+		}
+
+		DocAnalyticData doc = null;
+		if (data != null && data.isEmpty() == false) {
+
+			Collections.sort(data, new DocAnalyticDataComparator());
+			StringBuilder sb = new StringBuilder();
+
+			for (DocAnalyticData docAnalyticData : data) {
+				if (docAnalyticData.getId().startsWith("BATCH_") || docAnalyticData.getId().equals("QUESTION")) {
+					doc = docAnalyticData;
+
+					int ranking = Integer.parseInt(doc.getId().split("_")[1]);
+					float hitScore = searchResults.get(ranking).getHitScore();
+
+					PredictedResultItem item = new PredictedResultItem(party.getId(), questionId, hitScore,
+							doc.getSentimentScore(), doc.getSentimentPolarity());
+					predictionResult.addItem(item);
+
+					String s = String.format("%s (%7.4f) Polarity:%s\tSentiScore:%.3f\tText:%s\n", doc.getId(),
+							hitScore, doc.getSentimentPolarity(), doc.getSentimentScore(), doc.getSourceText());
+					sb.append(s);
+				}
+			}
+			System.out.println(sb.toString());
+		}
+		return predictionResult;
+	}
+
+	@Deprecated
 	public PredictedResult calculateSentiment(Party party, int questionId, int windowSize) {
 		PredictedResult predictionResult = new PredictedResult(party, questionId);
 		SearchTester searcher = new SearchTester();
@@ -83,7 +151,7 @@ public class DocumentSentimentAnalyzer {
 										// File | Settings | File Templates.
 			}
 		}
-		
+
 		DocAnalyticData doc = null;
 		if (data != null && data.isEmpty() == false) {
 
@@ -107,21 +175,30 @@ public class DocumentSentimentAnalyzer {
 						sb.append(doc.getId() + "\tDocPolarity: " + doc.getSentimentPolarity() + " \tSentiScore: "
 								+ doc.getSentimentScore() + "\t Text: " + doc.getSourceText() + "\n");
 
-//						if (doc.getOpinions() != null && !doc.getOpinions().isEmpty()) {
-//							System.out.println("Quote: " + doc.getOpinions().get(0).getQuotation());
-//							System.out.println("Polarity: " + doc.getOpinions().get(0).getSentimentPolarity());
-//						}
-//
-//						if (doc.getModelSentiment() != null) {
-//							System.out.println("Neg" + doc.getModelSentiment().getNegativeScore());
-//							System.out.println("Neu" + doc.getModelSentiment().getMixedScore());
-//							System.out.println("Pos" + doc.getModelSentiment().getPositiveScore());
-//						}
-//						
-//						if(doc.getEntities() != null && !doc.getEntities().isEmpty()) {
-//							System.out.println("title:" + doc.getEntities().get(0).getTitle());
-//							System.out.println("title:" + doc.getEntities().get(0).getSentimentScore());
-//						}
+						// if (doc.getOpinions() != null &&
+						// !doc.getOpinions().isEmpty()) {
+						// System.out.println("Quote: " +
+						// doc.getOpinions().get(0).getQuotation());
+						// System.out.println("Polarity: " +
+						// doc.getOpinions().get(0).getSentimentPolarity());
+						// }
+						//
+						// if (doc.getModelSentiment() != null) {
+						// System.out.println("Neg" +
+						// doc.getModelSentiment().getNegativeScore());
+						// System.out.println("Neu" +
+						// doc.getModelSentiment().getMixedScore());
+						// System.out.println("Pos" +
+						// doc.getModelSentiment().getPositiveScore());
+						// }
+						//
+						// if(doc.getEntities() != null &&
+						// !doc.getEntities().isEmpty()) {
+						// System.out.println("title:" +
+						// doc.getEntities().get(0).getTitle());
+						// System.out.println("title:" +
+						// doc.getEntities().get(0).getSentimentScore());
+						// }
 					}
 				}
 			}

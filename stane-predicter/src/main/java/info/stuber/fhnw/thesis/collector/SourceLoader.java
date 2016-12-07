@@ -8,7 +8,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
@@ -29,7 +31,20 @@ public class SourceLoader implements ISourceLoader {
 
 	public static void main(String[] args) {
 		ISourceLoader loader = new SourceLoader();
-		// loader.print();
+		loader.print();
+		 System.out.println("Try to find Duplicate"); 
+		
+		 
+		 List<Coding> codings = loader.getCodings();
+		Set<String> names = new HashSet<String>();
+		for (Coding coding:codings) {
+		  if (names.contains(coding.getSourceUrl().toString())) {
+		   coding.printDebug();
+		  } else {
+		    names.add(coding.getSourceUrl().toString());
+		    System.out.println(coding.getSourceUrl().toString());
+		  }
+		}
 
 	}
 

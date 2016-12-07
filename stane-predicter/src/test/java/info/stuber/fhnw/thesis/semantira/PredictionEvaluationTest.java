@@ -12,9 +12,9 @@ import junit.framework.Assert;
 public class PredictionEvaluationTest {
 
 	PredictionEvaluation evaluator;
-	private Party PARTY = Party.fromInteger(6);
-	private int QUESTION_ID = 17;
-	private int WINDOW_SIZE = 4;
+	private Party PARTY = Party.fromInteger(1);
+	private int QUESTION_ID = 4;
+	private int WINDOW_SIZE = 1;
 	
 	// TO large Sample to send: Party 3, Question 23, Window Size 4
 
@@ -26,7 +26,7 @@ public class PredictionEvaluationTest {
 	@Test
 	public void Evaluate_All_Test() {
 
-		List<EvalResult> results = evaluator.CompareAll(WINDOW_SIZE);
+		List<EvalResult> results = evaluator.compareAll(WINDOW_SIZE);
 		printResult(results);
 	}
 	
@@ -47,7 +47,7 @@ public class PredictionEvaluationTest {
 	@Test
 	public void Evaluate_ByQuestion_Test() {
 
-		List<EvalResult> results = evaluator.CompareQuestion(QUESTION_ID, WINDOW_SIZE);
+		List<EvalResult> results = evaluator.compareQuestion(QUESTION_ID, WINDOW_SIZE);
 		printResult(results);
 	}
 

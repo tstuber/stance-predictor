@@ -2,7 +2,9 @@ package info.stuber.fhnw.thesis.lucene;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -41,16 +43,15 @@ public class SearchTester {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		SearchTester tester = new SearchTester();
-		tester.getBestHits(Party.UKIP, 1, 2);
+		List<SearchResult> res = tester.retrieveTopDocs(Party.CON, 1, 1);;
 	}
 
-	public ScoreDoc[] retrieveTopDocs(Party party, int questionId, int windowSize) {
-		ScoreDoc[] hits = null;
+	public List<SearchResult> retrieveTopDocs(Party party, int questionId, int windowSize) {
+		List<SearchResult> searchResults = new ArrayList<SearchResult>();
 
 		String indexPath = getPathOfIndex(windowSize);
 
 		try {
-
 			Analyzer analyzer = new StandardAnalyzer();
 			Directory index = FSDirectory.open(Paths.get(indexPath));
 
@@ -67,20 +68,40 @@ public class SearchTester {
 			IndexReader reader = DirectoryReader.open(index);
 			IndexSearcher searcher = new IndexSearcher(reader);
 			TopDocs docs = searcher.search(q, hitsPerPage);
-			hits = docs.scoreDocs;
+			ScoreDoc[] hits = docs.scoreDocs;
 
 			System.out.println("maxDocs: " + reader.maxDoc());
 			System.out.println("numDocs: " + reader.numDocs());
 
 			// 4. display results
-			System.out.println("Found " + hits.length + " hits.");
+			System.out.println("Found " + hits.length + " hits.\n");
+			System.out.printf("Top Results for Party:%s and Question:%d\n" , party, questionId);
+			
+			int docCount = 0;
 			for (int i = 0; i < hits.length; ++i) {
+				
+				// Aborts if already 10 documents are collected. 
+				if(docCount >= 10) {
+					break;
+				}
+				
 				int docId = hits[i].doc;
 				Document d = searcher.doc(docId);
-				String passage = d.get(LuceneConstants.CONTENTS).replace("\n", "").replace("\r", "");
-				System.out.println((i + 1) + ". (" + hits[i].score + ") Party:" + d.get(LuceneConstants.PARTY)
-						+ " Question:" + d.get(LuceneConstants.QUESTION) + " URL:" + d.get(LuceneConstants.SOURCE)
-						+ "\n" + passage);
+				
+				float hitScore = hits[i].score;
+				String passage = d.get(LuceneConstants.CONTENTS);
+				String source = d.get(LuceneConstants.SOURCE);
+				
+				SearchResult res = new SearchResult(passage, hitScore, docCount, source);
+				
+				// Only adds search result if not a duplicate. 
+				if(!searchResults.contains(res)) {
+					searchResults.add(res);
+					docCount++;
+//					System.out.println((docCount + 1) + ". (" + hitScore + ") Party:" + party + " Question:" + questionId
+//							+ " URL:" + source + "\n" + passage);
+					System.out.printf("%2d (%7.4f) %s (%s)\n" , docCount, hitScore, passage, source);
+				} 	
 			}
 
 			// reader can only be closed when there
@@ -94,9 +115,10 @@ public class SearchTester {
 			e.printStackTrace();
 		}
 
-		return hits;
+		return searchResults;
 	}
 
+	@Deprecated
 	public HashMap<Integer, String> getBestHits(Party party, int questionId, int windowSize) {
 
 		HashMap<Integer, String> result = new HashMap<Integer, String>();

@@ -52,6 +52,27 @@ public class PredictedResult {
 		}
 		return sum / score.length;
 	}
+	
+	public float getWeightedMean() {
+		float totalWeight = 0f;
+		float accumulatedMean = 0f;
+		
+		for(PredictedResultItem item : resultItemList) {
+			
+			float sentiScore = item.getSentimentScore();
+			float hitScore = item.getHitScore();
+			
+			// Missing HitScore. Weighting can't be completed. Abort with max Values.
+			if(hitScore == Float.MAX_VALUE) {
+				return 9999f;
+			}
+				
+			totalWeight += hitScore;
+			accumulatedMean += hitScore * sentiScore;
+		}
+		
+		return accumulatedMean/totalWeight;
+	}
 
 	public float getMedian() {
 		float[] score = getScoreArray();

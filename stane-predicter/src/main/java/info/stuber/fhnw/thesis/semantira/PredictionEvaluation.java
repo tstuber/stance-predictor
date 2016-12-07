@@ -15,10 +15,6 @@ public class PredictionEvaluation {
 		analyzer = new DocumentSentimentAnalyzer();
 	}
 
-	public PredictedResult TestSingle(Party party, int questionId, int windowSize) {
-		return analyzer.calculateSentiment(party, questionId, windowSize);
-	}
-
 	/***
 	 * Evaluates a specific question for a specific party.
 	 * 
@@ -33,7 +29,7 @@ public class PredictionEvaluation {
 		ExpectedResult expectedResult = ExpectedResultsLoader.getSingleResult(party, questionId);
 		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
 
-		PredictedResult predRes = analyzer.calculateSentiment(party, questionId, windowSize);
+		PredictedResult predRes = analyzer.returningHitScoreToCalculateToWeightScore(party, questionId, windowSize);
 		evaluationResults
 				.add(new EvalResult(party.getId(), questionId, expectedResult.getAnswer(), predRes.getAnswer()));
 
@@ -47,14 +43,14 @@ public class PredictionEvaluation {
 	 * @param windowSize
 	 * @return
 	 */
-	public List<EvalResult> CompareQuestion(int question, int windowSize) {
+	public List<EvalResult> compareQuestion(int question, int windowSize) {
 
 		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getResultsByQuestion(question);
 		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
 
 		for (ExpectedResult expRes : expectedResults) {
 			Party party = Party.fromInteger(expRes.getParty());
-			PredictedResult predRes = analyzer.calculateSentiment(party, question, windowSize);
+			PredictedResult predRes = analyzer.returningHitScoreToCalculateToWeightScore(party, question, windowSize);
 			evaluationResults.add(new EvalResult(party.getId(), question, expRes.getAnswer(), predRes.getAnswer()));
 		}
 
@@ -75,7 +71,7 @@ public class PredictionEvaluation {
 
 		for (ExpectedResult expRes : expectedResults) {
 			int question = expRes.getQuestion();
-			PredictedResult predRes = analyzer.calculateSentiment(party, question, windowSize);
+			PredictedResult predRes = analyzer.returningHitScoreToCalculateToWeightScore(party, question, windowSize);
 			evaluationResults.add(new EvalResult(party.getId(), question, expRes.getAnswer(), predRes.getAnswer()));
 		}
 
@@ -88,7 +84,7 @@ public class PredictionEvaluation {
 	 * @param windowSize
 	 * @return
 	 */
-	public List<EvalResult> CompareAll(int windowSize) {
+	public List<EvalResult> compareAll(int windowSize) {
 
 		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getAllResults();
 		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
@@ -96,7 +92,7 @@ public class PredictionEvaluation {
 		for (ExpectedResult expRes : expectedResults) {
 			int question = expRes.getQuestion();
 			Party party = Party.fromInteger(expRes.getParty());
-			PredictedResult predRes = analyzer.calculateSentiment(party, question, windowSize);
+			PredictedResult predRes = analyzer.returningHitScoreToCalculateToWeightScore(party, question, windowSize);
 			evaluationResults.add(new EvalResult(party.getId(), question, expRes.getAnswer(), predRes.getAnswer()));
 		}
 

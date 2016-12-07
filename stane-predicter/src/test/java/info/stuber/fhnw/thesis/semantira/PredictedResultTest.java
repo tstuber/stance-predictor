@@ -37,6 +37,41 @@ public class PredictedResultTest {
 	}
 	
 	@Test
+	public void predictedResult_WeightedMeanTest() {
+		
+		// Arrange.
+		PredictedResult result = new PredictedResult(PARTY, QUESTION_ID);
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 16, 0.5f, "Positive"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 12, 0.0f, "Neutral"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 2, -0.5f, "Negative"));
+		
+		// 1. (16)  0.2
+		// 2. (12)  0.0
+		// 3. ( 3) -0.2
+		// expected: close to 0.2
+
+		// Calculatoin: (16) * 0.2 + (12) * 0.0 + ( 3) * -0.2 / (16+12+3)
+		
+		// Assert.
+		Assert.assertTrue(result.size() == 3);
+		Assert.assertEquals(0.23333333, result.getWeightedMean(), 0.01);
+	}
+	
+	@Test
+	public void predictedResult_WeightedMeanInvalidTest() {
+		
+		// Arrange.
+		PredictedResult result = new PredictedResult(PARTY, QUESTION_ID);
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 16, 0.5f, "Positive"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 0.0f, "Neutral"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 2, -0.5f, "Negative"));
+		
+		// Assert.
+		Assert.assertTrue(result.size() == 3);
+		Assert.assertEquals(9999, result.getWeightedMean(), 0.01);
+	}
+	
+	@Test
 	public void predictedResult_MedianTest() {
 		
 		// Arrange.
@@ -50,6 +85,23 @@ public class PredictedResultTest {
 		// Assert.
 		Assert.assertTrue(result.size() > 1);
 		Assert.assertTrue(result.getMedian() == 0.8f);
+	}
+	
+	@Test
+	public void predictedResult_MinMaxTest() {
+		
+		// Arrange.
+		PredictedResult result = new PredictedResult(PARTY, QUESTION_ID);
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 1.0f, "Positive"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 0.8f, "Positive"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, -1.0f, "Positive"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, -0.8f, "Positive"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 0.7f, "Positive"));
+		
+		// Assert.
+		Assert.assertTrue(result.size() > 1);
+		Assert.assertTrue(result.getMax() == 1.0f);
+		Assert.assertTrue(result.getMin() == -1.0f);
 	}
 	
 	public void predictResult_AnswerTest1() {
