@@ -44,7 +44,6 @@ public class DocumentSentimentAnalyzer {
 		int windowSize = 1;
 
 		DocumentSentimentAnalyzer analyzer = new DocumentSentimentAnalyzer();
-		// analyzer.calculateSentiment(party, question, windowSize);
 		PredictedResult res = analyzer.returningHitScoreToCalculateToWeightScore(party, question, windowSize);
 		System.out.println(res.getMean());
 	}

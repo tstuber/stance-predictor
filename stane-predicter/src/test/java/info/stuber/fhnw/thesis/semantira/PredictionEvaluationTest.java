@@ -12,11 +12,11 @@ import junit.framework.Assert;
 public class PredictionEvaluationTest {
 
 	PredictionEvaluation evaluator;
-	private Party PARTY = Party.fromInteger(1);
-	private int QUESTION_ID = 4;
-	private int WINDOW_SIZE = 1;
+	private Party PARTY = Party.fromInteger(2);
+	private int QUESTION_ID = 10;
+	private int WINDOW_SIZE = 2;
 	
-	// TO large Sample to send: Party 3, Question 23, Window Size 4
+	// To large Sample to send: Party 3, Question 23, Window Size 4
 
 	@Before
 	public void setup() {

@@ -30,6 +30,7 @@ public class PredictionEvaluation {
 		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
 
 		PredictedResult predRes = analyzer.returningHitScoreToCalculateToWeightScore(party, questionId, windowSize);
+		System.out.println(predRes);
 		evaluationResults
 				.add(new EvalResult(party.getId(), questionId, expectedResult.getAnswer(), predRes.getAnswer()));
 

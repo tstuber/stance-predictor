@@ -98,20 +98,54 @@ public class PredictedResult {
 	 * mapping
 	 ***/
 	public int getAnswer() {
-		float m = this.getMean();
+		
+		return getAnswer(this.getMean());
+	}
+	
+	public int getAnswer(float sentiScore) {
+		
 		int result = 6;
+		
+		// Taken default range from Semantria: 
+		// -0.05 to +0.22
+		
+		// neg -- medium -- pos-medium -- pos
+		float neg = -0.75f;
+		float neg_mid = -0.25f;
+		float pos_mid = 0.25f;
+		float pos = 0.75f;
 
-		if (m < -0.75)
+		if (sentiScore < neg)
 			result = 5;
-		else if (m >= -0.75 && m < -0.25)
+		else if (sentiScore >= neg && sentiScore < neg_mid)
 			result = 4;
-		else if (m >= -0.25 && m < 0.25)
+		else if (sentiScore >= neg_mid && sentiScore < pos_mid)
 			result = 3;
-		else if (m >= 0.25 && m < 0.75)
+		else if (sentiScore >= pos_mid && sentiScore < pos)
 			result = 2;
-		else if (m >= 0.75)
+		else if (sentiScore >= pos)
 			result = 1;
 		
 		return result;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		// Display: Min, Max, Mean, WeightedMean, Median
+		sb.append(this.getMin() + "\t");
+		sb.append(this.getMax() + "\t");
+		sb.append(this.getMean() + "\t");
+		sb.append(this.getWeightedMean() + "\t");
+		sb.append(this.getMedian() + "\n");
+		
+		// Display: Min, Max, Mean, WeightedMean, Median
+		sb.append(this.getAnswer(this.getMin()) + "\t");
+		sb.append(this.getAnswer(this.getMax()) + "\t");
+		sb.append(this.getAnswer(this.getMean()) + "\t");
+		sb.append(this.getAnswer(this.getWeightedMean()) + "\t");
+		sb.append(this.getAnswer(this.getMedian()) + "\n");
+		
+		return sb.toString();
 	}
 }
