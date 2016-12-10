@@ -15,6 +15,7 @@ public class PredictionEvaluation {
 		analyzer = new DocumentSentimentAnalyzer();
 	}
 
+
 	/***
 	 * Evaluates a specific question for a specific party.
 	 * 
@@ -24,15 +25,13 @@ public class PredictionEvaluation {
 	 * @return
 	 * @throws NotSupportedQuestionException
 	 */
-	public List<EvalResult> evaluateSingle(Party party, int questionId, int windowSize) {
+	public List<PredictedResult> evaluateSingle(Party party, int questionId, int windowSize) {
 
-		ExpectedResult expectedResult = ExpectedResultsLoader.getSingleResult(party, questionId);
-		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
+		List<PredictedResult> evaluationResults = new ArrayList<PredictedResult>();
 
 		PredictedResult predRes = analyzer.returningHitScoreToCalculateToWeightScore(party, questionId, windowSize);
-		System.out.println(predRes);
-		evaluationResults
-				.add(new EvalResult(party.getId(), questionId, expectedResult.getAnswer(), predRes.getAnswer()));
+
+		evaluationResults.add(predRes);
 
 		return evaluationResults;
 	}
@@ -44,15 +43,15 @@ public class PredictionEvaluation {
 	 * @param windowSize
 	 * @return
 	 */
-	public List<EvalResult> compareQuestion(int question, int windowSize) {
+	public List<PredictedResult> compareQuestion(int question, int windowSize) {
 
 		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getResultsByQuestion(question);
-		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
+		List<PredictedResult> evaluationResults = new ArrayList<PredictedResult>();
 
 		for (ExpectedResult expRes : expectedResults) {
 			Party party = Party.fromInteger(expRes.getParty());
 			PredictedResult predRes = analyzer.returningHitScoreToCalculateToWeightScore(party, question, windowSize);
-			evaluationResults.add(new EvalResult(party.getId(), question, expRes.getAnswer(), predRes.getAnswer()));
+			evaluationResults.add(predRes);
 		}
 
 		return evaluationResults;
@@ -65,15 +64,15 @@ public class PredictionEvaluation {
 	 * @param windowSize
 	 * @return
 	 */
-	public List<EvalResult> compareParty(Party party, int windowSize) {
+	public List<PredictedResult> compareParty(Party party, int windowSize) {
 
 		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getResultsByParty(party);
-		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
+		List<PredictedResult> evaluationResults = new ArrayList<PredictedResult>();
 
 		for (ExpectedResult expRes : expectedResults) {
 			int question = expRes.getQuestion();
 			PredictedResult predRes = analyzer.returningHitScoreToCalculateToWeightScore(party, question, windowSize);
-			evaluationResults.add(new EvalResult(party.getId(), question, expRes.getAnswer(), predRes.getAnswer()));
+			evaluationResults.add(predRes);
 		}
 
 		return evaluationResults;
@@ -85,16 +84,16 @@ public class PredictionEvaluation {
 	 * @param windowSize
 	 * @return
 	 */
-	public List<EvalResult> compareAll(int windowSize) {
+	public List<PredictedResult> compareAll(int windowSize) {
 
 		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getAllResults();
-		List<EvalResult> evaluationResults = new ArrayList<EvalResult>();
+		List<PredictedResult> evaluationResults = new ArrayList<PredictedResult>();
 
 		for (ExpectedResult expRes : expectedResults) {
 			int question = expRes.getQuestion();
 			Party party = Party.fromInteger(expRes.getParty());
 			PredictedResult predRes = analyzer.returningHitScoreToCalculateToWeightScore(party, question, windowSize);
-			evaluationResults.add(new EvalResult(party.getId(), question, expRes.getAnswer(), predRes.getAnswer()));
+			evaluationResults.add(predRes);
 		}
 
 		return evaluationResults;

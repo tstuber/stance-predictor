@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
@@ -25,6 +26,8 @@ import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.similarities.BM25Similarity;
+import org.apache.lucene.search.similarities.MultiSimilarity;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.springframework.aop.aspectj.AspectJAdviceParameterNameDiscoverer.AmbiguousBindingException;
@@ -43,7 +46,7 @@ public class SearchTester {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		SearchTester tester = new SearchTester();
-		List<SearchResult> res = tester.retrieveTopDocs(Party.CON, 1, 1);;
+		List<SearchResult> res = tester.retrieveTopDocs(Party.CON, 34, 2);;
 	}
 
 	public List<SearchResult> retrieveTopDocs(Party party, int questionId, int windowSize) {
@@ -52,7 +55,7 @@ public class SearchTester {
 		String indexPath = getPathOfIndex(windowSize);
 
 		try {
-			Analyzer analyzer = new StandardAnalyzer();
+			Analyzer analyzer = new EnglishAnalyzer();
 			Directory index = FSDirectory.open(Paths.get(indexPath));
 
 			// 2. query

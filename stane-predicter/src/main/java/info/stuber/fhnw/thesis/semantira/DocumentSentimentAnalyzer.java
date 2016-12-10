@@ -13,6 +13,7 @@ import com.semantria.serializer.JsonSerializer;
 import info.stuber.fhnw.thesis.lucene.SearchResult;
 import info.stuber.fhnw.thesis.lucene.SearchTester;
 import info.stuber.fhnw.thesis.utils.Question;
+import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 import info.stuber.fhnw.thesis.utils.Party;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ import org.apache.lucene.search.ScoreDoc;
 public class DocumentSentimentAnalyzer {
 
 	private static final int TIMEOUT_BEFORE_GETTING_RESPONSE = 2000; // in
+	private static final boolean ONLY_PASSAGES_WITH_SENTIMENT = Boolean.parseBoolean(GetConfigPropertyValues.getProperty("only_sentimental"));
 
 	private Configuration m_config = null;
 	private static ISerializer serializer = new JsonSerializer();
@@ -98,6 +100,12 @@ public class DocumentSentimentAnalyzer {
 					int ranking = Integer.parseInt(doc.getId().split("_")[1]);
 					float hitScore = searchResults.get(ranking).getHitScore();
 
+					// Skip neutral results if only sentimented passages are used. 
+					if(ONLY_PASSAGES_WITH_SENTIMENT && doc.getSentimentPolarity().equals("neutral"))
+					{
+						continue;
+					}
+					
 					PredictedResultItem item = new PredictedResultItem(party.getId(), questionId, hitScore,
 							doc.getSentimentScore(), doc.getSentimentPolarity());
 					predictionResult.addItem(item);
@@ -105,8 +113,10 @@ public class DocumentSentimentAnalyzer {
 					String s = String.format("%s (%7.4f) Polarity:%s\tSentiScore:%.3f\tText:%s\n", doc.getId(),
 							hitScore, doc.getSentimentPolarity(), doc.getSentimentScore(), doc.getSourceText());
 					sb.append(s);
+					
 				}
 			}
+			System.out.println("ELEMENTS: " + predictionResult.size());
 			System.out.println(sb.toString());
 		}
 		return predictionResult;
@@ -173,31 +183,6 @@ public class DocumentSentimentAnalyzer {
 								doc.getSentimentScore(), doc.getSentimentPolarity()));
 						sb.append(doc.getId() + "\tDocPolarity: " + doc.getSentimentPolarity() + " \tSentiScore: "
 								+ doc.getSentimentScore() + "\t Text: " + doc.getSourceText() + "\n");
-
-						// if (doc.getOpinions() != null &&
-						// !doc.getOpinions().isEmpty()) {
-						// System.out.println("Quote: " +
-						// doc.getOpinions().get(0).getQuotation());
-						// System.out.println("Polarity: " +
-						// doc.getOpinions().get(0).getSentimentPolarity());
-						// }
-						//
-						// if (doc.getModelSentiment() != null) {
-						// System.out.println("Neg" +
-						// doc.getModelSentiment().getNegativeScore());
-						// System.out.println("Neu" +
-						// doc.getModelSentiment().getMixedScore());
-						// System.out.println("Pos" +
-						// doc.getModelSentiment().getPositiveScore());
-						// }
-						//
-						// if(doc.getEntities() != null &&
-						// !doc.getEntities().isEmpty()) {
-						// System.out.println("title:" +
-						// doc.getEntities().get(0).getTitle());
-						// System.out.println("title:" +
-						// doc.getEntities().get(0).getSentimentScore());
-						// }
 					}
 				}
 			}

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import info.stuber.fhnw.thesis.utils.ExpectedResult;
+import info.stuber.fhnw.thesis.utils.ExpectedResultsLoader;
 import info.stuber.fhnw.thesis.utils.Party;
 
 public class PredictedResult {
@@ -11,11 +13,13 @@ public class PredictedResult {
 	private List<PredictedResultItem> resultItemList;
 	private Party party;
 	private int questionId;
+	private int expectedAnswer;
 
 	public PredictedResult(Party party, int questionId) {
 		this.resultItemList = new ArrayList<PredictedResultItem>();
 		this.party = party;
 		this.questionId = questionId;
+		this.expectedAnswer = ExpectedResultsLoader.getSingleResult(party, questionId).getAnswer();
 	}
 
 	public void addItem(PredictedResultItem resultItem) {
@@ -52,26 +56,27 @@ public class PredictedResult {
 		}
 		return sum / score.length;
 	}
-	
+
 	public float getWeightedMean() {
 		float totalWeight = 0f;
 		float accumulatedMean = 0f;
-		
-		for(PredictedResultItem item : resultItemList) {
-			
+
+		for (PredictedResultItem item : resultItemList) {
+
 			float sentiScore = item.getSentimentScore();
 			float hitScore = item.getHitScore();
-			
-			// Missing HitScore. Weighting can't be completed. Abort with max Values.
-			if(hitScore == Float.MAX_VALUE) {
+
+			// Missing HitScore. Weighting can't be completed. Abort with max
+			// Values.
+			if (hitScore == Float.MAX_VALUE) {
 				return 9999f;
 			}
-				
+
 			totalWeight += hitScore;
 			accumulatedMean += hitScore * sentiScore;
 		}
-		
-		return accumulatedMean/totalWeight;
+
+		return accumulatedMean / totalWeight;
 	}
 
 	public float getMedian() {
@@ -97,22 +102,27 @@ public class PredictedResult {
 	 * OFFICIAL METRIC TO COMPARE THE ANSWER!!!!!!! Includes the required
 	 * mapping
 	 ***/
+	@Deprecated
 	public int getAnswer() {
-		
-		return getAnswer(this.getMean());
+		return getAnswer(this.getMax());
 	}
-	
+
 	public int getAnswer(float sentiScore) {
-		
+
 		int result = 6;
-		
-		// Taken default range from Semantria: 
+
+		// Taken default range from Semantria:
 		// -0.05 to +0.22
-		
+
 		// neg -- medium -- pos-medium -- pos
+		// float neg = -0.75f;
+		// float neg_mid = -0.25f;
+		// float pos_mid = 0.25f;
+		// float pos = 0.75f;
+
 		float neg = -0.75f;
-		float neg_mid = -0.25f;
-		float pos_mid = 0.25f;
+		float neg_mid = -0.05f;
+		float pos_mid = 0.12f;
 		float pos = 0.75f;
 
 		if (sentiScore < neg)
@@ -125,27 +135,60 @@ public class PredictedResult {
 			result = 2;
 		else if (sentiScore >= pos)
 			result = 1;
-		
+
 		return result;
 	}
 	
+	public boolean isSuccess(int predictedAnswer) {
+		boolean result = false;
+		
+		if((expectedAnswer == 3 || expectedAnswer == 6)  && predictedAnswer == 3)
+			result = true;
+		else if((expectedAnswer == 1 || expectedAnswer == 2) && (predictedAnswer == 1 || predictedAnswer == 2))
+			result = true;
+		else if((expectedAnswer == 4 || expectedAnswer == 5) && (predictedAnswer == 4 || predictedAnswer == 5))
+			result = true;
+		
+		return result;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		// Display: Min, Max, Mean, WeightedMean, Median
-		sb.append(this.getMin() + "\t");
-		sb.append(this.getMax() + "\t");
-		sb.append(this.getMean() + "\t");
-		sb.append(this.getWeightedMean() + "\t");
-		sb.append(this.getMedian() + "\n");
+		sb.append("Debug" + "\t");
+		sb.append(this.party + "\t");
+		sb.append(this.questionId + "\t");
+		sb.append(this.expectedAnswer + "\t");
+		sb.append(String.format("%7.4f\t\t", this.getMin()));
+		sb.append(String.format("%7.4f\t\t", this.getMax()));
+		sb.append(String.format("%7.4f\t\t", this.getMean()));
+		sb.append(String.format("%7.4f\t\t", this.getWeightedMean()));
+		sb.append(String.format("%7.4f\n", this.getMedian()));
+
+		int answerMin = this.getAnswer(this.getMin());
+		int answerMax = this.getAnswer(this.getMax());
+		int answerMean = this.getAnswer(this.getMean());
+		int answerWeightedMean = this.getAnswer(this.getWeightedMean());
+		int answerMedian = this.getAnswer(this.getMedian());
 		
 		// Display: Min, Max, Mean, WeightedMean, Median
-		sb.append(this.getAnswer(this.getMin()) + "\t");
-		sb.append(this.getAnswer(this.getMax()) + "\t");
-		sb.append(this.getAnswer(this.getMean()) + "\t");
-		sb.append(this.getAnswer(this.getWeightedMean()) + "\t");
-		sb.append(this.getAnswer(this.getMedian()) + "\n");
+		sb.append("Result" + "\t");
+		sb.append(this.party + "\t");
+		sb.append(this.questionId + "\t");
+		sb.append(this.expectedAnswer + "\t");
+		sb.append(answerMin + "\t");
+		sb.append(this.isSuccess(answerMin) + "\t");
+		sb.append(answerMax + "\t");
+		sb.append(this.isSuccess(answerMax) + "\t");
+		sb.append(answerMean + "\t");
+		sb.append(this.isSuccess(answerMean) + "\t");
+		sb.append(answerWeightedMean + "\t");
+		sb.append(this.isSuccess(answerWeightedMean) + "\t");
 		
+		sb.append(answerMedian + "\t");
+		sb.append(this.isSuccess(answerMedian) + "\t");
+
 		return sb.toString();
 	}
 }

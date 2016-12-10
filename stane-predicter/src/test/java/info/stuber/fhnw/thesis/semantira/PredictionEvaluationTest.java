@@ -12,8 +12,8 @@ import junit.framework.Assert;
 public class PredictionEvaluationTest {
 
 	PredictionEvaluation evaluator;
-	private Party PARTY = Party.fromInteger(2);
-	private int QUESTION_ID = 10;
+	private Party PARTY = Party.fromInteger(4);
+	private int QUESTION_ID = 34;
 	private int WINDOW_SIZE = 2;
 	
 	// To large Sample to send: Party 3, Question 23, Window Size 4
@@ -24,43 +24,38 @@ public class PredictionEvaluationTest {
 	}
 
 	@Test
-	public void Evaluate_All_Test() {
-
-		List<EvalResult> results = evaluator.compareAll(WINDOW_SIZE);
-		printResult(results);
-	}
-	
-	@Test
 	public void Evaluate_ByPartyAndQuestion_Test() {
 
-		List<EvalResult> results = evaluator.evaluateSingle(PARTY, QUESTION_ID, WINDOW_SIZE);
+		List<PredictedResult> results = evaluator.evaluateSingle(PARTY, QUESTION_ID, WINDOW_SIZE);
 		printResult(results);
 	}
 
-	@Test
-	public void Evaluate_ByParty_Test() {
-
-		List<EvalResult> results = evaluator.compareParty(PARTY, WINDOW_SIZE);
-		printResult(results);
-	}
-	
 	@Test
 	public void Evaluate_ByQuestion_Test() {
 
-		List<EvalResult> results = evaluator.compareQuestion(QUESTION_ID, WINDOW_SIZE);
+		List<PredictedResult> results = evaluator.compareQuestion(QUESTION_ID, WINDOW_SIZE);
 		printResult(results);
 	}
+	
+	@Test
+	public void Evaluate_ByParty_Test() {
 
-	private void printResult(List<EvalResult> results) {
-		System.out.println("Party\tQuestion\tExp\tPred\tisSuccess");
+		List<PredictedResult> results = evaluator.compareParty(PARTY, WINDOW_SIZE);
+		printResult(results);
+	}
+	
+	@Test
+	public void Evaluate_All_Test() {
+
+		List<PredictedResult> results = evaluator.compareAll(WINDOW_SIZE);
+		printResult(results);
+	}
+	
+	private void printResult(List<PredictedResult> results) {
+		System.out.println("Type\tParty\tQ-Id\tExp\tMin\t\tMax\t\tAvg\t\tW-Avg\t\tMedium");
 		
-		int success = 0;
-		for (EvalResult res : results) {
+		for (PredictedResult res : results) {
 			System.out.println(res.toString());
-			if(res.isSuccess())
-				success++;
 		}
-		System.out.println(success + " from " + results.size() + " were successful predicted");
-		
 	}
 }
