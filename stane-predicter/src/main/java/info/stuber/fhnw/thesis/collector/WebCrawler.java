@@ -161,8 +161,9 @@ public class WebCrawler {
 				append(((TextNode) node).text()); // TextNodes carry all
 													// user-readable text in the
 													// DOM.
-			else if (name.equals("li"))
-				append("\n * ");
+			// 11.12.2016 - Removed 'li' elements			
+			//else if (name.equals("li"))
+  			//	append("\n * ");
 			else if (name.equals("dt"))
 				append("  ");
 			else if (StringUtil.in(name, "p", "h1", "h2", "h3", "h4", "h5", "tr"))
@@ -174,8 +175,9 @@ public class WebCrawler {
 			String name = node.nodeName();
 			if (StringUtil.in(name, "br", "dd", "dt", "p", "h1", "h2", "h3", "h4", "h5"))
 				append("\n");
-			else if (name.equals("a"))
-				append(String.format(" <%s>", node.absUrl("href")));
+			// 11.12.2016 - Removed 'li' elements
+			// else if (name.equals("a"))
+			// 	append(String.format(" <%s>", node.absUrl("href")));
 		}
 
 		// appends text to the string builder with a simple word wrap method
