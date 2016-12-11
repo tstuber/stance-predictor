@@ -40,16 +40,29 @@ public class PredictedResult {
 
 	public float getMax() {
 		float[] score = getScoreArray();
+		
+		if(score.length == 0)
+			return 0f;
+		
 		return score[score.length - 1];
-
 	}
 
 	public float getMin() {
+		float[] score = getScoreArray();
+		
+		if(score.length == 0)
+			return 0f;
+		
 		return getScoreArray()[0];
+		
 	}
 
 	public float getMean() {
 		float[] score = getScoreArray();
+		
+		if(score.length == 0)
+			return 0f;
+		
 		float sum = 0;
 		for (int i = 0; i < score.length; i++) {
 			sum += score[i];
@@ -81,6 +94,9 @@ public class PredictedResult {
 
 	public float getMedian() {
 		float[] score = getScoreArray();
+		if(score.length == 0)
+			return 0f;
+		
 		int middle = score.length / 2;
 		if (score.length % 2 == 1) {
 			return score[middle];
