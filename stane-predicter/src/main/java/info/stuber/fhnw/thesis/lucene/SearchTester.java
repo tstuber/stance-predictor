@@ -46,7 +46,7 @@ public class SearchTester {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		SearchTester tester = new SearchTester();
-		List<SearchResult> res = tester.retrieveTopDocs(Party.CON, 34, 2);;
+		List<SearchResult> res = tester.retrieveTopDocs(Party.CON, 14, 2);;
 	}
 
 	public List<SearchResult> retrieveTopDocs(Party party, int questionId, int windowSize) {
@@ -55,7 +55,7 @@ public class SearchTester {
 		String indexPath = getPathOfIndex(windowSize);
 
 		try {
-			Analyzer analyzer = new EnglishAnalyzer();
+			Analyzer analyzer = new StandardAnalyzer();
 			Directory index = FSDirectory.open(Paths.get(indexPath));
 
 			// 2. query
@@ -69,6 +69,7 @@ public class SearchTester {
 			// 3. search
 			int hitsPerPage = LuceneConstants.MAX_SEARCH;
 			IndexReader reader = DirectoryReader.open(index);
+			
 			IndexSearcher searcher = new IndexSearcher(reader);
 			TopDocs docs = searcher.search(q, hitsPerPage);
 			ScoreDoc[] hits = docs.scoreDocs;
