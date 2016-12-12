@@ -118,11 +118,6 @@ public class PredictedResult {
 	 * OFFICIAL METRIC TO COMPARE THE ANSWER!!!!!!! Includes the required
 	 * mapping
 	 ***/
-	@Deprecated
-	public int getAnswer() {
-		return getAnswer(this.getMax());
-	}
-
 	public int getAnswer(float sentiScore) {
 
 		int result = 6;
