@@ -104,38 +104,48 @@ public class PredictedResultTest {
 		Assert.assertTrue(result.getMin() == -1.0f);
 	}
 	
+	@Test
 	public void predictResult_AnswerTest1() {
+		float sentiScore = 1.0f;
 		PredictedResult result = new PredictedResult(PARTY, QUESTION_ID);
-		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 1.0f, "Positive"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, sentiScore, "Positive"));
 		
-		Assert.assertTrue(result.getAnswer() == 1);
+		Assert.assertTrue(result.getAnswer(sentiScore) == 1);
 	}
 	
+	@Test
 	public void predictResult_AnswerTest2() {
+		float sentiScore = 0.12f;
 		PredictedResult result = new PredictedResult(PARTY, QUESTION_ID);
-		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 0.74f, "Positive"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, sentiScore, "Positive"));
 		
-		Assert.assertTrue(result.getAnswer() == 2);
+		Assert.assertTrue(result.getAnswer(sentiScore) == 2);
 	}
 	
+	@Test
 	public void predictResult_AnswerTest3() {
+		float sentiScore = 0.11f;
 		PredictedResult result = new PredictedResult(PARTY, QUESTION_ID);
-		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 0.25f, "Neutral"));
-		
-		Assert.assertTrue(result.getAnswer() == 3);
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, sentiScore, "Neutral"));
+				
+		Assert.assertTrue(result.getAnswer(sentiScore) == 3);
 	}
 	
+	@Test
 	public void predictResult_AnswerTest4() {
+		float sentiScore = -0.24f;
 		PredictedResult result = new PredictedResult(PARTY, QUESTION_ID);
-		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, -0.26f, "Negativ"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, sentiScore, "Negativ"));
 		
-		Assert.assertTrue(result.getAnswer() == 4);
+		Assert.assertTrue(result.getAnswer(sentiScore) == 4);
 	}
 	
+	@Test
 	public void predictResult_AnswerTest5() {
+		float sentiScore = -0.78f;
 		PredictedResult result = new PredictedResult(PARTY, QUESTION_ID);
-		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, -0.75f, "Negativ"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, sentiScore, "Negativ"));
 		
-		Assert.assertTrue(result.getAnswer() == 5);
+		Assert.assertTrue(result.getAnswer(sentiScore) == 5);
 	}
 }
