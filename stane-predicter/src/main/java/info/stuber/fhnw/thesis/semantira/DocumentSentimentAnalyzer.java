@@ -28,6 +28,8 @@ public class DocumentSentimentAnalyzer {
 
 	private static final int TIMEOUT_BEFORE_GETTING_RESPONSE = 2000; // in
 	private static final boolean ONLY_PASSAGES_WITH_SENTIMENT = Boolean.parseBoolean(GetConfigPropertyValues.getProperty("only_sentimental"));
+	private static final boolean ONLY_FIRST_HIT = Boolean.parseBoolean(GetConfigPropertyValues.getProperty("first_hit"));
+	
 
 	private Configuration m_config = null;
 	private static ISerializer serializer = new JsonSerializer();
@@ -119,7 +121,10 @@ public class DocumentSentimentAnalyzer {
 					String s = String.format("%s (%7.4f) Polarity:%s\tSentiScore:%.3f\tText:%s\n", doc.getId(),
 							hitScore, doc.getSentimentPolarity(), doc.getSentimentScore(), doc.getSourceText());
 					sb.append(s);
-					
+
+					// Skip any further results if only first hit is activated. 
+					if(ONLY_FIRST_HIT)
+						break;
 				}
 			}
 			System.out.println("ELEMENTS: " + predictionResult.size());
