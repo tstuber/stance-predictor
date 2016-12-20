@@ -36,12 +36,8 @@ public class DocumentSentimentAnalyzer {
 	private String version = "4.2";
 	
 	// thomas.stuber@students.fhnw.ch
-	//static String API_KEY = "06758519-fdf0-4a36-a405-ff680b98db53";
-	//static String API_SECRET = "8496b5de-1a16-4842-8c57-1c01efe57854";
-	
-	// thomas.stuber@ipt.ch
-	static String API_KEY = "3d51deb9-cdef-467e-946c-43a96d2bf4f7";
-	static String API_SECRET = "b4cb30c1-a845-4e63-a98d-848ced6d8b1b";
+	static String API_KEY = "06758519-fdf0-4a36-a405-ff680b98db53";
+	static String API_SECRET = "8496b5de-1a16-4842-8c57-1c01efe57854";
 
 	public DocumentSentimentAnalyzer() {
 

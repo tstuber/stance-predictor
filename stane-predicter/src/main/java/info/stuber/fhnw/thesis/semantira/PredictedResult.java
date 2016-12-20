@@ -6,7 +6,9 @@ import java.util.List;
 
 import info.stuber.fhnw.thesis.utils.ExpectedResult;
 import info.stuber.fhnw.thesis.utils.ExpectedResultsLoader;
+import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 import info.stuber.fhnw.thesis.utils.Party;
+import info.stuber.fhnw.thesis.utils.Question;
 
 public class PredictedResult {
 
@@ -14,12 +16,18 @@ public class PredictedResult {
 	private Party party;
 	private int questionId;
 	private int expectedAnswer;
+	private boolean inversionMode = Boolean.parseBoolean(GetConfigPropertyValues.getProperty("inverse_question_mode"));
+	private float inversionFactor = Float.MAX_VALUE;
 
 	public PredictedResult(Party party, int questionId) {
 		this.resultItemList = new ArrayList<PredictedResultItem>();
 		this.party = party;
 		this.questionId = questionId;
 		this.expectedAnswer = ExpectedResultsLoader.getSingleResult(party, questionId).getAnswer();
+
+		if (this.inversionMode) {
+			this.inversionFactor = Question.questionInversionFlag(questionId);
+		}
 	}
 
 	public void addItem(PredictedResultItem resultItem) {
@@ -40,34 +48,34 @@ public class PredictedResult {
 
 	public float getMax() {
 		float[] score = getScoreArray();
-		
-		if(score.length == 0)
+
+		if (score.length == 0)
 			return 0f;
-		
-		return score[score.length - 1];
+
+		return score[score.length - 1] * this.inversionFactor;
 	}
 
 	public float getMin() {
 		float[] score = getScoreArray();
-		
-		if(score.length == 0)
+
+		if (score.length == 0)
 			return 0f;
-		
-		return getScoreArray()[0];
-		
+
+		return getScoreArray()[0] * this.inversionFactor;
+
 	}
 
 	public float getMean() {
 		float[] score = getScoreArray();
-		
-		if(score.length == 0)
+
+		if (score.length == 0)
 			return 0f;
-		
+
 		float sum = 0;
 		for (int i = 0; i < score.length; i++) {
 			sum += score[i];
 		}
-		return sum / score.length;
+		return (sum / score.length) * this.inversionFactor;
 	}
 
 	public float getWeightedMean() {
@@ -89,20 +97,24 @@ public class PredictedResult {
 			accumulatedMean += hitScore * sentiScore;
 		}
 
-		return accumulatedMean / totalWeight;
+		return (accumulatedMean / totalWeight) * this.inversionFactor;
 	}
 
 	public float getMedian() {
 		float[] score = getScoreArray();
-		if(score.length == 0)
+		if (score.length == 0)
 			return 0f;
-		
+
+		float result = 0f;
+
 		int middle = score.length / 2;
 		if (score.length % 2 == 1) {
-			return score[middle];
+			result = score[middle];
 		} else {
-			return (score[middle - 1] + score[middle]) / 2.0f;
+			result = (score[middle - 1] + score[middle]) / 2.0f;
 		}
+
+		return result * this.inversionFactor;
 	}
 
 	private float[] getScoreArray() {
@@ -149,22 +161,23 @@ public class PredictedResult {
 
 		return result;
 	}
-	
+
 	public boolean isSuccess(int predictedAnswer) {
 		boolean result = false;
-		
-		if((expectedAnswer == 3 || expectedAnswer == 6)  && predictedAnswer == 3)
+
+		if ((expectedAnswer == 3 || expectedAnswer == 6) && predictedAnswer == 3)
 			result = true;
-		else if((expectedAnswer == 1 || expectedAnswer == 2) && (predictedAnswer == 1 || predictedAnswer == 2))
+		else if ((expectedAnswer == 1 || expectedAnswer == 2) && (predictedAnswer == 1 || predictedAnswer == 2))
 			result = true;
-		else if((expectedAnswer == 4 || expectedAnswer == 5) && (predictedAnswer == 4 || predictedAnswer == 5))
+		else if ((expectedAnswer == 4 || expectedAnswer == 5) && (predictedAnswer == 4 || predictedAnswer == 5))
 			result = true;
-		
+
 		return result;
 	}
 
 	@Override
 	public String toString() {
+
 		StringBuilder sb = new StringBuilder();
 		// Display: Min, Max, Mean, WeightedMean, Median
 		sb.append("Debug" + "\t");
@@ -175,14 +188,15 @@ public class PredictedResult {
 		sb.append(String.format("%7.4f\t\t", this.getMax()));
 		sb.append(String.format("%7.4f\t\t", this.getMean()));
 		sb.append(String.format("%7.4f\t\t", this.getWeightedMean()));
-		sb.append(String.format("%7.4f\n", this.getMedian()));
+		sb.append(String.format("%7.4f\t\t", this.getMedian()));
+		sb.append(String.format("%f\n", this.inversionFactor));
 
 		int answerMin = this.getAnswer(this.getMin());
 		int answerMax = this.getAnswer(this.getMax());
 		int answerMean = this.getAnswer(this.getMean());
 		int answerWeightedMean = this.getAnswer(this.getWeightedMean());
 		int answerMedian = this.getAnswer(this.getMedian());
-		
+
 		// Display: Min, Max, Mean, WeightedMean, Median
 		sb.append("Result" + "\t");
 		sb.append(this.party + "\t");
@@ -196,10 +210,15 @@ public class PredictedResult {
 		sb.append(this.isSuccess(answerMean) + "\t");
 		sb.append(answerWeightedMean + "\t");
 		sb.append(this.isSuccess(answerWeightedMean) + "\t");
-		
+
 		sb.append(answerMedian + "\t");
 		sb.append(this.isSuccess(answerMedian) + "\t");
+		sb.append(String.format("%f", this.inversionFactor));
 
 		return sb.toString();
+	}
+	
+	public String toHtmlTableElement() {
+		return null;
 	}
 }
