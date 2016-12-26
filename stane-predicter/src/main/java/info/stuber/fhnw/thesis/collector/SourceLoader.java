@@ -3,14 +3,19 @@ package info.stuber.fhnw.thesis.collector;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import org.apache.commons.io.IOUtils;
 
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
@@ -50,15 +55,16 @@ public class SourceLoader implements ISourceLoader {
 
 	private List<Coding> readSourceFile() {
 
-		File f = new File(GetConfigPropertyValues.getProperty("path_codingurls"));
+		InputStream inputStream = null;
 		BufferedReader reader = null;
-
+		String path = GetConfigPropertyValues.getProperty("path_codingurls");
+		
 		try {
 
 			System.out.println("Try to load Source File");
 
-			FileInputStream fis = new FileInputStream(f);
-			reader = new BufferedReader(new InputStreamReader(fis, Charset.forName("UTF-8")));
+			inputStream = PdfCache.class.getClassLoader().getResourceAsStream(path);
+			reader = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
 
 			String line;
 
