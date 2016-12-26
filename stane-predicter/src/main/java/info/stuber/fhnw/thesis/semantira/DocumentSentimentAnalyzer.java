@@ -11,29 +11,20 @@ import com.semantria.mapping.output.*;
 import com.semantria.serializer.JsonSerializer;
 
 import info.stuber.fhnw.thesis.lucene.SearchResult;
-import info.stuber.fhnw.thesis.lucene.SearchTester;
-import info.stuber.fhnw.thesis.utils.Question;
+import info.stuber.fhnw.thesis.lucene.LuceneSearcher;
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 import info.stuber.fhnw.thesis.utils.Party;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
-
-import org.apache.lucene.search.ScoreDoc;
 
 public class DocumentSentimentAnalyzer {
-
-	private static final int TIMEOUT_BEFORE_GETTING_RESPONSE = 2000; // in
 	private static final boolean ONLY_PASSAGES_WITH_SENTIMENT = Boolean.parseBoolean(GetConfigPropertyValues.getProperty("only_sentimental"));
 	private static final boolean ONLY_FIRST_HIT = Boolean.parseBoolean(GetConfigPropertyValues.getProperty("first_hit"));
-	
 
-	private Configuration m_config = null;
 	private static ISerializer serializer = new JsonSerializer();
-	private String version = "4.2";
+
 	
 	static String API_KEY = "42885975-07fe-4fc2-b904-6ed743a441ef";
 	static String API_SECRET = "d715adb6-d3fe-4966-8d94-eb5a26963858";
@@ -56,7 +47,7 @@ public class DocumentSentimentAnalyzer {
 	public PredictedResult returningHitScoreToCalculateToWeightScore(Party party, int questionId, int windowSize) {
 
 		PredictedResult predictionResult = new PredictedResult(party, questionId);
-		SearchTester searcher = new SearchTester();
+		LuceneSearcher searcher = new LuceneSearcher();
 		List<SearchResult> searchResults = searcher.retrieveTopDocs(party, questionId, windowSize);
 
 		// Prepare documents to process.
