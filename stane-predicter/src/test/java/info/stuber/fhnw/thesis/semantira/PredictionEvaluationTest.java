@@ -6,14 +6,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 import info.stuber.fhnw.thesis.utils.Party;
 import info.stuber.fhnw.thesis.utils.Props;
 import junit.framework.Assert;
@@ -47,8 +45,6 @@ public class PredictionEvaluationTest {
 
 		List<PredictedResult> results = evaluator.evaluateSingle(PARTY, QUESTION_ID, WINDOW_SIZE);
 		printResult(results);
-		createReport();
-
 	}
 
 	@Test
@@ -94,24 +90,5 @@ public class PredictionEvaluationTest {
 
 	private String firstLetter(boolean input) {
 		return (input == true) ? "T" : "F";
-	}
-
-	private void createReport() {
-
-		// Create target output file.
-
-		// set header.
-
-		// for each result: print out.
-		String S = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
-		File file = new File("./reports/Report_" + this.evaluationName + "_" + S + ".html");
-		
-		try {
-			Files.write(Paths.get(file.toURI()), "My string to save".getBytes("utf-8"), StandardOpenOption.CREATE,
-					StandardOpenOption.TRUNCATE_EXISTING);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }
