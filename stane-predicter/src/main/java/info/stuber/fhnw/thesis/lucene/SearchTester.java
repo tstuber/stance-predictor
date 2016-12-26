@@ -39,6 +39,8 @@ import info.stuber.fhnw.thesis.utils.Question;
 
 public class SearchTester {
 
+	private static final String ANALYZER = GetConfigPropertyValues.getProperty("analyzer");
+
 	public SearchTester() {
 
 	}
@@ -46,16 +48,25 @@ public class SearchTester {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		SearchTester tester = new SearchTester();
-		List<SearchResult> res = tester.retrieveTopDocs(Party.CON, 14, 2);;
+		List<SearchResult> res = tester.retrieveTopDocs(Party.CON, 14, 2);
+		;
 	}
 
 	public List<SearchResult> retrieveTopDocs(Party party, int questionId, int windowSize) {
 		List<SearchResult> searchResults = new ArrayList<SearchResult>();
 
 		String indexPath = getPathOfIndex(windowSize);
+		Analyzer analyzer = null;
 
+		System.out.println("CONFIG: "+ANALYZER);
 		try {
-			Analyzer analyzer = new StandardAnalyzer();
+			if (ANALYZER.startsWith("E")) {
+				analyzer = new EnglishAnalyzer();
+				System.out.println("English Analyzer");
+			} else {
+				analyzer = new StandardAnalyzer();
+				System.out.println("Standard Analyzer");
+			}
 			Directory index = FSDirectory.open(Paths.get(indexPath));
 
 			// 2. query
@@ -69,7 +80,7 @@ public class SearchTester {
 			// 3. search
 			int hitsPerPage = LuceneConstants.MAX_SEARCH;
 			IndexReader reader = DirectoryReader.open(index);
-			
+
 			IndexSearcher searcher = new IndexSearcher(reader);
 			TopDocs docs = searcher.search(q, hitsPerPage);
 			ScoreDoc[] hits = docs.scoreDocs;
@@ -79,33 +90,34 @@ public class SearchTester {
 
 			// 4. display results
 			System.out.println("Found " + hits.length + " hits.\n");
-			System.out.printf("Top Results for Party:%s and Question:%d\n" , party, questionId);
-			
+			System.out.printf("Top Results for Party:%s and Question:%d\n", party, questionId);
+
 			int docCount = 0;
 			for (int i = 0; i < hits.length; ++i) {
-				
-				// Aborts if already 10 documents are collected. 
-				if(docCount >= 10) {
+
+				// Aborts if already 10 documents are collected.
+				if (docCount >= 10) {
 					break;
 				}
-				
+
 				int docId = hits[i].doc;
 				Document d = searcher.doc(docId);
-				
+
 				float hitScore = hits[i].score;
 				String passage = d.get(LuceneConstants.CONTENTS);
 				String source = d.get(LuceneConstants.SOURCE);
-				
+
 				SearchResult res = new SearchResult(passage, hitScore, docCount, source);
-				
-				// Only adds search result if not a duplicate. 
-				if(!searchResults.contains(res)) {
+
+				// Only adds search result if not a duplicate.
+				if (!searchResults.contains(res)) {
 					searchResults.add(res);
 					docCount++;
-//					System.out.println((docCount + 1) + ". (" + hitScore + ") Party:" + party + " Question:" + questionId
-//							+ " URL:" + source + "\n" + passage);
-					System.out.printf("%2d (%7.4f) %s (%s)\n" , docCount, hitScore, passage, source);
-				} 	
+					// System.out.println((docCount + 1) + ". (" + hitScore + ")
+					// Party:" + party + " Question:" + questionId
+					// + " URL:" + source + "\n" + passage);
+					System.out.printf("%2d (%7.4f) %s (%s)\n", docCount, hitScore, passage, source);
+				}
 			}
 
 			// reader can only be closed when there
