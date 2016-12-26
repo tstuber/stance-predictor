@@ -41,9 +41,9 @@ public class PredictedResultTest {
 		
 		// Arrange.
 		PredictedResult result = new PredictedResult(PARTY, QUESTION_ID);
-		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 16, 0.5f, "Positive"));
-		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 12, 0.0f, "Neutral"));
-		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 2, -0.5f, "Negative"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 16, 0.5f, "Positive", "text"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 12, 0.0f, "Neutral", "text"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 2, -0.5f, "Negative", "text"));
 		
 		// 1. (16)  0.2
 		// 2. (12)  0.0
@@ -62,9 +62,9 @@ public class PredictedResultTest {
 		
 		// Arrange.
 		PredictedResult result = new PredictedResult(PARTY, QUESTION_ID);
-		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 16, 0.5f, "Positive"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 16, 0.5f, "Positive", "text"));
 		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 0.0f, "Neutral"));
-		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 2, -0.5f, "Negative"));
+		result.addItem(new PredictedResultItem(PARTY.getId(), QUESTION_ID, 2, -0.5f, "Negative", "text"));
 		
 		// Assert.
 		Assert.assertTrue(result.size() == 3);

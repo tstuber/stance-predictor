@@ -41,8 +41,8 @@ public class PredictionRunner {
 	public void evaluate() {
 		// List<PredictedResult> results =
 		// this.evaluator.compareAll(WINDOW_SIZE);
-		// List<PredictedResult> results = this.evaluator.compareQuestion(1, WINDOW_SIZE);
-		List<PredictedResult> results = this.evaluator.evaluateSingle(Party.CON, 1, 3);
+		List<PredictedResult> results = this.evaluator.compareQuestion(10, WINDOW_SIZE);
+		//List<PredictedResult> results = this.evaluator.evaluateSingle(Party.CON, 1, 3);
 		saveReport(results);
 	}
 
@@ -58,6 +58,18 @@ public class PredictionRunner {
 		String date = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
 		String date_report = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date());
 		File file = new File("./reports/Report_" + this.evaluationName + "_" + date + ".html");
+		
+		// Calculate result.
+		int total = results.size();
+		int correct = 0;
+		for(PredictedResult res : results) {
+			if(res.isSuccess(res.getAnswer(res.getMin())))
+				correct++;
+		}
+		int wrong = total-correct;
+		
+		float correctPerc = correct/total;
+		float wrongPerc = wrong/total;
 
 		// HEADER.
 		sb.append("<!DOCTYPE html><html><head>");
@@ -85,36 +97,23 @@ public class PredictionRunner {
 		sb.append("<li>Analyzer: <kbd>" + ANALYZER + "</kbd></li>");
 		sb.append("</ul>");
 		sb.append("<p>Shortcut: " + this.evaluationName + "</p>");
-		
+
 		// SUMMARY.
 		sb.append("<h3>Summary</h3>");
+		sb.append("<p>" + correct + " from " + total + " are correct predicted.");
 		
-		int right = 55;
-		int wrong = 45;
-		
+
 		sb.append("<div class='progress'>");
-		sb.append("<div class='progress-bar progress-bar-success progress-bar-striped' style='width: "+right+"%'/>");
-		sb.append(" <span class='sr-only'>"+right+"% Complete (success)</span>");
+		sb.append(
+				"<div class='progress-bar progress-bar-success progress-bar-striped' style='width: " + correctPerc + "%'/>");
+		sb.append(" <span class='sr-only'>" + correctPerc + "% Complete (success)</span>");
 		sb.append("</div>");
-		sb.append("<div class='progress-bar progress-bar-danger progress-bar-striped' style='width: "+wrong+"%'/>");
-		sb.append(" <span class='sr-only'>"+wrong+"% Complete (danger)</span>");
+		sb.append("<div class='progress-bar progress-bar-danger progress-bar-striped' style='width: " + wrongPerc + "%'/>");
+		sb.append(" <span class='sr-only'>" + wrongPerc + "% Complete (danger)</span>");
 		sb.append("</div>");
 		sb.append("</div>");
-		
-//		<div class="progress">
-//		  <div class="progress-bar progress-bar-success" style="width: 35%">
-//		    <span class="sr-only">35% Complete (success)</span>
-//		  </div>
-//		  <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
-//		    <span class="sr-only">20% Complete (warning)</span>
-//		  </div>
-//		  <div class="progress-bar progress-bar-danger" style="width: 10%">
-//		    <span class="sr-only">10% Complete (danger)</span>
-//		  </div>
-//		</div>
-		
-		
-		// RESULTS. 
+
+		// RESULTS.
 		sb.append("<h3>Results</h3>");
 
 		sb.append("<table class='table' style='border-collapse:collapse;'>");
@@ -152,17 +151,33 @@ public class PredictionRunner {
 																		// DER
 																		// BESTEN
 																		// PERFORMANCE!
-			sb.append("<td><button type=button class='btn btn-default btn-xs'  data-toggle='collapse' data-target='#"+target+"' class='accordion-toggle'>");
+			sb.append("<td><button type=button class='btn btn-default btn-xs'  data-toggle='collapse' data-target='#"
+					+ target + "' class='accordion-toggle'>");
 			sb.append("<span class='glyphicon glyphicon-plus-sign' aria-hidden=true></span>");
-			sb.append(" More</button></td>");		
-			
+			sb.append(" More</button></td>");
+
 			sb.append("</tr>");
 			sb.append("<tr>");
-			sb.append("<td colspan='5' class='hiddenRow'>");
-			sb.append("<div class='accordian-body collapse' id='"+target+"'>");
+			sb.append("<td colspan='6' class='hiddenRow'>");
+			sb.append("<div class='accordian-body collapse' id='" + target + "'>");
 			sb.append("<h3>Debug Information</h3>");
-			sb.append("<p>Used answers for Prediction:</p>");
-			
+			int itemPos = 0;
+			for (PredictedResultItem resItem : res.getResultItems()) {
+				
+				if(Props.evalFirstHit() && itemPos != 0)
+					break;
+					
+				sb.append("<p>");
+				sb.append("<b>Hitscore: </b>" + resItem.getHitScore());
+				sb.append(", <b>SentiScore: </b> " + resItem.getSentimentScore());
+				sb.append(", <b>Source: </b>" + resItem.getSource());
+				sb.append("</p>");
+				sb.append("</p><b>Text :</b>" + resItem.getText());
+				sb.append("</p>");
+				
+				itemPos++;
+			}
+
 			sb.append("</div>");
 			sb.append("</td>");
 			sb.append("</tr>");

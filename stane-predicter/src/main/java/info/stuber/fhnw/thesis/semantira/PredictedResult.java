@@ -33,6 +33,13 @@ public class PredictedResult {
 	public void addItem(PredictedResultItem resultItem) {
 		this.resultItemList.add(resultItem);
 	}
+	
+	public List<PredictedResultItem> getResultItems() {
+		if(this.resultItemList == null)
+			return null;
+		
+		return this.resultItemList;
+	}
 
 	public Party getParty() {
 		return this.party;

@@ -17,6 +17,7 @@ import info.stuber.fhnw.thesis.utils.Party;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class DocumentSentimentAnalyzer {
@@ -59,9 +60,11 @@ public class DocumentSentimentAnalyzer {
 		//System.out.println("LEFT: "+session.getSubscription().getBillingSettings().getDocsBalance());
 		//System.out.println("STATUS: "+session.getSubscription().getStatus());
 
+		HashMap<String, String> sourceLookup = new HashMap<String, String>();
 		List<Document> tasks = new ArrayList<Document>();
 		for (SearchResult res : searchResults) {
 			tasks.add(new Document("BATCH_" + res.getRanking(), res.getPassage()));
+			sourceLookup.put("BATCH_" + res.getRanking(), res.source());
 		}
 
 		// VERIFY
@@ -107,7 +110,11 @@ public class DocumentSentimentAnalyzer {
 					}
 					
 					PredictedResultItem item = new PredictedResultItem(party.getId(), questionId, hitScore,
-							doc.getSentimentScore(), doc.getSentimentPolarity());
+							doc.getSentimentScore(), doc.getSentimentPolarity(), doc.getSourceText());
+					
+					String source = sourceLookup.get(docAnalyticData.getId());
+					item.setSource(source);
+					
 					predictionResult.addItem(item);
 
 					String s = String.format("%s (%7.4f) Polarity:%s\tSentiScore:%.3f\tText:%s\n", doc.getId(),
