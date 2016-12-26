@@ -4,12 +4,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
 import info.stuber.fhnw.thesis.collector.Coding;
+import info.stuber.fhnw.thesis.collector.PdfCache;
 
 public class ExpectedResultsLoader {
 
@@ -74,13 +76,14 @@ public class ExpectedResultsLoader {
 	private static void readSource() {
 		System.out.println("Reading source files for expected results");
 		resultList = new ArrayList<ExpectedResult>();
-		File f = new File(GetConfigPropertyValues.getProperty("path_codingresults"));
+		
+		String path = GetConfigPropertyValues.getProperty("path_codingresults");
+		InputStream inputStream = null;
 		BufferedReader reader = null;
-		FileInputStream fis = null;
 
 		try {
-			fis = new FileInputStream(f);
-			reader = new BufferedReader(new InputStreamReader(fis, Charset.forName("UTF-8")));
+			inputStream = PdfCache.class.getClassLoader().getResourceAsStream(path);
+			reader = new BufferedReader(new InputStreamReader(inputStream, Charset.forName("UTF-8")));
 
 			String line;
 
@@ -107,7 +110,7 @@ public class ExpectedResultsLoader {
 			System.out.println(ex);
 		} finally {
 			try {
-				fis.close();
+				inputStream.close();
 				reader.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
