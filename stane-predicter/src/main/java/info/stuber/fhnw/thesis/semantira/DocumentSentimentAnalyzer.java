@@ -35,9 +35,8 @@ public class DocumentSentimentAnalyzer {
 	private static ISerializer serializer = new JsonSerializer();
 	private String version = "4.2";
 	
-	// thomas.stuber@students.fhnw.ch
-	static String API_KEY = "06758519-fdf0-4a36-a405-ff680b98db53";
-	static String API_SECRET = "8496b5de-1a16-4842-8c57-1c01efe57854";
+	static String API_KEY = "42885975-07fe-4fc2-b904-6ed743a441ef";
+	static String API_SECRET = "d715adb6-d3fe-4966-8d94-eb5a26963858";
 
 	public DocumentSentimentAnalyzer() {
 
@@ -65,6 +64,9 @@ public class DocumentSentimentAnalyzer {
 		Session session = Session.createSession(API_KEY, API_SECRET);
 		session.registerSerializer(serializer);
 		session.setCallbackHandler(new CallbackHandler());
+		
+		//System.out.println("LEFT: "+session.getSubscription().getBillingSettings().getDocsBalance());
+		//System.out.println("STATUS: "+session.getSubscription().getStatus());
 
 		List<Document> tasks = new ArrayList<Document>();
 		for (SearchResult res : searchResults) {
@@ -76,6 +78,9 @@ public class DocumentSentimentAnalyzer {
 		if (status == 202)
 			System.out.println("Document queued successfully!");
 
+		if(status == 402)
+			return null;
+		
 		List<DocAnalyticData> data = null;
 		for (int i = 0; i < 5; i++) {
 			data = session.getProcessedDocuments(configId);
