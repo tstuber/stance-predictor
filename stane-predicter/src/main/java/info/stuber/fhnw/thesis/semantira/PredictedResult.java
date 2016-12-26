@@ -17,7 +17,7 @@ public class PredictedResult {
 	private int questionId;
 	private int expectedAnswer;
 	private boolean inversionMode = Boolean.parseBoolean(GetConfigPropertyValues.getProperty("inverse_question_mode"));
-	private float inversionFactor = Float.MAX_VALUE;
+	private float inversionFactor = 1.0f;
 
 	public PredictedResult(Party party, int questionId) {
 		this.resultItemList = new ArrayList<PredictedResultItem>();
@@ -125,6 +125,10 @@ public class PredictedResult {
 		Arrays.sort(result);
 		return result;
 	}
+	
+	public int getExpectedAnswer() {
+		return this.expectedAnswer;
+	}
 
 	/**
 	 * OFFICIAL METRIC TO COMPARE THE ANSWER!!!!!!! Includes the required
@@ -189,7 +193,7 @@ public class PredictedResult {
 		sb.append(String.format("%7.4f\t\t", this.getMean()));
 		sb.append(String.format("%7.4f\t\t", this.getWeightedMean()));
 		sb.append(String.format("%7.4f\t\t", this.getMedian()));
-		sb.append(String.format("%f\n", this.inversionFactor));
+		sb.append(String.format("%.0f\n", this.inversionFactor));
 
 		int answerMin = this.getAnswer(this.getMin());
 		int answerMax = this.getAnswer(this.getMax());
@@ -213,7 +217,7 @@ public class PredictedResult {
 
 		sb.append(answerMedian + "\t");
 		sb.append(this.isSuccess(answerMedian) + "\t");
-		sb.append(String.format("%f", this.inversionFactor));
+		sb.append(String.format("%.0f", this.inversionFactor));
 
 		return sb.toString();
 	}
