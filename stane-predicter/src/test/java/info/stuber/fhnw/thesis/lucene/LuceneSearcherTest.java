@@ -6,13 +6,13 @@ import org.junit.Test;
 
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 
-public class SearchTesterTest {
+public class LuceneSearcherTest {
 
-	SearchTester searcher = null;
+	LuceneSearcher searcher = null;
 	
 	@Before
-	public void setUp() {
-		searcher = new SearchTester();
+	public void setup() {
+		searcher = new LuceneSearcher();
 	}
 	
 	@Test

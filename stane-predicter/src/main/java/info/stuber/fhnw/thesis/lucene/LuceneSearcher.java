@@ -3,7 +3,6 @@ package info.stuber.fhnw.thesis.lucene;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -12,44 +11,30 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
-import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.queryparser.xml.ParserException;
-import org.apache.lucene.queryparser.xml.QueryBuilder;
-import org.apache.lucene.queryparser.xml.QueryBuilderFactory;
-import org.apache.lucene.queryparser.xml.builders.BooleanQueryBuilder;
-import org.apache.lucene.search.BooleanClause;
-import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
-import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.search.TopDocs;
-import org.apache.lucene.search.similarities.BM25Similarity;
-import org.apache.lucene.search.similarities.MultiSimilarity;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.springframework.aop.aspectj.AspectJAdviceParameterNameDiscoverer.AmbiguousBindingException;
-import org.w3c.dom.Element;
-
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 import info.stuber.fhnw.thesis.utils.Party;
 import info.stuber.fhnw.thesis.utils.Question;
 
-public class SearchTester {
+public class LuceneSearcher {
 
 	private static final String ANALYZER = GetConfigPropertyValues.getProperty("analyzer");
 
-	public SearchTester() {
+	public LuceneSearcher() {
 
 	}
 
 	public static void main(String[] args) throws IOException, ParseException {
 
-		SearchTester tester = new SearchTester();
-		List<SearchResult> res = tester.retrieveTopDocs(Party.CON, 14, 2);
-		;
+		LuceneSearcher searcher = new LuceneSearcher();
+		searcher.retrieveTopDocs(Party.CON, 14, 2);
 	}
 
 	public List<SearchResult> retrieveTopDocs(Party party, int questionId, int windowSize) {
@@ -58,14 +43,11 @@ public class SearchTester {
 		String indexPath = getPathOfIndex(windowSize);
 		Analyzer analyzer = null;
 
-		System.out.println("CONFIG: "+ANALYZER);
 		try {
 			if (ANALYZER.startsWith("E")) {
 				analyzer = new EnglishAnalyzer();
-				System.out.println("English Analyzer");
 			} else {
 				analyzer = new StandardAnalyzer();
-				System.out.println("Standard Analyzer");
 			}
 			Directory index = FSDirectory.open(Paths.get(indexPath));
 
