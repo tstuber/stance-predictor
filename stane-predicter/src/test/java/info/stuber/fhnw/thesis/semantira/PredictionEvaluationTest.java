@@ -50,21 +50,21 @@ public class PredictionEvaluationTest {
 	@Test
 	public void Evaluate_ByQuestion_Test() {
 
-		List<PredictedResult> results = evaluator.compareQuestion(QUESTION_ID, WINDOW_SIZE);
+		List<PredictedResult> results = evaluator.evaluateQuestion(QUESTION_ID, WINDOW_SIZE);
 		printResult(results);
 	}
 
 	@Test
 	public void Evaluate_ByParty_Test() {
 
-		List<PredictedResult> results = evaluator.compareParty(PARTY, WINDOW_SIZE);
+		List<PredictedResult> results = evaluator.evaluateParty(PARTY, WINDOW_SIZE);
 		printResult(results);
 	}
 
 	@Test
 	public void Evaluate_All_Test() {
 
-		List<PredictedResult> results = evaluator.compareAll(WINDOW_SIZE);
+		List<PredictedResult> results = evaluator.evaluateAll(WINDOW_SIZE);
 		printResult(results);
 	}
 

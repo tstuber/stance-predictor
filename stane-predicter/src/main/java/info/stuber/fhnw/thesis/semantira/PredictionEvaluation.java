@@ -43,7 +43,7 @@ public class PredictionEvaluation {
 	 * @param windowSize
 	 * @return
 	 */
-	public List<PredictedResult> compareQuestion(int question, int windowSize) {
+	public List<PredictedResult> evaluateQuestion(int question, int windowSize) {
 
 		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getResultsByQuestion(question);
 		List<PredictedResult> evaluationResults = new ArrayList<PredictedResult>();
@@ -64,7 +64,7 @@ public class PredictionEvaluation {
 	 * @param windowSize
 	 * @return
 	 */
-	public List<PredictedResult> compareParty(Party party, int windowSize) {
+	public List<PredictedResult> evaluateParty(Party party, int windowSize) {
 
 		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getResultsByParty(party);
 		List<PredictedResult> evaluationResults = new ArrayList<PredictedResult>();
@@ -84,7 +84,7 @@ public class PredictionEvaluation {
 	 * @param windowSize
 	 * @return
 	 */
-	public List<PredictedResult> compareAll(int windowSize) {
+	public List<PredictedResult> evaluateAll(int windowSize) {
 
 		List<ExpectedResult> expectedResults = ExpectedResultsLoader.getAllResults();
 		List<PredictedResult> evaluationResults = new ArrayList<PredictedResult>();
