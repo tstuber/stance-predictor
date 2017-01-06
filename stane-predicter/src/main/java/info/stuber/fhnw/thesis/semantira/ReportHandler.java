@@ -56,10 +56,6 @@ public class ReportHandler {
 		float correctPerc = correct * 1.0f / total * 100;
 		float wrongPerc = wrong * 1.0f / total * 100;
 
-		System.out.println("correct: " + correct + " (percentage: " + correctPerc + ")");
-		System.out.println("wrong: " + wrong + " (percentage: " + wrongPerc + ")");
-		System.out.println("total: " + total);
-
 		// HEADER.
 		sb.append("<!DOCTYPE html><html><head>");
 		sb.append("<title>Stance Prediction Report</title>");

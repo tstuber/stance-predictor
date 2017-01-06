@@ -37,23 +37,24 @@ public class PredictionRunner {
 	}
 
 	public void evaluate() {
-		// List<PredictedResult> results =
-		// this.evaluator.compareAll(WINDOW_SIZE);
-		// List<PredictedResult> results =
-		// this.evaluator.evaluateSingle(Party.CON, 1, 3);
-
-		// List<PredictedResult> results = this.evaluator.compareQuestion(1,
-		// WINDOW_SIZE);
-		// List<PredictedResult> results = this.evaluator.compareParty(PARTY,
-		// WINDOW_SIZE);
-		// dirtySave(results);
-
-		List<PredictedResult> results = dirtyLoad();
+		
+		// If set to true, reuses the last saved result. 
+		// No Usage of Web Sentiment Analyzer will be made. 
+		boolean reuseLastRun = true; 
+		List<PredictedResult> results;
+		
+		if(reuseLastRun) {
+			results = deserializeResults();
+		}
+		else {
+			results = this.evaluator.evaluateSingle(PARTY, QUESTION_ID, WINDOW_SIZE);
+			serializeResults(results);
+		}
 
 		this.reportHandler.saveReport(results);
 	}
 
-	private void dirtySave(List<PredictedResult> results) {
+	private void serializeResults(List<PredictedResult> results) {
 
 		try {
 			FileOutputStream fout = new FileOutputStream("lastRunToReport.dat");
@@ -67,7 +68,7 @@ public class PredictionRunner {
 		}
 	}
 
-	private List<PredictedResult> dirtyLoad() {
+	private List<PredictedResult> deserializeResults() {
 		List<PredictedResult> results = null;
 		try {
 			FileInputStream fius = new FileInputStream("lastRunToReport.dat");
