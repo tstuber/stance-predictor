@@ -1,0 +1,821 @@
+1
+
+Introduction For the first time in our 82 year history, Plaid Cymru entered government following the elections of May 2007. The One Wales programme of government, drawn up between Plaid Cymru and the Labour Party, states that ‘we want to see a fair system of youth and criminal justice, in which the people have every confidence’ and that ‘we will consider the evidence for the devolution of the Criminal Justice System’.
+Before being elected to the National Assembly, I worked as a Probation Officer, as a support worker with Women’s Aid and I also taught social work and social policy at Cardiff University.
+I was appointed as Plaid’s Shadow Social Justice Minister shortly after my election in 2003 and retained that position until after the Assembly election in 2007.
+This paper was commissioned as part of the policy development work of Plaid Cymru, being carried out under the auspices of the Plaid Cymru Policy Development Unit. It will, I hope, focus minds on an issue which is of great relevance to many of Wales’ people, and contribute to the debate on the future of the Criminal Justice System in Wales by arguing the case for its devolution.
+
+Leanne Wood AM, Plaid Cymru Spring 2008
+
+Published and Promoted by: Plaid Cymru Policy Development Unit, Tŷ Gwynfor, 18 Park Grove, Cardiff, CF10 3BN polisi@plaidcymru.org 02920 646 014 www.plaidcymru.org ISBN
+
+Printed by Dalton Printers, Dalton House, Theisger Street, Cardiff CF24 4BN 0-905077-80-6
+© Plaid Cymru 2008
+
+2
+
+Executive Summary Criminal justice policies are not working. The UK has the highest rates of imprisonment among all Western European countries, with record numbers of children locked up. This is despite the fact that crime levels have fallen over the last ten years. Two thirds of prisoners go on to re-offend, while crime victim rates are 30% higher than the European average.
+Levels of suicide, substance use problems and mental disorders are high among the UK prison population.
+New Labour has adopted a shamelessly populist approach to crime in response to simplistic focus groups which tell them that crime is the voters’ chief concern. Little regard has been paid to what works. We have seen a public campaign which has resulted in the demonisation of young people.
+Successive UK governments have treated the symptoms of crime and not the causes.
+Causes include problematic substance use, poverty, poor parental relationships, abuse and a lack of youth facilities.
+
+3
+
+Recommendations Powers to deal with police, prisons, probation, the courts and sentencing should be devolved to Wales so that the Welsh Assembly government of the day can apply its chosen policies in those areas. The government's agenda would be implemented with the democratic mandate of the people of Wales.
+Under these circumstances, a Plaid Cymru government would pursue an alternative criminal justice strategy, focussing on tackling the causes of crime, reducing fear of crime and thereby making our communities safer. This strategy would include:
+•
+
+Freeing up resources to invest in public sector community rehabilitation and meaningful offending behaviour programmes in prison for those convicted of offences serious enough to warrant custody. The prison population could be reduced significantly with changes to sentencing policy to emphasise more community-based rehabilitation.
+
+•
+
+The creation of a Welsh Youth Justice Board and consideration of the Finnish youth justice system as a model for Wales. Finland has a very small number of children in custody. Instead there is a wide variety of psychiatric provision to deal with behavioural problems at an early stage.
+
+•
+
+Expanding Social Service Departments to carry out more preventative work. Networks of child counsellors could be employed to work alongside an expanded Child and Adult Mental Health Service (CAMHS).
+
+•
+
+Replacing ASBOs with a system of restorative justice, mentoring and conferencing.
+
+•
+
+A twenty year substance use strategy, focussing on harm reduction and including multidisciplinary substance use teams working with criminal justice agencies on individually designed care plans. Problematic substance users should be treated as patients.
+Primary school children should receive harm reduction education, with an emphasis on the promotion of mental wellbeing and suicide/self-harm prevention. There is also an urgent need for a wide-ranging public debate on the future of drug enforcement laws.
+
+•
+
+A generational strategy to tackle hate or power-based crime. The primary school curriculum should contain ‘relationships education’ which aims to challenge and change early signs of sexist, racist, homophobic and bullying or abusive attitudes. It should also cover questions of sexual health, contraception, domestic abuse and sexual consent.
+
+•
+
+Protecting children from adult violence through the ending of the defence of ‘reasonable chastisement’. Adults convicted of smacking children in their care should be sentenced to parenting skills/social work intervention.
+
+•
+
+A comprehensive strategy to reduce fear of crime through investment in facilities for young people, youth support workers and a citizens’ public service scheme to bridge the gap between older and younger generations and the need to ‘hang around on street corners’.
+
+4
+
+What are safe communities?
+Community life in Wales is at risk.
+UK Government attacks on public services and the historic lack of a Welsh economic policy has meant that community viability has had to depend upon the whims of the market.
+Whilst there have been some winners, most communities and the people living within them have been losers.
+Safe communities can mean many things, from ensuring older, younger and ill community members are properly cared for, to anti-terrorist measures or fixed paving stones.
+For the purposes of this paper, safe communities are ones in which people can move around freely in public spaces – and in their own homes – without fear for their personal safety or the safety of those in their care.
+We cannot have safe communities unless we have active communities. For communities to be active, they need facilities – shops, pubs, post offices, schools, health and social services and jobs, which all act as a hub for the community.
+They also need to be places where young people want to stay, or where people with a contribution to make want to move to. Many of our communities in Wales are losing their young people, especially those who are highly skilled. As long as this brain-drain continues, these areas will become more deprived.
+This paper considers crime and the fear of crime in Wales. It argues that fear of crime is disproportionate to actual crime and that existing government policy is not only failing to address the causes of crime, but is in itself contributing to a heightened fear of crime.
+To complement Plaid’s economic and social policies, which are designed to revitalise our communities, this paper aims to outline Plaid’s vision to create safer communities by adopting an alternative approach to criminal justice matters, based on different values and on evidence.
+Change for the better There is no solution for crime. Criminal activity has existed since people have had laws, and it will continue for the foreseeable future. But it is clear that the current approach is failing.
+Why else would the UK have the highest rate of imprisonment amongst all western European countries, some 50% higher than comparative countries like France, Germany and Italy, and ten times more than Spain1? And why would 72% of the male adult prison population have two or more mental disorders2? As the recently resigned Chair of the Youth Justice Board, Rod Morgan, has said:
+
+1
+
+The Howard League for Penal Reform, ‘England and Wales lead the pack on European imprisonment rates’, website press release, 18 January 2006)
+2 Prison Reform Trust, Bromley Briefings Prison Factfile November 2006 (London, 2006), p.26
+
+5
+
+We know that criminalising young children … is generally counter-productive, indeed criminogenic [crime-causing]. Yet what are we doing? We’re criminalising more children and young people – 26% more in the last three years3.
+Although the latest figures show a decrease4, October 2006 saw 3,350 children and young people locked up in England and Wales, a doubling in a decade5. Yet the British Crime Survey (BCS), which asks young people themselves whether they have offended in the past twelve months (what is known as ‘self-report methodology’) shows that levels of crime committed have been static for the past five years. There has been a disproportionate increase in the numbers of girls and boys from Black and minority ethnic backgrounds sent to prison6.
+Two thirds of adult prisoners re-offend, while a higher proportion of the youth prison population are repeatedly arrested after release, mainly for committing offences linked to a substance use problem. Nearly two-thirds of sentenced male prisoners and two-fifths of sentenced female prisoners admit to hazardous drinking, i.e. drinking that will affect one’s mental and physical health in the long term. Of these, about half have a severe alcohol dependency, which is a physical and psychological dependence on alcohol. It is common for prisoners who have alcohol problems to also have drug problems. Just over a quarter of male prisoners and about a fifth of female prisoners who are hazardous drinkers are dependent on at least one type of illicit drug7.
+The women’s prison population has doubled in the last decade. This rise in the female population can largely be attributed to the significant increase in the severity of sentences.
+For example, at the Crown Court in 1991, only 8% of women convicted of motoring offences went to prison. That proportion had increased to 42% by 2001. Similarly, women convicted of theft are now twice as likely to go to prison as they were in 1991. At the Magistrates’ Court, the chances of a woman receiving a custodial sentence have increased seven fold8.
+The majority of the female prison population are sentenced for non-violent offences. At the end of August 2006 the largest group (32%), were sentenced for drug offences. More than two thirds of women show symptoms of at least one neurotic disorder such as depression, anxiety and phobias. More than half are suffering from a personality disorder.
+Among the general population, less than one fifth of women suffer from these disorders9.
+The same people are recycled through the prison system, often on short sentences, making rehabilitation work difficult, if not impossible. Women in particular tend to serve very short sentences. For instance, in 2004, 64% of women served custodial sentences of 3 months custody or less10. Sixty five per cent of the women released from prison in 2002 were reconvicted within two years of release11. Short sentences lend very little time for prison 3
+
+Morgan, R., ‘A temporary respite’, Guardian, 19 February 2007 Youth Justice Board, Annual Report and Accounts 2006/07 (London, July 2007) p.26 5
+O’Keeffe, A., ‘War on Youth’, New Statesman, 16 October 2006 pp.18-21 6
+Audit Commission, Youth Justice 2004: A Review of the Reformed Youth Justice System (2004)
+7 Prison Reform Trust, Bromley Briefings Prison Factfile November 2006 (London, 2006), p.14 8
+ibid., p.14 9
+ibid., p.14 10 ibid., p.14 11 ibid., p.14 4
+
+6
+
+and probation services to deal with emotional issues, drug addiction or education. At the same time, community penalties and drug rehabilitation requirements are underused for women offenders relative to male offenders12.
+The prison population has ballooned from 47,000 in 1993 to more than 80,000 today. The British Crime Survey reports that crime peaked in 1995, and has since then fallen by 42%.
+There have been large decreases in burglary and vehicle thefts over the last ten years
+(burglary down 59%, vehicle thefts down 61%) and also in violent crime (down 43%). The risk of becoming a victim of crime is now 24% compared with 40% in 1995. The 10%
+increase in vandalism in 2006/07 masks an overall 11% decrease since 1995. Crime statistics stabilized in 2006/0713 (see Figure 1).
+All BCS Crime 25,000
+
+20,000
+
+15,000 Crimes
+
+10,000
+
+5,000
+
+0 1995
+
+1996
+
+1997
+
+1998
+
+1999
+
+2000
+
+2001/02 2002/03 2003/04 2004/05 2005/06 2006/07 Interviews Interviews Interviews Interviews Interviews Interviews Year
+
+Figure 1: British Crime Survey 2006-07
+
+Prison overcrowding means that prisoners are shipped far from their families and are therefore at a much greater risk of violence, riots and suicides and less likely to receive the rehabilitative support which will help them to ‘go straight’ on release.
+In response to the call from the four Welsh Chief Constables in January 2008 for the devolution of the police, probation, prosecution and court services to Wales14, Dafydd Elis Thomas, the National Assembly’s Presiding Officer, stated that this would only happen if it could be shown that such a transfer of power would improve Welsh life15. The Chief Constable of North Wales Police has argued in a personal capacity that devolution is a process which is both inevitable and attractive. Plaid Cymru believes that the advent of primary legislative powers in the National Assembly must include the devolution of the 12
+
+Home Office, Home Office Statistical Bulletin 18/06, Offender Management Caseload Statistics 2005 (December 2006), p.28 13 British Crime Survey 2006-07 statistics as reported in Home Office Statistical Bulletin: Crime in England and Wales 2006/07, Nicholas, S., Kershaw, C. and Walker, A. (eds.), Home Office (London, 2008)
+14 Williamson, D., ’Let Wales take control of its justice system, say Chief Constables’, Western Mail, 18 January 2008 15 ibid.
+
+7
+
+Criminal Justice System, so that a more progressive approach to safer communities can begin across all levels of society, and so that such a programme is suited to Wales’ distinct needs.
+Who is dealing with crime?
+The Ministry of Justice has main responsibility for crime and criminal justice matters. The Welsh Assembly Government is responsible for crime prevention through its responsibilities for housing, education, health and specifically for Community Safety Partnerships, domestic abuse, youth justice, the substance misuse strategy and part funding of the police. The Assembly has a significant impact on the crime prevention agenda in Wales, but its hands are tied by UK government policy on policing, criminal law, the courts, sentencing, probation and the prison systems. Plaid wants to see responsibility for all aspects of the criminal justice system in Wales devolved to Wales, including the ability to decide our own criminal law. The One Wales programme states that ‘we will also consider the potential for devolution of some or all of the criminal justice system’. In the recent debate on the future structure of policing, our call for the devolution of police services gathered widespread support (if only mainly because the Home Office acted with such incompetence!).
+In recent years, the Labour-run Home Office has presided over the largest ever UK prison population, increases in problematic substance use, a public campaign (in league with the tabloid press) which has made law and order a highly charged political issue, and the opening up of the probation service to privatisation. It has responded to tabloid scare stories of ’feral youth’ by introducing Anti-Social Behaviour Orders (ASBOs) and the
+’Respect’ agenda.
+Rod Morgan believes that:
+We have substantially abandoned our traditionally tolerant, middle way stance regarding behaviours that we know are widely demanded but potentially very destructive – the use of alcohol and other drugs, gambling and so on. Instead of paternalistic controls, we now combine free-market liberalisation with punitively prohibitionist elements16.
+Drinking laws have been relaxed, smoking has been banned in public places and super casinos have been heavily promoted. New Labour has reduced civil liberties in a wide range of areas: clamping down on the rights of protestors, removing habeas corpus and paving the way for the introduction of a new surveillance and monitoring system for every citizen through the Identity Card Scheme.
+Plaid contends that New Labour has prioritised crime because focus groups simplistically tell them that it’s the voters’ main concern, and it is an easy subject to attract headlines. It has been a shamelessly populist approach.
+Crime always has been and always will be a chief political concern. Statistics show that since 1995 there has been a 42% decrease in overall crime levels, while crisis point has been 16
+
+Morgan, R., ‘The Contradiction of Youth Justice in England and Wales’, YJ magazine, Issue 004, Nov-Dec 2006, p.14
+
+8
+
+reached in the prison population with a 70% increase since 1993. However, New Labour cannot claim the credit for this drop in crime rates. The UN Crime Prevention Agency’s recent EU Crime and Safety Survey (2007) shows that despite falls in crime levels throughout Europe since 1995, UK crime rates have not dropped as fast as those across the rest of the EU. The UK is named alongside Ireland, Estonia, the Netherlands and Denmark as the crime hotspots of Europe with crime victim rates that are at least 30% higher than the EU average. The study concludes that no single factor can explain the drop in crime across Europe over the past ten years, but that a fall in the proportion of young males and improved security measures such as burglar and car alarms are probably more influential than tough sentencing policies or rising prison populations17.
+Plaid believes that dealing with the causes of crime would be more effective in reducing long-term criminality. There could be some consensus among different political parties in Wales to taking a different approach to crime, particularly in relation to our treatment of children and young people. The debate has not yet taken place to any adequate extent on a Welsh level. The Home Office has recently been reorganised in response to the fact that there has been a crisis in so many of its areas of responsibility, with many critics – including former Home Secretary post-holders – saying that it is too big to be effective.
+Crime Levels There is no doubt that fear of crime is high. In every British Crime Survey (which, though flawed, is widely accepted as the most accurate study of crime figures) since 1995 overall crime figures have fallen, yet in the 2006-07 survey 65% of people thought that crime in the UK as a whole had increased compared with 41% who thought crime in their local area had increased18.
+Fear of crime can mean that people reduce their participation in community life, resulting in social isolation. Crime is generally feared more by those who are at least risk of it. Figures from the BCS for 2006-07 indicate that a young man under the age of twenty-one is the most likely target of a violent crime. 12.6% of this age group experienced a violent crime of some sort, based on their BSC interview. Yet that age group had the lowest number of people who stated that fear of crime greatly affected their quality of life19.
+The same 2006-07 survey confirmed that although older people have the highest fear of crime, they are the least likely to become a victim. Although the risk of crime is lower for older people, being a victim of crime can have a more profound effect, as those who are most vulnerable can suffer the most serious consequences20.
+People are more likely to fear crime if they see young people ‘hanging around the streets’.
+
+17
+
+Travis, A. and Traynor, I., ‘Britain named as one of Europe’s crime hotspots’, Guardian, 6 February 2007 British Crime Survey 2006-07 statistics as reported in Home Office Statistical Bulletin: Crime in England and Wales 2006/07, Nicholas, S., Kershaw, C. and Walker, A. (eds.), Home Office (London, 2008)
+19 ibid.
+20 Donaldson, R. Home Office Findings 198 Experiences of Burgled Older People, Home Office (London, 2003)
+18
+
+9
+
+There are people living in communities in Wales whose behaviour is causing misery for others. In particular, behaviour termed as ’hate crime’, which is targeted at minorities –
+such as homophobia and racist harassment – can have devastating effects on the victims.
+So too can a small minority of young people whose behaviour intimidates, harasses and frightens people in their homes and communities. None of this is acceptable and it must be dealt with.
+New Labour has created over 700 new offences since 199721. People are being criminalised for things now that their parents and grandparents got away with. Children are now dealt with more harshly than adults. There appear to be numerous instances where incidents that used to be regarded as normal adolescent behaviour fifteen or twenty years ago are now being seen as low-level criminal activity. Young people are receiving ASBOs for playing football in the wrong place, loud music or loud behaviour disturbing neighbours. They can receive a maximum of two reprimands (the equivalent of a caution), whereas adults can get an unlimited number. An adult caught with cannabis will be dealt with informally. Police guidance that stated a young person caught with possession should lead to automatic arrest has been recently replaced with it ’may’ lead to arrest if necessary22.
+In an article in the Guardian in April 2005, Polly Toynbee argues that crime is not getting worse, but that there is a:
+universal myth of some golden age set in the imagined time just beyond what we can remember [which] suggests the world has been in moral decline since time began... the only real rise in crime last year was in the use of imitation firearms… We are living in remarkable times when crime has fallen steadily by well over a third since 199523.
+It seems to make no sense to see fear of crime increasing while actual crime is going down.
+Toynbee offers one explanation:
+A vast industry of mendacity has a vested interest in scaring people witless with front-page shock, TV cops and doom-laden moral panic editorials24.
+We can add to that New Labour’s obsession with appearing ’tough on crime’ which result in more headline-grabbing measures to deal with crime. The focus has been on low level, nuisance crimes, which have become known as ‘anti-social behaviour’. This is a newly invented term. It didn’t exist in our vocabulary until after 1997. The government claims that authorities receive 66,000 complaints of anti-social behaviour every day25.
+If we accept that dealing with the causes of crime would be more beneficial than introducing ever-harsher penalties to treat the symptoms, then we must understand what causes people to behave in criminal ways.
+
+21
+
+Based on answer to question by Elfyn Llwyd MP, PMQ, Hansard, 2 November 2005 Steele, J., ‘Children no longer face automatic arrest for cannabis possession’, Daily Telegraph, 24 January 2007 23 Toynbee, P., ‘Scared Witless’, Guardian, 22 April 2005 24 ibid.
+25 Home Office website, One day count of Anti-Social Behaviour: September 10, 2003 22
+
+10
+
+What are the causes of crime?
+The causes of crime are varied: poverty, substance abuse, a lack of youth provision, neglected mental health problems. It can be a combination of all these, or none of them.
+Bereavement or abuse can trigger problems that lead to criminal behaviour. It’s also true to say many people experience some or all of these things, but do not go on to offend. Plaid Cymru contends that New Labour’s flawed ‘Respect’ agenda is also a cause of criminality.
+Poverty Young people are more likely to be seen on the streets in areas with higher deprivation, as there are fewer free or low-cost suitable facilities, like youth groups, in such areas. Also, parents are less likely to be able to afford after school activities like music, sport or dance classes. Edinburgh University’s study of Youth Transitions and Crime has tracked 4,300 children over eight years. It has come up with two main findings: first, that working-class children are more likely to come into contact with the Criminal Justice System regardless of whether or not they actually offend more; and second, that those who do have contact with the Criminal Justice System are less likely to stop offending than those who do not26.
+A study by John Mann, MP for Bassetlaw found that heroin addiction is 27% higher in former coalfield areas27. Poverty brings difficult circumstances, hopelessness and in some cases fatalism. According to data from the Welsh National Database for Substance Misuse, the rate of referrals to treatment agencies where heroin is the main problem drug in Welsh coalfield areas is nearly twice that in non-coalfield areas and almost one third more than in Wales as a whole28.
+A view from Scotland provides food for thought:
+Although relative poverty by itself is not the cause of Scotland’s drug problem […….] there is a strong association between the extent of drug problems and a range of social and economic inequalities. Therefore, narrowing these inequality gaps should contribute significantly to a reduction in high levels of damaging drug use. Furthermore, policies that focus on reducing poverty, exclusion and inequalities, per se, should help clarify more realistic boundaries for health, social care and criminal justice responses to individual29.
+
+26
+
+O’Keeffe, A., ‘War on Youth’, New Statesman, 16 October 2006, pp.18-21 Mann, J., MP, ‘Lessons from Bassetlaw: Effective Drug Treatment can Turn Communities Around’, Progress Online website, 8 September 2006 28 Health Solutions Wales, Substance Misuse in Wales Welsh National Database for Substance Misuse All-Wales Report Quarter 3 2006/7 (October-December 2006)
+29 Shaw, A., Egan, J., & Gillespie, M., Drugs and Poverty: a literature review, Scottish Drugs Forum – a report produced on behalf of the Scottish Association of Alcohol and Drug Action Teams (2007)
+27
+
+11
+
+Poverty in Wales is a major issue. Twenty-eight percent of all children in Wales live in poverty, which is 162,000 children. The number is slowly lowering: it was 35% in 1999, but poverty is still a strong indicator of possible criminality. According to Save the Children 56,000 children live in severe and persistent poverty. The 2006/07 British Crime Survey showed that people living in more deprived areas were more likely to be a victim of crime than those living in less deprived areas; 10% of households in the most employmentdeprived areas had been a victim of one or more vehicle thefts, compared with 7% of those in the least employment-deprived areas30 . 640,000 people in Wales are living in poverty;
+60,000 people are unemployed and a further 95,000 are ‘economically inactive but wanting work.’ Low pay is also a contributor to poverty. More than a third of poor households in Wales include an adult who is working.
+Dr. Peter Kenway, Joint Director of the New Policy Institute claims:
+Although poverty and disadvantage are at their deepest in the Valleys, people in all parts of Wales face these problems31.
+Substance Use and Mental Ill-health Problematic substance use is another key cause of criminal behaviour. There is wide availability of a variety of illegal and legal substances in every town in Wales. In 2005-06, 10.2% of Welsh people aged 16-59 tried illegal drugs. 24.2% of 15-16 year olds smoke cigarettes weekly and 54.2% drank alcohol on a weekly basis32. A report published in November 2007 from the EU’s drugs monitoring centre shows that while drug abuse appears to be stabilising, England and Wales have the second highest cocaine use in Europe.
+The level of cocaine use is twice the average elsewhere in Europe apart from Spain. The use of cannabis attained record levels in the UK last year but now appears to have stabilised, albeit at high levels. Cannabis use among young adults aged 15-34 in England and Wales still remain amongst the highest in Europe. Prevalence of cannabis was estimated at 22% in England and Wales, 28% in the Czech Republic and 24% in both Spain and France33.
+In 2002, a Cross-National Survey on Health Behaviour in School-Aged Children (HBSC)
+reported substantially higher rates of weekly drinking and drunkenness than the vast 30
+
+British Crime Survey 2006-07 statistics as reported in Home Office Statistical Bulletin: Crime in England and Wales 2006/07, Nicholas, S., Kershaw, C. and Walker, A. (eds.), Home Office (London, 2008)
+31 Joseph Rowntree Foundation, ‘Family poverty falls faster in Wales, but one in four children still affected’, website press release, 30 November 2005 32 Roe, S. and Man, L., Home Office Statistical Bulletin 15/06: Drug Misuse Declared: Findings from the 2005-06 British Crime Survey England and Wales, Home Office (2006)
+33 European Monitoring Centre for Drugs and Drug Addiction, Annual Report 2007: The State of the Drugs Problem in Europe (Luxembourg, 2007)
+34 Currie, C. et al (eds.), ‘Young People’s Health in Context: international report from the HBSC 2001/02 survey’, WHO Policy Series: Health policy for children and adolescents, Issue 4, WHO Regional Office for Europe
+(Copenhagen, 2004)
+
+12
+
+majority of other countries in the study. Reported drunkenness was most likely in Wales and Denmark34.
+Current statistics indicate that the problem is getting worse. According to Professor Mark Bellis, Director of the Centre for Public Health at Liverpool John Moores University:
+The ages of children admitted to hospital for alcohol–related problems are getting lower.
+The number of eight year olds who drink has doubled from 5 per cent in 1995 to 10 per cent in 2005. The number of eleven year old girls who drink has increased from 15 per cent in 1995 to 25 per cent in 2005.35 Solvent misuse (knowingly abusing a gas, vapour or solvent with the purpose of ‘getting high’
+or harming oneself) is another area of concern. While much attention has been focussed on deaths from illegal drugs, solvent misuse causes more deaths among young people aged 10-16 in England and Wales than Class A and other illegal drugs. In 2001, there were seventeen deaths from solvent misuse for this age group compared to five deaths from illegal drugs. In 2002, there were eighteen solvent abuse related deaths compared to six drug related deaths. Thirty one young people aged between eleven and nineteen and twenty one people aged twenty to thirty four died as a result of solvent misuse in 200236.
+Not all people who drink or use illegal drugs will develop problematic use. ‘Problematic use’ is when the use of a substance or substances causes problems in other areas of life e.g.
+stops you going to work, makes you feel ill or causes you to commit crimes (most commonly theft or violence).
+The reasons for the development of problematic substance use are varied and complex.
+There are many studies that show the link between substance use, mental health problems and sexual or other (particularly childhood) abuse37. Other traumatic events like bereavement and parental divorce can also result in the use of substances as a crutch or as a way to forget bad memories – a form of self-medication. Many people with a mental health problem have a co-existing problem with alcohol or drugs. This is known as dual diagnosis and its prevalence is unknown. We do know, however, that one in nine people suffer from mental health problems and one in two hundred suffers from severe mental illness38. Former coalfield areas, specifically Blaenau Gwent, Merthyr Tydfil and Rhondda Cynon Taf, tend to have higher levels of mental health needs than other parts of Wales. In the case of Rhondda Cynon Taf, the area also registers high levels of referrals for substance misuse39. There is much anecdotal evidence to suggest that people with dual diagnosis fall
+
+35
+
+Bignell, P. and Owen, J., ‘2007 Special Report: Under Age Drinking’, Independent, 18 February 2008 Department of Health, ‘Out of Sight? ...not out of mind’ Children, Young People and Volatile Substance Abuse
+(VSA) A Framework for VSA 2005 (July 2006)
+37 4Therapy Network website, ‘Physical or Sexual Abuse Linked with Later Substance Abuse’
+38 National Assembly for Wales, Better Health – Better Wales (May 1998)
+39 National Assembly for Wales/Health Solutions Wales, Substance Misuse in Wales: Wales National Database for Substance Misuse, All-Wales Report Quarter 4 2006-07 (Jan-March 2007) (2007)
+40 Prison Reform Trust, Bromley Briefings Prison Factfile November 2006 (London 2006), p.28 36
+
+13
+
+between services, and are therefore at risk of not receiving the treatment which could prevent criminal behaviour from developing.
+A high percentage of people in our prisons have unresolved emotional problems related to past abuse. A range of studies estimate that approximately 55% of people entering prisons each year use drugs40. Approximately 72% of men and 70% of women prisoners have two or more mental health disorders. The Chief Inspector of Prisons has estimated, based on visits to local prisons, that 41% of prisoners being held in health care centres should have been held in secure NHS accommodation. Research has found that there are up to 500 patients in prison health care centres with mental health problems sufficiently ill to require immediate NHS admission. Mental health issues amongst prisoners can be linked to past experiences of violence at home and sexual abuse. About half of women and a quarter of men have suffered from domestic abuse while approximately one in three women report having experienced sexual abuse41. There is a very high likelihood that unless these issues are addressed, some of these people will continue using substances problematically and will continue to offend. A report by the Fawcett Society’s Commission on Women and the Criminal Justice System raises concerns about the lack of a formal link between courts and the Probation Service on the one hand and mental health services on the other42. A subsequent Fawcett Society report has highlighted the lack of support for victims of rape43.
+Emotional problems combined with overcrowding in prisons result in increased rates of suicide attempts. The suicide rate for men in prison is five times greater that that for men in the community. Boys aged 15-17 are eighteen times more likely to commit suicide if in prison than in the community44. 37% of women in prison say they have attempted suicide at some point in their lives. While women represent 6% of the prison population, they accounted for almost half (46%) of all reported self-harm incidents45. The suicide rate for men is greater in Scotland and Wales than the UK average, while suicide rates among 11-17 year olds between 1995 and 2004 was five times greater in Wales than in England46.
+Lack of Youth Provision Youth crime, as it mostly takes place in public, on the street, is the easiest to tackle.
+Although the Home Secretary has recently announced a review, Government targets have been in place for ’offences brought to justice’, where the police have to bring a total of 1.25 million cases to justice every year. The number of adult convictions has remained static, yet the target is exceeded. Children and young people generally commit crimes in public 41
+
+ibid., p.15 Fawcett Commission on Women and the Crimial Justice System, A Report of the Fawcett Society’s Commission on Women and the Criminal Justice System (March 2004)
+43 The Fawcett Society, Justice for Rape Victims campaign leaflet (January 2008)
+44 Office for National Statistics, Suicide Trends and Geographical Variations in the UK, 1991 to 2004 (Autumn 2006)
+45 ibid., p.9 46 ibid., p.15 42
+
+14
+
+places, in the streets where they are ’hanging around’. They are easy to catch and their cases are easy to process. Rod Morgan says that, for the police, arresting children is like
+’picking low-hanging fruit’47.
+Young people are more likely to be on the streets if they have no alternative provision.
+Youth provision refers to the facilities and amenities that are available to young people in their communities. There are an estimated 4,046 youth clubs within Wales. 1046 are public sector provision clubs48 and an estimated 3000 are in the private sector49. Many communities have no free or low-cost youth provision at all.
+Demonising Young People Government propaganda has perpetuated the idea that young people are the root cause of crime and the main perpetrators of crime. This idea contributes to a heightened sense of fear of crime. The tendency to blame young people for society’s ills is symptomatic of the simplistic correlation between young people and crime. ’Hoodies’ have become one of the latest scapegoats. In reality young people are more likely to be victims of crime than perpetrators, as shown by recent Home Office statistics50. These statistics show that 35%
+of young people aged 10-15 and 32% of young people aged 16-25 had experienced at least one personal crime in the previous twelve months as compared to 14% of adults aged 2665.
+A recent report by UNICEF51 found that children in the UK suffer greater deprivation, worse relationships with their parents and are exposed to more risks from alcohol, drugs and unsafe sex than those in any other wealthy country in the world. In response to this report, England’s Children’s Commissioner Al Aynsley-Green said that:
+It’s time to stop demonising children and young people for what goes wrong and start supporting them to make positive choices. To bring an end to the confusing messages we give to young people about their role, responsibility and position in society and ensure that every child feels valued and respected52.
+
+47
+
+O’Keeffe, A., ‘War on Youth’, New Statesman, 16 October 2006, pp. 18-21 This table was provided by the Welsh Assembly Government Youth Work Delivery department: the last audit of the maintained Youth Service 2003-2004 gave these figures. This group estimates that there has been no significant change since 2004 regarding these numbers.
+49 Youth Cymru, Annual Report 2004/2005 (2005)
+50 Donaldson, R., Findings 246 The victimisation of young people: Findings from the Crime and Justice Survey 2003, Home Office: Research, Development and Statistics Directorate (2005)
+51 United Nations Children Fund, Child Poverty in Perspective: An Overview of Child Well-being in Rich Countries
+(2007)
+52 Boseley, S., ‘British Children: poorer, at greater risk and more insecure’, Guardian, 14 February 2007 53 British Institute for Brain Injured Children (BIBIC), Ain’t Misbehavin’, (campaign update, November 2005)
+48
+
+15
+
+Respect?
+The ‘Respect’ agenda has been part of New Labour’s discourse. A superficially attractive concept, the late Peter Clarke, the first Children’s Commissioner for Wales criticised this agenda and has pointed to the fact that the debate has been about young people allegedly disrespecting older people and not about engendering mutual respect between people of different generations.
+What are we doing to our young people?
+The UN Convention on the Rights of the Child states that custody should be the sentence of last resort for children. Yet twice as many children are locked up today than there were a decade ago. Youth and social workers are busy dealing with kids who have committed minor offences like breaking a window, meaning that their caseloads are full, leaving them unable to work effectively with more serious behaviour, or with prison leavers. With only one secure children’s home in Wales (at Hillside Centre, Neath), high prison numbers mean that children are being placed further away from their families and social workers, increasing the risk of self-harm and suicide. Approximately 84% of young offenders from Wales are imprisoned in England.
+Anti-Social Behaviour Orders (ASBOs)
+Although an ASBO is not a criminal offence, breaching the conditions of an ASBO is. Upon breach of an ASBO, people are being sent to prison for behaviour that was not serious enough to warrant a criminal conviction, let alone a prison sentence. Forty three per cent of ASBOs are issued to under-eighteens. According to the British Institute for Brain Injured Children (BIBIC), thirty five per cent of those have a diagnosed mental health problem or accepted learning difficulty53. It is difficult if not impossible for some people to abide by conditions they don’t fully understand. We don’t know how many people have breached their ASBOs, as the data is not available, but a study by the Youth Justice Board in 2005 revealed that 700 children and young people had been imprisoned for breaching an ASBO.
+A further study by the Policy Research Bureau and NACRO in areas in England and Wales found that almost half of the ASBOs issued to under-eighteens had been breached
+(conditions broken)54. Figures released by the National Audit Office in December 2006 estimate that 55% of ASBOs have been breached. Home Office figures estimate 47%55.
+Anti-Social Behaviour Orders were introduced into British law in the 1998 Crime and Disorder Act. This law gave a wide legal definition to anti-social behaviour. It claims that anti-social behaviour is:
+
+54
+
+Solanki, A-R., Bateman, T., Boswell, G. and Hill, E., Anti-Social Behaviour Orders for Young People given between January 2004 and January 2005, Youth Justice Board for England and Wales (2006)
+55
+‘Half of Asbo holders breach order’, BBC News online, 7 December 2006
+
+16
+
+Behaviour which causes or is likely to cause harassment, alarm or distress to one or more people who are not in the same household as the perpetrator56.
+An order can be made for anyone ten years of age or older. The grounds for an ASBO are varied from graffiti to dealing drugs. The ASBO itself is a warning to the perpetrator through the civil courts forbidding further anti-social behaviour, but if the perpetrator continues using anti-social behaviour and breaks the order they can be convicted for up to five years imprisonment or heavy fines. The behaviour that results in an ASBO does not have to be criminal in nature; ASBOs have been given for loitering in town and city centres and even for repeated suicide attempts57.
+ASBOs can be judged in either a civil or criminal court but are civil orders regardless of the issuing court. The civil nature of the orders allows hearsay and professional witness testimony to be heard. An order includes conditions forbidding the perpetrator from specific anti-social actions or entering specified areas. People are given ASBOs for a minimum of two years and can have a range of enforcement that covers all of England and Wales. In order to issue an ASBO a judge must conduct a two-stage test. First, the judge must rule that the behaviour was anti-social and, secondly, that an order is necessary for the protection of persons from further anti-social behaviour by the perpetrator. The first stage of the test requires proof but the second stage is purely an exercise in judgement or evaluation. Also the agency applying for the order does not have to prove that the perpetrator intended to cause harassment, alarm, or distress: they just have to prove that the effect of the behaviour is anti-social. Often, the enforcement of ASBOs includes the naming and publicising the face of the individual. This runs contrary to the principles of the Children Act 2004 as the exposure of the child’s identity to the press is clearly not in the best interests of the child. Local authorities, police forces, the British Transport Police and registered social landlords can apply for ASBOs.
+Few, if any of these organisations give mental health issues any consideration. This is evident because the Home Office has not compiled or released any data about the numbers of adults and youths with mental health problems or learning difficulties who have received anti-social behaviour orders. A representative of BIBIC recently said:
+Despite a number of requests to the government about the collecting of statistics on young people with ASBOs (and mental health issues), it is very difficult to find meaningful statistics about learning difficulties and mental health issues58.
+A recent publication by BIBIC indicates that youths with learning difficulties and/or mental health issues have been issued ASBOs, even though these children do not necessarily understand the orders, cannot necessarily read the orders, or are unable to remember the terms of their orders59. Some learning difficulties have been discovered after ASBOs were handed down to the child.
+56
+
+Office of Public Sector Information, Crime and Disorder Act 1998 (July 1998)
+Stone, A., ‘Suicide bids woman cost 999 services £1m’, Western Mail, 12 July 2007 58 E-mail from Vivienne Streeter, BIBIC 59 BIBIC, Ain’t Misbehavin’, (campaign update, November 2005)
+57
+
+17
+
+Do ASBOs work?
+There is no evidence to show that ASBOs deter young people from committing or recommitting crimes or nuisance behaviour. In fact the opposite is true. MORI’s work for the Youth Justice Board has tracked young people’s experience of crime, both as offenders and as victims, since 1999 and indicates that offending levels remained static over the four years up to 2005. According to MORI:
+Nearly half of the young people whose case files were reviewed (68 out of 137) had been returned to court for failure to comply with their order. The majority had ‘breached’ their ASBO on more than one occasion60.
+In many instances the failure to comply with an order is not simply due to young people who have no respect for the order but frequently related to the demanding and often unrealistic demands of the order’s requirements.
+The approach of using ASBOs to deal with anti-social behaviour may not be the way in which most people would like to see this problem addressed, as revealed in a study by the Joseph Rowntree Foundation61. The study revealed that, in fact, most people (66%) prefer
+‘preventative action to deal with the causes’ as opposed to 20% who prefer tough action62.
+A further study by the Institute for Public Policy Research found ASBOs to be ineffective for children under 12 with a result of ‘speeding children into the criminal justice system’63.
+ASBOs in Wales The table below64 shows the figures of Anti-Social Behaviour Orders received by adults and young people since 1999:
+
+List of Areas Dyfed-Powys Gwent North Wales South Wales Wales England
+
+Number of ASBOs given between 1999-2005 to youths (10-17 years of age)
+4 29 58 49 140 2995
+
+Number of ASBOs given between 19992006 to adults (18+
+years of age)
+23 27 64 74 188 3832
+
+60
+
+Ipsos MORI, What Place for ASBOs in an era of ‘Respect’? (June 2005)
+Joseph Rowntree Foundation, Anti-Social Behaviour Strategies: Finding a Balance, Institute for Criminal Policy Research (Bristol, 2005)
+62 ibid., p.7 63 Institute for Public Policy Research, Make Me a Criminal – Preventing Youth Crime (2008)
+64 Home Office: Research, Development and Statistics Directorate, ASBO Statistics April 1999-December 2005 61
+
+18
+
+In Wales, success has been measured by the low number of ASBOs given, as alternative interventions are used first, and the ASBO is the last resort. This approach has been supported by the Welsh Assembly Government, with First Minister Rhodri Morgan stating in 2006 that:
+It is true that ASBOs have been used more as a last resort measure in Wales…Chief Constables in Wales have always maintained the line that the more ASBOs you’ve issued, you should regard as a sign of failure65.
+Change for the Better It is clear that if we are serious about making our communities safer, we have to tackle the causes of crime and anti-social behaviour. Plaid Cymru has long advocated that the Assembly should have powers over criminal justice in order to implement a safer communities strategy. Such a strategy would involve an overhaul of the Criminal Justice System to prioritise tackling the causes of crime.
+Plaid Cymru believes that a good place to start would be the creation of a Welsh Youth Justice Board, whose main aim will be to reduce the child prison population. The money saved should be invested in rehabilitation programmes and support.
+There should be further investigation and consideration of the youth justice system in Finland. A comparative analysis of the treatment of young people in trouble in England and Wales and in Finland found that Finland has tiny numbers of young offenders locked up but accommodates ‘very large numbers of children and young people in non-custodial residential institutions of one type or another’66. These include reformatories, children's homes, youth homes and family group homes. By far the largest number – almost 4,000 –
+are held in special psychiatric units. If England and Wales had the same number of psychiatric beds per head of population as Finland, there would be approximately 40,000. In Wales there would be 2,220. In fact there are 2867.
+It appears that concern about child and adolescent mental health in Finland has eclipsed concerns about youth crime and it would follow from this that behaviour which might be viewed as criminal in England and Wales could well be dealt with in Finland, first and foremost, as a psychiatric disorder. The researchers suggest that the use of psychiatric units reflects a philosophy of highly individualised treatment that is out of favour in the UK.
+Recent research undertaken in Greater Manchester by the Youth Justice Trust revealed that 92% of 147 randomly selected cases had serious and untreated problems of loss or bereavement. When we consider this, the Finnish system, where places in special
+
+65
+
+‘Morgan raises respect ‘tensions’’, BBC News online, 10 January 2006 Esmée Fairbairn Foundation, Rethinking Crime and Punishment: The Report (2004), p.45 67 National Assembly for Wales, Health and Social Services Committee Paper HSS(2)-06-06(p.3), Mental Health Services for Children and Young People, 23 March 2006 69 Pitts, J. and Kuula, T., ‘Incarcerating Young People: An Anglo-Finnish Comparison’, Youth Justice Vol. 5, No. 3,
+(2005) pp. 147-164 66
+
+19
+
+psychiatric units for children and adolescents outnumber places in reformatories in a ratio of 160 to one, appears rather less outlandish69.
+Whether residential or not, it is clear that unless basic mainstream services like education and health are able to respond to the needs of young offenders and children at risk, youth justice ends up picking up the pieces, providing a parallel but second-rate service.
+Improved services will, of course, have a cost. But there will be a range of benefits in terms of reduced criminality, improved learning outcomes, reduced adult mental health problems and potentially reduced substance use. It will also reduce the youth prison and secure unit population, resulting in significant savings.
+Social Service Departments should be expanded and networks of specialist child counsellors should be employed. These should be linked to an expanded Child and Adolescent Mental Health Service (CAMHS), which includes psychiatric residential accommodation. The assessment and care of children needs to be integrated and coordinated centrally and locally.
+The Welsh Assembly Government should exercise an overarching responsibility for every child, including those who offend or are deemed to be at risk of offending. We would ensure that teachers and other school staff are trained in a wide range of restorative and problem-solving techniques, which can resolve conflicts between pupils and between pupils and teachers. For example, in some of the high schools in Sefton, Merseyside a restorative conference is always used where there is a chance of exclusion70. Promotion of mental wellbeing should be included in the school curriculum, with an emphasis on suicide and selfharm prevention to those assessed as being at risk.
+We should replace ASBOs with a system of restorative justice. If criminal acts have been committed then the perpetrator needs to be punished with criminal standards: probation, prison, fines, and community service. The Commissioner of the Council of Europe’s Human Rights Commission has remarked on the treatment of children with regard to ASBOs in England and Wales:
+It is to be hoped that this burst of ASBO-mania will quieten down and that use [of ASBOs]
+in time will be limited to appropriate and serious cases, where no other means of intervention might succeed. Responsible guidelines and realistic rhetoric is required, however, for this to succeed71.
+The Welsh Youth Justice Board will provide for the expanded use of:
+•
+•
+
+Reparation Orders. These are orders made in the civil courts that require the perpetrator to repair the damage their behaviour caused, either directly to the victim or indirectly to the community. Financial reparations are not allowed.
+Child Safety Orders for children under 10 years of age who have shown behavioural problems. The order puts the child under supervision of a Youth Offending Team,
+
+70
+
+Allen, R., From punishment to problem solving A new approach to children in trouble, Centre for Crime and Justice Studies (2006)
+71 Liberty, ‘International Criticism of UK Human Rights Record’, website press release, 8 June 2005
+
+20
+
+•
+
+which works with young offenders or youth at risk of offending by mentoring, counselling, etc.
+Acceptable Behaviour Contracts. These are written agreements between young offenders, their families, police, youth offending teams, and other agencies banning anti-social behaviour.
+
+Provision for these orders is made in the Children Act (2001), but little use is made of them because Social Services Departments are understaffed and underfunded. These tools should be expanded to include both mentoring of young people by older role models in the community and conferencing to bring youths, their families, and relevant agencies together to discuss the young person’s problem behaviour in order to find causes and try to fix them.
+Tackling substance use and its causes Most crime is drug or alcohol related. Substance dependency and problematic use will be tackled by introducing a twenty-year substance use harm-reduction strategy. Investing in social services departments and specialist counselling services will enable the prevention of a significant amount of criminal behaviour. Adults with substance use problems will be able to access free counselling services and psychiatric support on demand. Alcopops will be heavily taxed and a strategy introduced to reduce youth alcohol intake.
+There needs to be substantial investment to ensure the widest range of detoxification and rehabilitation services are available to meet the range of substance users’ needs. Crucially, problematic substance users will be treated as patients first. If they break the law to fund a habit, a properly funded public probation service should work with other agencies to implement a personal plan to avoid offending including, where appropriate, the use of substitute medication. This plan could be implemented in prison, where necessary.
+The One Wales government is committed to allowing the prescription of diamorphine
+(medical grade heroin) under strictly supervised medical conditions, if the pilot currently underway in England proves to be a success. To reduce crime, we believe in the introduction of multi-agency substance treatment centres, where problems can be dealt with by a range of professionals all working together in the same building.
+The UK’s thirty-five year war against illegal drugs is lost. A public debate on the future of drugs laws is overdue. The Chief Constable of North Wales, Richard Brunstrom, has made several efforts to raise this necessary debate. Attempts to reduce the supply of drugs into the UK have failed. The price of all illegal drugs has lowered72, showing higher levels of availability.
+Currently around 70% of the total UK drugs budget is spent on enforcement.
+Approximately 20% is spent on health, and 10% on education. This expenditure needs to be re-prioritised to concentrate on tackling the causes of substance problems.
+If we could accept that some people are going to use substances, then we could focus public spending and energies on those whose use either causes problems for others e.g. through violence or burglaries, or those whose use is causing problems for themselves such as 72
+
+Travis, A., ‘Britain’s £5.9bn a year drug habit’, Guardian, 24 November 2006
+
+21
+
+substance misusing pregnant women. The aim of a harm reduction strategy would be to reduce the risk of harm to individuals and communities. To this end needle exchange schemes should be promoted, as well as safe injecting facilities and other harm reduction measures.
+Every primary school child in Wales should have access to substance use ‘harm reduction’
+education delivered by trained substance misuse professionals.
+Dealing with Hate Crime The One Wales government is committed to implementing a fully resourced strategy to uncover and reduce hate crime: domestic/sexual, racial, homophobic and child abuse and the abuse of vulnerable adults. This should include intensive counselling and support for all victims and survivors of hate crime. The strategy will include ‘relationships education’ in all schools, with the aim of challenging and changing sexist, racist, homophobic and bullying or abusive attitudes. This education will cover issues of sexual consent and domestic abuse and will include a specific aim to reduce teenage pregnancy rates.
+All children should have access to independent advocacy through a fully staffed 24-hour helpline.
+Rehabilitation to reduce re-offending The probation service has 13% lower re-offending rates than prison. This is despite severe budget cut backs, out-sourcing and staff shortages in the service in recent years. Probation Officers and Youth Offending Officers already deploy a wide range of programmes, which can be proven to be effective in reducing the risk of criminality. The money saved by reducing the prison population will pay to enable rehabilitation workers to have manageable caseloads to enable them to carry out their work effectively. Plaid Cymru wants to reverse any legislation that opens up offender rehabilitation work to the market in Wales.
+We recognize that prison will be an inevitable outcome for some offenders. Prisoners should be entitled to a basic minimum standard of health, education, rehabilitation and resettlement services while serving their sentences and on release. Each prisoner should have an individual offending behaviour reduction plan aimed at avoiding future incarceration.
+
+22
+
+Reducing fear of crime: concluding thoughts We believe that the measures outlined above will reduce actual levels of crime in the long term. Particular measures are needed to tackle the fear of crime that exists today. An Assembly Government without devolved criminal justice services could still introduce a strategy to reduce fear of crime.
+It is vital that young people are involved in local crime fear reduction forums. Their ideas for combating problematic behaviour will be invaluable. Crime hot spots could see increased police visibility, if appropriate, but more use of outreach youth workers and increased free or low-cost youth provision will be encouraged. Plaid wants to see investment in a wide variety of youth provision, for example through a citizens public service scheme, which will help young people develop a sense of public service and responsibility, at the same time as help to provide a bridge between young and older generations, which will further help to reduce the fear of crime in the long term.
+The ‘Respect’ agenda needs to be reorganised to include the mutual respect of people within and between different generations. Plaid supports the view of the late Peter Clarke who called for a rejection of the idea that older people should not have to show respect towards young people. The way politicians and the media debate this issue needs to be challenged and changed.
+Ultimately, people have to have self-respect, hope and viable communities to feel safe and secure. Public spaces should be enjoyed by all generations, without fear for personal safety.
+I hope the ideas presented here will be the start of Plaid’s contribution to a mature debate about the future of criminal justice, and therefore safer communities, in Wales.
+
+23
+
+24
+
+Cyflwyniad Am y tro cyntaf mewn 82 mlynedd o hanes, daeth Plaid Cymru yn rhan o lywodraeth yn dilyn etholiadau Mai 2007. Mae rhaglen lywodraethu Cymru’n Un, a luniwyd ar y cyd gan Blaid Cymru a’r Blaid Lafur, yn nodi ein bod ‘am weld system cyfiawnder ieuenctid a throseddol sy’n deg, system y mae gan bobl Cymru hyder ynddi’ ac y ‘byddwn yn ystyried y dystiolaeth ar gyfer datganoli’r System Cyfiawnder Troseddol’.
+Cyn i mi gael fy ethol i’r Cynulliad Cenedlaethol, roeddwn yn gweithio fel Swyddog Prawf, fel gweithiwr cymorth i gorff Cymorth i Fenywod a hefyd yn dysgu gwaith cymdeithasol a pholisi cymdeithasol ym Mhrifysgol Caerdydd.
+Cefais fy mhenodi’n Weinidog Cysgodol dros Gyfiawnder Cymdeithasol y Blaid ar ôl cael fy ethol yn 2003 a chedwais y swydd tan ar ôl etholiadau’r Cynulliad yn 2007.
+Fe gomisiynwyd y papur hwn fel rhan o waith datblygu polisi Plaid Cymru, sy’n cael ei gyflawni dan nawdd Uned Datblygu Polisi Plaid Cymru. Fe fydd, gobeithio, yn tynnu sylw pobl at fater sy’n berthnasol iawn i lawer o bobl Cymru, ac yn cyfrannu at y drafodaeth ar ddyfodol y System Cyfiawnder Troseddol yng Nghymru drwy ddadlau o blaid yr achos i’w datganoli.
+
+Leanne Wood AC, Plaid Cymru Gwanwyn 2008
+
+Cyhoeddwyd a hyrwyddwyd gan: Uned Datblygu Polisi Plaid Cymru, Tŷ Gwynfor, 18 Park Grove, Caerdydd CF10 3BN polisi@plaidcymru.org 02920 646 014 www.plaidcymru.org Argraffwyd gan Dalton Printers, Dalton House, Stryd Theisger, Caerdydd CF24 4BN ISBN 0-905077-80-6
+© Plaid Cymru 2008
+
+25
+
+Crynodeb Gweithredol Nid yw polisïau cyfiawnder troseddol y Deyrnas Unedig yn gweithio. Yn y DU y mae’r cyfraddau carcharu uchaf yng Ngorllewin Ewrop, gyda’r niferoedd mwyaf o blant dan glo.
+Mae hyn er gwaethaf gostyngiad yn y lefelau troseddu dros y deng mlynedd diwethaf.
+Mae dau draean o garcharorion yn aildroseddu, tra bod cyfraddau pobl sy’n dioddef troseddau 30% yn uwch na’r cyfartaledd Ewropeaidd. Mae lefelau hunanladdiad, problemau defnyddio sylweddau ac anhwylderau meddwl yn uchel ymysg carcharorion y DU.
+Mae Llafur Newydd wedi ymdrin â throseddu mewn ffordd boblogaidd digywilydd, gan ganolbwyntio ar ymateb i grwpiau ffocws sy’n dweud wrthynt mai troseddu yw’r prif destun pryder i etholwyr. Prin yw’r ystyriaeth sydd wedi cael ei roi i fesurau sy’n gweithio. Rydym wedi gweld ymgyrch gyhoeddus sydd wedi arwain at roi pobl ifanc o dan y lach.
+Mae polisïau’r DU wedi bod yn ymdrin â symptomau troseddu, nid yr achosion. Mae’r achosion yn cynnwys defnyddio sylweddau, tlodi, perthynas wael rhwng rhiant a phlentyn, cam-drin a diffyg cyfleusterau ieuenctid.
+Argymhellion Dylai pwerau i ddelio â'r heddlu, carchardai, y gwasanaeth prawf, y llysoedd barn a dedfrydu gael eu datganoli i Gymru fel y gall Llywodraeth Cynulliad Cymru gyflwyno polisiau y mae wedi'u dewis ar gyfer y meysydd hynny. Byddai agenda'r llywodraeth yn cael ei weithredu gyda mandad democrataidd gan bobl Cymru.
+O dan yr amgylchiadau hyn, mi fyddai llywodraeth Plaid Cymru yn dilyn Strategaeth Cyfiawnder Troseddol amgen, gan ffocysu ar daclo achos torcyfraith, lleihau'r ofn am dorcyfraith ac felly sicrhau bod ein cymunedau'n fwy diogel. Byddai'r strategaeth yn cynnwys:
+•
+
+Rhyddhau adnoddau i’w buddsoddi mewn rhaglenni adfer cymunedol a rhaglenni ymddygiad troseddol effeithiol mewn carchardai i’r rheini sy’n cael eu dedfrydu am droseddau sy’n ddigon difrifol i’w cadw dan glo. Gellid torri lawr yn sylweddol ar y nifer o bobl yn y carchar trwy newid y polisi dedfrydu a rhoi llawer mwy o bwyslais ar adfer cymunedol.
+
+•
+
+Creu Bwrdd Cyfiawnder Ieuenctid Cymru ac ystyried system cyfiawnder ieuenctid y Ffindir fel model i Gymru. Nifer fechan iawn o blant sydd dan glo yn y Ffindir; yn hytrach mae darpariaeth seiciatrig amrywiol ar gael i ddelio â phroblemau ymddygiad yn gynnar.
+
+•
+
+Ehangu Adrannau Gwasanaethau Cymdeithasol i wneud mwy o waith ataliol. Gellid cyflogi rhwydweithiau o gynghorwyr plant i weithio ochr yn ochr â Gwasanaeth Iechyd Meddwl Plant a’r Glasoed (CAMHS) estynedig.
+
+26
+
+•
+
+Diddymu ASBOs a gosod system o gyfiawnder adferol, mentora a chynadledda yn eu lle.
+
+•
+
+Strategaeth ugain mlynedd ar ddefnyddio sylweddau yn canolbwyntio ar leihau niwed ac yn cynnwys timau defnyddio sylweddau amlddisgyblaeth yn gweithio gydag asiantaethau cyfiawnder troseddol ar gynlluniau gofal unigol. Dylid trin defnyddwyr sylweddau problematig fel cleifion. Dylid rhoi addysg i blant ysgol gynradd ar leihau niwed, gyda phwyslais ar hyrwyddo lles meddyliol ac atal hunanladdiad/hunan-niwed.
+Hefyd mae angen brys am drafodaeth gyhoeddus eang ar ddyfodol gweithredu cyfreithiau yn ymwneud â chyffuriau.
+
+•
+
+Strategaeth dros genhedlaeth ar droseddau atgasedd neu droseddau ar sail pŵer.
+Dylai’r cwricwlwm ysgol gynradd gynnwys addysg ar berthynas gyda’r nod o herio a newid arwyddion cynnar o agweddau sy’n gwahaniaethu ar sail rhyw, hil neu homoffobia, a bwlio neu gam-drin. Dylai hefyd gynnwys iechyd rhywiol, dulliau atalgenhedlu, trais yn y cartref a chydsyniad rhywiol.
+
+•
+
+Amddiffyn plant rhag trais gan oedolion drwy roi terfyn ar ‘gosb resymol’. Dylid dedfrydu oedolion a geir yn euog o guro plant yn eu gofal i sesiynau sgiliau rhieni/gwaith cymdeithasol.
+
+•
+
+Strategaeth gynhwysfawr i leihau ofn troseddu drwy fuddsoddi mewn cyfleusterau i bobl ifanc, gweithwyr cymorth ieuenctid a chynllun gwasanaeth cyhoeddus i ddinasyddion i bontio’r bwlch rhwng pobl hŷn a phobl iau a’r angen i ‘sefyllian ar gornel stryd’.
+
+27
+
+Beth yw cymunedau diogel?
+Mae bywyd cymunedol yng Nghymru mewn perygl.
+Mae ymosodiadau Llywodraeth y DU ar wasanaethau cyhoeddus a diffyg polisi economaidd i Gymru yn draddodiadol yn golygu y bu’n rhaid i ymarferoldeb cymunedol ddibynnu ar fympwyon y farchnad. Er bod rhai wedi bod ar eu hennill, colli fu hanes y rhan fwyaf o gymunedau a’r bobl sy’n byw ynddynt.
+Gall cymunedau diogel olygu llawer o bethau, o sicrhau gofal priodol i bobl hŷn, iau a sâl, i fesurau gwrthderfysgaeth neu drwsio palmentydd sydd wedi torri.
+At ddibenion y papur hwn, ystyr cymunedau diogel yw cymunedau lle gall pobl ddefnyddio mannau cyhoeddus a’u cartrefi eu hunain yn rhwydd, heb iddynt fod ofn eu diogelwch eu hunain neu’r rheini y maent yn gofalu amdanynt.
+Nid oes modd cael cymunedau diogel oni bai bod gennym gymunedau gweithgar. Mae angen cyfleusterau ar gymunedau er mwyn iddynt fod yn weithgar – siopau, tafarndai, swyddfeydd post, ysgolion, gwasanaethau iechyd a chymdeithasol a swyddi, sydd oll yn ganolbwynt i’r gymuned.
+Hefyd mae angen iddynt fod yn lleoedd y mae pobl ifanc am aros ynddynt, neu lle mae pobl sydd â chyfraniad i’w wneud am symud iddynt. Mae llawer o’n cymunedau yng Nghymru yn colli’u pobl ifanc, yn enwedig y rhai mwyaf medrus. Cyn belled ag y bydd y cymunedau’n parhau i golli’u pobl ddawnus, bydd yr ardaloedd hyn yn mynd yn fwy difreintiedig.
+Mae’r papur hwn yn ystyried troseddau ac ofn troseddu yng Nghymru, ac yn dadlau nad yw ofn troseddu yn cyd-fynd â’r cyfraddau troseddu gwirioneddol. Nid yw polisi presennol y llywodraeth yn mynd i’r afael ag achosion troseddu, ac mae’n arwain at y cynnydd mewn ofn troseddu.
+Nod y papur hwn, i ategu polisïau economaidd a chymdeithasol Plaid sydd wedi’u llunio i adfywio’n cymunedau, yw amlinellu gweledigaeth Plaid i greu cymunedau mwy diogel drwy fabwysiadu dull newydd o fynd i’r afael â materion cyfiawnder troseddol, ar sail tystiolaeth ac ar sail gwerthoedd gwahanol.
+Newid er gwell Nid oes ateb i droseddu. Mae troseddu wedi bodoli ers creu cyfreithiau, a bydd yn parhau hyd y gellir rhagweld. Ond mae’n amlwg nad yw’r dulliau presennol yn gweithio. Pa reswm arall sydd am y ffaith mai yn y DU y mae’r gyfradd garcharu uchaf ymysg holl wledydd gorllewin Ewrop, tua 50% yn uwch na gwledydd cymharol fel Ffrainc, yr Almaen a’r Eidal, a deg gwaith yn uwch nag yn Sbaen73? A pham bod gan 72% o’r oedolion gwrywaidd yn y 73
+
+The Howard League for Penal Reform, ‘England and Wales lead the pack on European imprisonment rates’, datganiad i’r wasg ar y wefan, 18 Ionawr 2006
+
+28
+
+carchar ddau anhwylder meddyliol neu fwy74? Fel y dywedodd Rod Morgan, Cadeirydd y Bwrdd Cyfiawnder Ieuenctid sydd newydd ymddiswyddo:
+We know that criminalising young children … is generally counter-productive, indeed criminogenic [yn achosi troseddu]. Yet what are we doing? We’re criminalising more children and young people – 26% more in the last three years75.
+Er y bu gostyngiad yn y ffigurau diweddaraf76, rhoddwyd 3,350 o blant a phobl ifanc dan glo yng Nghymru a Lloegr ym mis Hydref 2006, ffigur sydd wedi dyblu mewn degawd77. Ac eto, mae’r Arolwg Troseddu Prydeinig a ofynnodd i bobl ifanc a ydynt wedi troseddu yn y deuddeg mis diwethaf (‘methodoleg hunan-adrodd’ fel y’i gelwir) yn dangos na fu newid yn y lefelau troseddu ers pum mlynedd. Mae’r cynnydd yn nifer y bechgyn a merched o gefndir du a chefndiroedd lleiafrifoedd ethnig sy’n cael eu rhoi yn y carchar yn anghyfrannol78.
+Mae dau draean o oedolion yn y carchar yn aildroseddu, tra bod cyfran uwch o bobl ifanc yn y carchar yn cael eu harestio droeon ar ôl iddynt gael eu rhyddhau, yn bennaf am gyflawni troseddau sy’n gysylltiedig â phroblem defnyddio sylweddau. Mae bron dau draean o garcharorion gwrywaidd a dwy ran o bump o garcharorion benywaidd sy’n cael eu dedfrydu yn cyfaddef eu bod yn yfed yn beryglus, h.y. yfed a fydd yn amharu ar iechyd meddwl ac iechyd corfforol yn yr hirdymor. O blith y rhain, mae tua hanner yn ddibynnol i raddau difrifol ar alcohol, sef eu bod yn ddibynnol yn gorfforol ac yn seicolegol ar alcohol. Mae’n gyffredin bod gan garcharorion sydd â phroblemau alcohol broblemau cyffuriau hefyd. Mae ychydig dros chwarter y carcharorion gwrywaidd a thua un rhan o bump o garcharorion benywaidd sy’n yfwyr peryglus yn ddibynnol ar o leiaf un math o gyffur anghyfreithlon79.
+Mae nifer y menywod mewn carchardai wedi dyblu yn y degawd diwethaf. Difrifoldeb dedfrydau sy’n bennaf gyfrifol am y cynnydd sylweddol yn nifer y menywod mewn carchardai. Er enghraifft, yn Llys y Goron ym 1991, dim ond 8% o fenywod a gafwyd yn euog o droseddau gyrru gafodd eu dedfrydu i garchar. Roedd hyn wedi cynyddu i 42% erbyn 2001. Yn yr un modd, mae menywod a geir yn euog o ladrata bellach ddwywaith yn fwy tebygol o fynd i’r carchar nag ym 1991. Yn y llys ynadon, mae’r tebygolrwydd y bydd menyw yn cael ei rhoi dan glo wedi cynyddu saith gwaith80.
+Caiff y rhan fwyaf o fenywod mewn carchardai eu dedfrydu am droseddau di-drais. Hyd at ddiwedd mis Awst 2006, roedd y grŵp mwyaf (32%) wedi’u dedfrydu am droseddau cyffuriau. Mae mwy na dau draean o fenywod yn dangos symptomau o leiaf un anhwylder niwrotig fel iselder, poen meddwl a ffobiâu. Mae mwy na hanner ohonynt yn dioddef anhwylder personoliaeth. Ymysg y boblogaeth gyffredinol, mae llai nag un o bob pum menyw yn dioddef yr anhwylderau hyn81.
+Mae’r un bobl yn cael eu hailgylchu drwy’r system garchardai, gyda dedfrydau byr yn aml, sy’n gwneud gwaith adfer yn anodd, os nad yn amhosibl. Yn arbennig, mae’n dueddol fod 74
+
+Prison Reform Trust, Bromley Briefings Prison Factfile November 2006 (Llundain, 2006), t.26 Morgan, R., ‘A temporary respite’, Guardian, 19 Chwefror 2007 76 Youth Justice Board, Annual Report and Accounts 2006/07 (Llundain, 2007), t.26 77 O’Keeffe, A., ‘ War on Youth’, New Statesman, t.18-21 78 Audit Commission, Youth Justice 2004: A Review of the Reformed Youth Justice System (2004)
+79 Prison Reform Trust, Bromley Briefings Prison Factfile November 2006 (Llundain, 2006), t.14 80 ibid., t.14 81 ibid., t.14 75
+
+29
+
+menywod yn cael dedfrydau byr iawn. Er enghraifft, yn 2004, cafodd 64% o fenywod ddedfrydau o dri mis neu’n llai82. Cafodd 65% o fenywod a ryddhawyd o’r carchar yn 2002 eu hail-ddedfrydu o fewn dwy flynedd83. Dim ond cyfnod byr y mae dedfrydau byr yn ei roi i garchardai a gwasanaethau prawf ddelio â phroblemau emosiynol, caethiwed i gyffuriau neu addysg. Ar yr un pryd, nid yw cosbau cymunedol a gofynion adfer cyffuriau yn cael eu defnyddio ddigon ar gyfer menywod fel y maent ar gyfer dynion84.
+Mae nifer y bobl mewn carchardai wedi chwyddo o 47,000 ym 1993 i fwy nag 80,000 heddiw. Mae’r Arolwg Troseddau Prydeinig (ATP) yn nodi mai 1995 oedd pwynt uchaf troseddu, ac y bu gostyngiad o 42% ers hynny. Bu gostyngiadau mawr mewn lladrata a dwyn cerbydau dros y 10 mlynedd diwethaf (gostyngiad o 59% mewn lladrata, gostyngiad o 61%
+mewn dwyn cerbydau) ac mewn troseddau treisgar (gostyngiad o 43%). Mae’r risg o ddioddef yn sgil troseddu bellach yn 24% o’i gymharu a 40% ym 1995. Mae’r cynnydd o 10%
+mewn fandaliaeth yn 2006/07 yn celu gostyngiad cyffredinol o 11% ers 1995. Sadiodd yr ystadegau troseddu yn 2006/0785 (gweler Ffigur 1).
+Holl Droseddau ATP 25,000
+
+20,000
+
+15,000 Troseddau
+
+10,000
+
+5,000
+
+0 1995
+
+1996
+
+1997
+
+1998
+
+1999
+
+2000
+
+2001/02
+
+2002/03
+
+2003/04
+
+2004/05
+
+2005/06
+
+2006/07
+
+Cyfweliadau Cyfweliadau Cyfweliadau Cyfweliadau Cyfweliadau Cyfweliadau
+
+Blwyddyn
+
+Ffigur 2: Arolwg Troseddu Prydeinig 2006-07
+
+Mae gordyrru mewn carchardai yn golygu y caiff carcharorion eu cludo’n bell i ffwrdd o’u teuluoedd. O ganlyniad maent yn wynebu mwy o berygl drwy drais, terfysgoedd a hunanladdiad, ac maent yn llai tebygol o gael cymorth adferol a fydd yn eu helpu i aros ar y trywydd iawn ar ôl eu rhyddhau.
+Mewn ymateb i’r alwad gan bedwar Prif Gwnstabl Cymru ym mis Ionawr 2008 i wasanaethau'r heddlu, y gwasanaeth prawf, y gwasanaeth erlyn a gwasanaethau’r llysoedd 82
+
+ibid., t.14 ibid., t.14 84 Home Office, Home Office Statistical Bulletin 18/06, Offender Management Caseload Statistics 2005 (Rhagfyr 2006), t.28 85 Ystadegau Arolwg Troseddu Prydain (British Crime Survey) fel y’u dyfynnir yn Home Office Statistical Bulletin:
+Crime in England and Wales 2006/07, Nicholas, S., Kershaw, C. a Walker, A. (gol.) (Llundain, 2008)
+83
+
+30
+
+gael eu datganoli i Gymru86, dywedodd Dafydd Elis Thomas, Llywydd y Cynulliad Cenedlaethol, y byddai hyn ond yn digwydd pe bai modd dangos y byddai trosglwyddo’r pwerau hyn yn gwella bywyd yng Nghymru87. Mae Prif Gwnstabl Heddlu Gogledd Cymru wedi dadlau o safbwynt personol mai proses anochel a deniadol yw datganoli. Mae Plaid Cymru o’r farn bod yn rhaid datganoli’r System Cyfiawnder Troseddol fel rhan o ddyfodiad pwerau deddfwriaethol sylfaenol yn y Cynulliad Cenedlaethol. Bydd hyn yn dechrau ffordd fwy blaengar o sicrhau cymunedau mwy diogel ar bob lefel o gymdeithas, a bydd rhaglen o’r fath yn gweddu i anghenion penodol Cymru.
+Pwy sy’n delio â throseddu?
+Y Weinyddiaeth Gyfiawnder sy’n bennaf gyfrifol am faterion troseddu a chyfiawnder troseddol. Mae Llywodraeth Cynulliad Cymru yn gyfrifol am atal troseddau drwy ei chyfrifoldebau dros dai, addysg, iechyd ac yn benodol Partneriaethau Diogelwch Cymunedol, trais yn y cartref, cyfiawnder ieuenctid, y strategaeth camddefnyddio sylweddau a chyllido’r heddlu yn rhannol. Mae’r Cynulliad wedi effeithio’n sylweddol ar yr agenda atal troseddau yng Nghymru, ond caiff ei gyfyngu gan bolisi llywodraeth y DU ar blismona, cyfraith droseddol, y llysoedd, dedfrydu, y gwasanaeth prawf a’r systemau carchardai. Mae Plaid am weld y cyfrifoldeb dros bob agwedd ar ein System Cyfiawnder Troseddol yng Nghymru yn cael ei ddatganoli i Gymru, gan gynnwys y gallu i benderfynu ar ein cyfraith droseddol ein hunain. Mae rhaglen Cymru’n Un yn nodi y ‘byddwn yn ystyried hefyd y posibilrwydd o ddatganoli rhywfaint neu’r cyfan o’r system cyfiawnder troseddol’. Yn y drafodaeth ddiweddar ar strwythur plismona yn y dyfodol, cafodd ein galwad i ddatganoli gwasanaethau’r heddlu gefnogaeth eang (hyd yn oed os oedd hynny’n bennaf yn sgil anallu’r Swyddfa Gartref!).
+Yn y blynyddoedd diweddar, mae’r Swyddfa Gartref o dan arweiniad y Blaid Lafur wedi bod yn goruchwylio’r nifer fwyaf erioed o bobl mewn carchardai yn y DU, cynnydd mewn dibyniaeth ar sylweddau, ymgyrch gyhoeddus (ar y cyd â’r papurau tabloid) i wneud cyfraith a threfn yn bwnc llosg hynod ddadleuol, a dechrau preifateiddio’r gwasanaeth carchardai a’r gwasanaeth prawf. Mae wedi ymateb i straeon braw y papurau tabloid am ‘ieuenctid gwyllt’
+drwy gyflwyno Gorchmynion Ymddygiad Gwrthgymdeithasol (ASBOs) a’r agenda ‘Parch’.
+Mae Rod Morgan wedi datgan y canlynol:
+We have substantially abandoned our traditionally tolerant, middle way stance regarding behaviours that we know are widely demanded but potentially very destructive – the use of alcohol and other drugs, gambling and so on. Instead of paternalistic controls, we now combine free-market liberalisation with punitively prohibitionist elements88.
+Mae cyfreithiau yfed wedi cael eu llacio, mae ysmygu mewn mannau cyhoeddus wedi cael ei wahardd ac mae casinos mawr wedi cael eu hyrwyddo’n frwd. Mae Llafur Newydd wedi cyfyngu ar hawliau sifil mewn amrywiaeth eang o feysydd: drwy gyfyngu ar hawliau
+
+86
+
+Williamson, D., ‘Let Wales take control of its justice system, say Chief Constables’, Western Mail, 18 Ionawr 2008 87 ibid.
+88 Morgan, R., ‘The Contradiction of Youth Justice in England and Wales’, cylchgrawn YJ, Cyfrol 004, Tach-Rhag 2006, t.14
+
+31
+
+gwrthdystwyr, dileu habeas corpus a braenaru’r tir i gyflwyno system wyliadwriaeth a monitro newydd ar gyfer pob dinesydd drwy’r Cynllun Cerdyn Adnabod.
+Mae Plaid yn dadlau bod Llafur Newydd wedi blaenoriaethu troseddu gan fod grwpiau ffocws yn dweud wrthynt mewn ffordd syml mai dyma yw prif bryder etholwyr, ac mae’n bwnc fydd yn denu penawdau yn hawdd. Maent wedi ceisio denu sylw pobl mewn ffordd ddigywilydd.
+Mae troseddu bob amser wedi bod yn un o’r prif bynciau llosg gwleidyddol. Mae’r ystadegau’n dangos y bu gostyngiad o 42% yn y lefelau troseddu cyffredinol ers 1995, wrth i ni ddod at gyfnod o argyfwng gyda chynnydd o 70% ers 1993 yn nifer y bobl sydd mewn carchardai. Fodd bynnag, ni all Llafur Newydd gymryd y clod am y gostyngiad hwn mewn cyfraddau troseddu. Mae arolwg diweddar Troseddau a Diogelwch yr UE gan Asiantaeth Atal Troseddau y Cenhedloedd Unedig (2007) yn dangos, er gwaethaf gostyngiadau mewn lefelau troseddu ledled Ewrop ers 1995, nid yw cyfraddau troseddu’r DU wedi gostwng mor gyflym â’r cyfraddau ledled yr UE. Ynghyd ag Iwerddon, Estonia, yr Iseldiroedd a Denmarc, y DU yw un o’r lleoedd gwaethaf yn Ewrop am droseddu, gyda chyfraddau’r bobl sy’n dioddef yn sgil troseddu o leiaf 30% yn uwch na chyfartaledd yr UE. Mae’r astudiaeth yn dod i’r casgliad nad oes un ffactor i esbonio’r gostyngiad mewn troseddu dros y 10 mlynedd diwethaf, ond mae’n debygol bod gostyngiad yng nghyfradd y dynion ifanc a mesurau diogelwch gwell fel larymau lladron a larymau ceir yn fwy dylanwadol na dedfrydau llym neu gynnydd yn nifer y bobl mewn carchardai89.
+Mae Plaid o’r farn mai delio ag achosion troseddu yw’r ffordd fwyaf effeithiol o leihau troseddu yn yr hirdymor. Gallai fod rhyw fath o gonsensws ymhlith y pleidiau gwleidyddol i fynd i’r afael â throseddu’n wahanol, yn enwedig mewn perthynas â’r ffordd rydym yn trin plant a phobl ifanc. Nid oes trafodaeth ddigonol wedi cael ei chynnal hyd yn hyn drwy Gymru gyfan. Yn ddiweddar, cafodd y Swyddfa Gartref ei haildrefnu mewn ymateb i’r ffaith bod cynifer o feysydd cyfrifoldeb y Swyddfa mewn argyfwng. Mae llawer o gynYsgrifenyddion Cartref wedi dweud ei bod yn rhy fawr i fod yn effeithiol.
+Lefelau Troseddu Nid oes amheuaeth bod ofn mawr o droseddu ar lawer o bobl. Ym mhob Arolwg Troseddu Prydeinig (sydd, er yn wallus, yn cael ei ystyried yn gyffredinol fel yr astudiaeth fwyaf cywir o ffigurau troseddu) ers 1995 mae’r ffigurau troseddu wedi gostwng. Serch hynny, yn arolwg 2006-07 roedd 65% o bobl yn meddwl bod troseddu yn y DU wedi cynyddu, o’i gymharu â
+41% oedd yn meddwl bod troseddu wedi cynyddu yn eu hardal leol90.
+Gall ofn troseddu olygu nad yw pobl yn cymryd cymaint o ran ym mywyd eu cymunedau, gan arwain at ynysu cymdeithasol. Y bobl sydd leiaf tebygol o ddioddef troseddu sydd ofn troseddu fwyaf. Mae ffigurau'r Arolwg Troseddu Prydeinig 2006-07 yn dangos mai dyn ifanc o dan un ar hugain oed sydd fwyaf tebygol o ddioddef yn sgil trosedd dreisgar. Dioddefodd 12.6% o’r grŵp oedran hwn drosedd dreisgar o ryw fath yn seiliedig ar gyfweliadau’r Arolwg
+
+89
+
+Travis, A. a Traynor, I., ‘Britain named as one of Europe’s crime hotspots’, Guardian, 6 Chwefror 2007 Ystadegau Arolwg Troseddu Prydain (British Crime Survey) fel y’u dyfynnir yn Home Office Statistical Bulletin:
+Crime in England and Wales 2006/07, Nicholas, S., Kershaw, C. a Walker, A. (gol.), (Llundain, 2008)
+
+90
+
+32
+
+Troseddu Prydeinig. Fodd bynnag, ymysg y grŵp oedran hwn yr oedd y nifer leiaf o bobl oedd yn dweud bod ofn troseddu yn effeithio’n fawr ar ansawdd eu bywyd91.
+Roedd arolwg 2006-07 hefyd yn cadarnhau mai pobl hŷn sydd leiaf tebygol o ddioddef troseddu, er mai dyma’r grŵp sydd ofn troseddu fwyaf. Er bod y risg o ddioddef troseddu yn is i bobl hŷn, gall dioddef yn sgil troseddu gael effaith fwy difrifol, gan mai’r bobl fwyaf bregus sydd yn aml yn dioddef y sgil-effeithiau mwyaf difrifol92.
+Mae pobl yn fwy tebygol o fod ofn troseddu os byddant yn gweld pobl ifanc ‘yn sefyllian ar gornel stryd’.
+Mae ymddygiad rhai pobl sy’n byw mewn cymunedau yng Nghymru yn achosi poendod i bobl eraill. Yn arbennig, gall ymddygiad a elwir yn ‘drosedd atgasedd’, sydd wedi’i dargedu at leiafrifoedd – er enghraifft homoffobia a hiliaeth – effeithio’n andwyol ar y rhai sy’n cael eu targedu.
+Yn yr un modd i leiafrif bach o bobl ifanc sy’n ymddwyn mewn modd sy’n bygwth, yn aflonyddu ac yn codi ofn ar bobl yn eu cartrefi a’u cymunedau. Nid yw hyn yn dderbyniol a rhaid delio ag ymddygiad o’r fath.
+Mae Llafur Newydd wedi creu dros 700 o droseddau newydd ers 199793. Mae pobl yn cael eu dedfrydu am bethau nad oedd eu rhieni a’u neiniau a’u teidiau. Bellach, caiff plant eu trin mewn ffordd fwy llym nag oedolion. Ymddengys fod nifer o achosion lle bod achosion oedd yn cael eu hystyried fel ymddygiad normal i bobl ifanc 15 neu 20 mlynedd yn ôl yn cael eu hystyried bellach yn fân droseddau. Mae ASBOs yn cael eu rhoi i bobl ifanc am chwarae pêldroed yn y lle anghywir, am chwarae cerddoriaeth uchel neu gadw sŵn sy’n tarfu ar gymdogion. Maent yn cael uchafswm o ddau gerydd (sy’n gyfystyr â rhybudd), tra bod oedolion yn cael nifer diderfyn. Os bydd oedolyn yn cael ei ddal â chanabis, bydd yr heddlu yn delio â’r person yn anffurfiol. Mae canllawiau’r heddlu, a arferai nodi y dylai person ifanc sy’n cael ei ddal â chanabis yn ei feddiant gael ei arestio ar unwaith, bellach yn nodi y ‘gallai’
+arwain at arestio pe bai angen94.
+Mewn erthygl yn y Guardian ym mis Ebrill 2005, bu Polly Toynbee yn dadlau nad yw troseddu’n gwaethygu, ond bod:
+universal myth of some golden age set in the imagined time just beyond what we can remember [which] suggests the world has been in moral decline since time began... the only real rise in crime last year was in the use of imitation firearms… We are living in remarkable times when crime has fallen steadily by well over a third since 199595.
+Nid yw’n gwneud synnwyr bod cynnydd mewn ofn troseddu tra bod troseddu gwirioneddol yn gostwng. Mae Toynbee yn cynnig un esboniad:
+
+91
+
+ibid.
+Donaldson, R., Home Office Findings 198 Experiences of Burgled Older People (Home Office, Llundain, 2003)
+93 Yn seiliedig ar ateb i gwestiwn gan Elfyn Llwyd AS, Cwestiynau’r Prif Weinidog (Hansard, 2 Chwefror 2005)
+94 Steele, J., ‘Children no longer face automatic arrest for cannabis possession’, Daily Telegraph, 24 Ionawr 2007 95 Toynbee, P., ‘Scared Witless’, Guardian, 22 Ebrill 2005 92
+
+33
+
+A vast industry of mendacity has a vested interest in scaring people witless with front-page shock, TV cops and doom-laden moral panic editorials96.
+Gallwn ychwanegu at hynny yr obsesiwn sydd gan Lafur Newydd i ymddangos yn ‘gadarn ar droseddu’ sy’n arwain at fwy o fesurau i gael penawdau papur newydd i ddelio â throseddu.
+Mae’r ffocws wedi bod ar fân droseddau sy’n achosi niwsans, sef ‘ymddygiad gwrthgymdeithasol’. Term newydd yw hwn. Nid oedd yn rhan o’n geirfa cyn 1997. Mae’r llywodraeth yn honni bod awdurdodau’n cael 66,000 o gwynion am ymddygiad gwrthgymdeithasol bob dydd97.
+Os byddwn yn derbyn y byddai delio ag achosion troseddu yn fwy buddiol na chyflwyno cosbau llymach fyth i drin y symptomau, yna mae’n rhaid deall yr hyn sy’n gwneud i bobl ymddwyn mewn ffyrdd troseddol.
+Beth yw achosion troseddu?
+Mae achosion troseddu yn amrywiol: tlodi, camddefnyddio sylweddau, diffyg darpariaeth i bobl ifanc, problemau iechyd meddwl sy’n cael eu hesgeuluso. Gall fod yn gyfuniad o’r rhain, neu ddim un ohonynt. Gall galar neu gam-drin achosi problemau a all arwain at ymddygiad troseddol. Mae’n wir i ddweud hefyd bod llawer o bobl yn dioddef rhai neu bob un o’r pethau hyn, ond nad ydynt yn mynd ymlaen i droseddu. Mae Plaid Cymru yn dadlau bod agenda wallus ‘Parch’ Llafur Newydd hefyd yn achosi troseddu.
+Tlodi Mae pobl ifanc yn fwy tebygol o fod ar y strydoedd mewn ardaloedd o amddifadedd uchel, gan fod llai o gyfleusterau addas am ddim neu am gost isel, fel grwpiau ieuenctid, mewn ardaloedd o’r fath. Hefyd, mae’n llai tebygol bod rhieni’n gallu fforddio gweithgareddau ar ôl ysgol fel dosbarthiadau cerddoriaeth, chwaraeon neu ddawns. Mae astudiaeth Prifysgol Caeredin ar Drawsnewid Pobl Ifanc a Throseddu wedi olrhain 4,300 o blant dros wyth mlynedd. Mae wedi gwneud dau brif ganfyddiad: yn gyntaf, fod plant dosbarth gweithiol yn fwy tebygol o ddod i gysylltiad â’r system cyfiawnder troseddol p’un a ydynt yn troseddu’n fwy ai peidio; ac yn ail, fod y rheini sy’n dod i gysylltiad â’r system cyfiawnder troseddol yn llai tebygol o stopio troseddu na’r rheini nad ydynt yn dod i gysylltiad98.
+Canfu astudiaeth gan John Mann, AS Bassetlaw, fod 27% yn fwy yn gaeth i heroin yn hen ardaloedd y meysydd glo99. Mae tlodi yn arwain at amgylchiadau anodd, anobaith ac mewn rhai achosion, marwolaeth. Yn ôl data o Gronfa Ddata Genedlaethol Cymru ar Gamddefnyddio Sylweddau, mae cyfradd y bobl lle mae heroin yn brif gyffur sy’n cael eu cyfeirio at asiantaethau triniaeth yn ardaloedd maes glo Cymru bron ddwywaith y gyfradd mewn ardaloedd y tu allan i’r maes glo, a bron draean yn fwy na Chymru gyfan100.
+
+96
+
+ibid.
+Gwefan y Swyddfa Gartref, One day count of Anti-Social Behaviour: September 10, 2003 98 O’Keeffe, A., ‘War on Youth’, New Statesman, 16 Hydref 2006, t.18-21 99 Mann, J., AC, Lessons from Bassetlaw: Effective Drug Treatment can Turn Communities Around, gwefan Progress Online, 8 Medi 2006 100 Llywodraeth Cynulliad Cymru/Atebion Iechyd Cymru, Substance Misuse in Wales Welsh National Database for Substance Misuse All-Wales Report Quarter 3 2006-07 (October-December 2006)
+97
+
+34
+
+Mae safbwynt mewn adroddiad o’r Alban yn rhoi syniad i bori drosto:
+Although relative poverty by itself is not the cause of Scotland’s drug problem […….] there is a strong association between the extent of drug problems and a range of social and economic inequalities. Therefore, narrowing these inequality gaps should contribute significantly to a reduction in high levels of damaging drug use. Furthermore, policies that focus on reducing poverty, exclusion and inequalities, per se, should help clarify more realistic boundaries for health, social care and criminal justice responses to individuals101.
+Mae tlodi yn broblem fawr yng Nghymru. Mae dau ddeg wyth y cant o holl blant Cymru yn byw mewn tlodi, sef 162,000 o blant. Mae’r nifer yn gostwng yn araf: 35% oedd y canran ym 1999, ond mae tlodi yn dal i fod yn ddangosydd cryf o droseddu posibl. Yn ôl Achub y Plant mae 56,000 o blant yn byw mewn tlodi difrifol a pharhaus. Dangosodd yr Arolwg Troseddu Prydeinig 2006/07 fod pobl sy’n byw mewn ardaloedd mwy difreintiedig yn fwy tebygol o ddioddef yn sgil troseddu na’r rheini sy’n byw mewn ardaloedd llai difreintiedig; mae un cerbyd neu fwy wedi cael ei ddwyn o 10% o gartrefi yn yr ardaloedd mwyaf difreintiedig o safbwynt cyflogaeth, o’i gymharu â 7% o gartrefi yn yr ardaloedd lleiaf difreintiedig o safbwynt cyflogaeth102. Mae 640,000 o bobl yng Nghymru yn byw mewn tlodi; mae 60,000 o bobl yn ddi-waith ac mae 95,000 arall yn ‘economaidd anweithgar ond am weithio’. Mae tâl isel hefyd yn cyfrannu at dlodi. Mae oedolyn sy’n gweithio yn byw mewn dros draean o gartrefi tlawd yng Nghymru.
+Mae Dr. Peter Kenway, Cyd Gyfarwyddwr y New Policy Institute yn honni:
+Although poverty and disadvantage are at their deepest in the Valleys, people in all parts of Wales face these problems103.
+Defnyddio Sylweddau ac Anhwylderau’r Meddwl Mae defnyddio sylweddau problematig yn elfen allweddol arall sy’n achosi ymddygiad troseddol. Mae amrywiaeth eang o sylweddau anghyfreithlon a chyfreithlon ar gael ym mhob tref yng Nghymru. Yn 2005-06 roedd 10.2% o bobl rhwng 16 a 59 oed yng Nghymru wedi cymryd cyffuriau anghyfreithlon. Roedd 24.2% o bobl ifanc 15-16 oed yn smygu sigaréts yn wythnosol a 54.2% yn yfed alcohol yn wythnosol104. Mae adroddiad a gyhoeddwyd ym mis Tachwedd 2007 gan ganolfan monitro cyffuriau yr UE yn dangos, er yr ymddengys fod lefelau camddefnyddio sylweddau yn sadio, mai yng Nghymru a Lloegr y mae’r ail lefel uchaf o ddefnyddio cocên yn Ewrop. Mae’r lefel defnyddio cocên ddwywaith yn uwch nag yn unrhyw le arall yn Ewrop heblaw am Sbaen. Cafwyd y lefel uchaf erioed o ddefnyddio canabis yn y DU y llynedd, ond ymddengys fod hyn wedi sadio, serch ar lefel uchel. Mae defnyddio canabis ymysg oedolion ifanc rhwng 15 a 34 yng Nghymru a Lloegr yn dal i fod
+
+101
+
+Shaw, A., Egan, J. a Gillespie, M., Drugs and Poverty: a literature review, Scottish Drugs Forum – adroddiad a gynhyrchwyd ar ran y Scottish Association of Alcohol and Drug Action Teams (2007)
+102 Ystadegau Arolwg Troseddu Prydain (British Crime Survey) fel y’u dyfynnir yn Home Office Statistical Bulletin:
+Crime in England and Wales 2006/07, Nicholas, S., Kershaw, C. a Walker, A. (gol.), (Llundain, 2008)
+103 Joseph Rowntree Foundation, ‘Family poverty falls faster in Wales, but one in four children still affected’, datganiad i’r wasg ar y wefan, 30 Tachwedd 2005 104 Roe, S. a Man., L., Home Office Statistical Bulletin 15/06: Drug Misuse Declared: Findings from the 2005-06 British Crime Survey England and Wales (y Swyddfa Gartref, 2006)
+
+35
+
+ymysg yr uchaf yn Ewrop. Amcangyfrifwyd fod 22% yn defnyddio canabis yng Nghymru a Lloegr, 28% yn y Weriniaeth Tsiec a 24% yn Sbaen a Ffrainc105.
+Yn 2002, nododd Arolwg Traws-wladol ar Ymddygiad Ieuenctid Ymysg Plant o Oedran Ysgol (HBSC) gyfraddau llawer uwch o yfed a meddwdod wythnosol nag ym mwyafrif y gwledydd eraill yn yr astudiaeth. Roedd meddwdod yn fwyaf tebygol yng Nghymru a Denmarc106.
+Mae’r ystadegau cyfredol yn awgrymu bod y broblem yn gwaethygu. Yn ôl yr Athro Mark Bellis, Cyfarwyddwr Canolfan Iechyd Cyhoeddus ym Mhrifysgol John Moores Lerpwl:
+The ages of children admitted to hospital for alcohol–related problems are getting lower.
+The number of eight year olds who drink has doubled from 5 per cent in 1995 to 10 per cent in 2005. The number of eleven year olds girl who drink has increased from 15 per cent in 1995 to 25 per cent in 2005107.
+Mae camddefnyddio toddyddion (defnyddio nwy, anwedd neu doddydd yn fwriadol i ‘fynd yn chwil’ neu achosi niwed i’ch hun) yn destun pryder hefyd. Er bod llawer o sylw wedi cael ei roi i farwolaethau yn sgil cyffuriau anghyfreithlon, mae camddefnyddio toddyddion yn achosi mwy o farwolaethau ymysg pobl ifanc 10 i 16 oed yng Nghymru a Lloegr na chyffuriau Dosbarth A a chyffuriau anghyfreithlon eraill. Yn 2001, roedd 17 o farwolaethau yn sgil camddefnyddio toddyddion yn y grŵp oedran hwn o’i gymharu â phum marwolaeth yn sgil cyffuriau anghyfreithlon. Yn 2002, roedd deunaw o farwolaethau yn sgil camddefnyddio toddyddion o’i gymharu â chwech o farwolaethau yn sgil cyffuriau. Bu trideg un o bobl ifanc rhwng 11 ac 19 oed a dauddeg un o bobl rhwng 20 a 34 oed farw yn sgil camddefnyddio sylweddau yn 2002108.
+Ni fydd pawb sy’n yfed neu’n defnyddio cyffuriau anghyfreithlon yn eu defnyddio mewn modd problematig. ‘Defnydd problematig’ yw pan fydd defnyddio sylwedd neu sylweddau yn achosi problemau eraill mewn agweddau eraill ar fywyd, e.e. os yw’n eich rhwystro rhag mynd i’r gwaith, yn gwneud i chi deimlo’n sâl, neu’n achosi i chi gyflawni troseddau (o ddwyn neu drais fel arfer).
+Mae rhesymau amrywiol a chymhleth dros ddefnydd sylweddau problematig. Mae llawer o astudiaethau yn dangos y cysylltiad rhwng defnyddio sylweddau, problemau iechyd meddwl a cham-drin rhywiol neu arall (yn enwedig yn ystod plentyndod)109. Mae digwyddiadau trawmatig eraill fel galar neu ysgariad rhieni hefyd yn gallu arwain at ddefnyddio sylweddau fel cefnogaeth, neu fel ffordd o anghofio atgofion gwael - rhyw fath o hunan feddyginiaeth.
+Mae gan lawer o bobl sydd â phroblem iechyd meddwl broblem hefyd ag alcohol neu gyffuriau. ‘Diagnosis dwbl’ yw’r enw a roddir i hyn, ac nid yw’n hysbys pa mor gyffredin yw’r fath beth. Fodd bynnag, rydym yn gwybod bod un o bob naw person yn dioddef problemau 105
+
+European Monitoring Centre for Drugs and Drug Addiction, Annual Report 2007: The State of the Drugs Problem in Europe (Luxembourg, 2007)
+106 Currie, C. et al (gol.), ‘Young People's Health in Context: international report from the HBSC 2001/02 survey’, WHO Policy Series: Health policy for children and adolescents, Issue 4 (WHO Regional Office for Europe, Copenhagen, 2004)
+107 Bignell, P. ac Owen, J., ‘2007 Special Report: Under Age Drinking’, Independent, 18 Chwefror 2008 108 Department of Health, Out of Sight?.... not out of mind’ Children, Young People and Volatile Substance Abuse
+(VSA) A Framework for VSA 2005 (Gorffennaf 2006)
+109 Gwefan 4Therapy Network, ‘Physical or Sexual Abuse Linked with Later Substance Abuse’
+
+36
+
+iechyd meddwl a bod un o bob dau gant o bobl yn dioddef salwch meddwl difrifol110. Yn gyffredinol, mae lefelau uwch o anghenion iechyd meddwl yn hen ardaloedd y meysydd glo, yn enwedig Blaenau Gwent, Merthyr Tudful a Rhondda Cynon Taf, na mewn rhannau eraill o Gymru. Yn achos Rhondda Cynon Taf, mae llawer o bobl yn yr ardal hefyd yn cael eu cyfeirio oherwydd eu bod yn camddefnyddio sylweddau111. Mae llawer o dystiolaeth anecdotaidd yn awgrymu bod pobl â diagnosis dwbl yn syrthio rhwng gwasanaethau, ac felly bod y risg o beidio â derbyn triniaeth a allai atal ymddygiad troseddol rhag datblygu yn uwch.
+Mae gan ganran uchel o bobl yn ein carchardai broblemau emosiynol sy’n gysylltiedig â
+cham-drin yn y gorffennol sydd heb eu datrys. Mae ystod o astudiaethau’n amcangyfrif bod oddeutu 55% o bobl sy’n mynd i’r carchar bob blwyddyn yn defnyddio cyffuriau112.
+Amcangyfrifir fod gan 72% o garcharorion gwrywaidd a 70% o garcharorion benywaidd ddau neu fwy o anhwylderau iechyd meddwl. Mae’r Prif Arolygydd Carchardai wedi amcangyfrif, ar sail ymweliadau â charchardai lleol, y dylai 41% o garcharorion sy’n cael eu cadw mewn canolfannau gofal iechyd gael eu cadw yn llety diogel y GIG. Mae ymchwil wedi canfod bod hyd at 500 o gleifion yng nghanolfannau gofal iechyd carchardai sydd â phroblemau iechyd meddwl sy’n ddigon gwael iddynt gael eu derbyn i’r GIG ar unwaith. Gellir cysylltu problemau iechyd meddwl ymysg carcharorion â phrofiadau yn y gorffennol o drais yn y cartref a cham-drin rhywiol. Mae tua hanner o fenywod a chwarter o ddynion wedi dioddef trais yn y cartref, tra bod tua un o bob tair menyw yn nodi eu bod wedi cael eu cam-drin yn rhywiol113. Mae’n debygol dros ben, oni bai bod rhywun yn mynd i’r afael â’r problemau hyn, y bydd rhai o’r bobl hyn yn parhau i ddefnyddio sylweddau yn broblematig ac yn parhau i droseddu. Mae adroddiad gan Gomisiwn y Gymdeithas Fawcett ar Fenywod a’r System Cyfiawnder Troseddol yn codi pryderon am y diffyg cyswllt ffurfiol rhwng y llysoedd a’r Gwasanaeth Prawf ar y naill law a’r gwasanaethau iechyd meddwl ar y llall114. Mae adroddiad dilynol gan y Gymdeithas Fawcett wedi pwysleisio diffyg cefnogaeth i bobl sy’n cael eu treisio115.
+Gall cyfuniad o broblemau emosiynol a gordyrru mewn carchardai arwain at gyfraddau uwch o bobl yn ceisio cyflawni hunanladdiad. Mae pum gwaith yn fwy o ddynion mewn carchardai yn lladd eu hunain nag o ddynion yn y gymuned. Mae bechgyn rhwng 15 ac 17 oed ddeunaw gwaith yn fwy tebygol o gyflawni hunanladdiad os ydynt yn y carchar nag yn y gymuned116.
+Mae 37% o fenywod mewn carchardai yn dweud eu bod wedi ceisio cyflawni hunanladdiad ar ryw adeg yn eu bywydau. Er mai dim ond 6% o’r bobl mewn carchardai sy’n fenywod, maent yn cyfrif am bron hanner (46%) o’r holl achosion o hunan-niwed117. Mae’r gyfradd hunanladdiad ymysg dynion yn uwch yng Nghymru a’r Alban na chyfartaledd y DU, tra bod y cyfraddau hunanladdiad ymysg pobl ifanc rhwng 11 ac 17 oed rhwng 1995 a 2004 bum gwaith yn uwch yng Nghymru nag yn Lloegr118.
+110
+
+Cynulliad Cenedlaethol Cymru, Gwell Iechyd – Gwell Cymru (Mai 1998)
+Cynulliad Cenedlaethol Cymru/Atebion Iechyd Cymru, Substance Misuse in Wales: Wales National Database for Substance Misuse, All-Wales Report Quarter 4 2006-07 (Jan-March 2007) (2007)
+112 Prison Reform Trust, Bromley Briefings Prison Factfile November 2006 (Llundain, 2006), t.28 113 ibid., t.15 114 Fawcett Commission on Women and the Crimial Justice System, A Report of the Fawcett Society’s Commission on Women and the Criminal Justice System (Mawrth 2004)
+115 The Fawcett Society, taflen ymgyrch Justice for Rape Victims (Ionawr 2008)
+116 Office for National Statistics, Suicide Trends and Geographical Variations in the UK, 1991 to 2004 (ONS, Hydref 2006)
+117 ibid., t.9 118 ibid., t.15 111
+
+37
+
+Diffyg Darpariaeth i Bobl Ifanc Troseddau gan bobl ifanc, gan ei fod fel arfer yn digwydd yn gyhoeddus, ar y stryd, yw’r hawsaf i fynd i’r afael â nhw. Er bod yr Ysgrifennydd Cartref wedi cyhoeddi adolygiad yn ddiweddar, roedd y llywodraeth wedi gosod targedau ar gyfer ‘troseddau’n arwain at ddedfrydu’, lle mae’n rhaid i’r heddlu ddod â chyfanswm o 1.25 miliwn o achosion i gyfiawnder bob blwyddyn. Mae nifer y dedfrydau ar gyfer oedolion wedi aros yr un fath, ac eto mae’r heddlu wedi curo’r targed. Mae plant a phobl ifanc yn gyffredinol yn troseddu mewn mannau cyhoeddus, yn y strydoedd lle maent yn ‘lladd amser’. Maent yn hawdd eu dal ac mae’n hawdd prosesu’u hachosion. Mae Rod Morgan yn dweud bod arestio plant fel ‘hel ffrwythau sy’n agos i’r ddaear’ i’r heddlu119.
+Mae pobl ifanc yn fwy tebygol o fod ar y strydoedd os nad oes darpariaeth arall ar eu cyfer.
+Mae darpariaeth i bobl ifanc yn cyfeirio at y cyfleusterau a’r amwynderau sydd ar gael i bobl ifanc yn eu cymunedau. Amcangyfrifir fod 4,046 o glybiau ieuenctid yng Nghymru. Mae 1046 o’r rhain yn glybiau sector cyhoeddus120 ac amcangyfrifir fod 3000 o glybiau yn y sector preifat.121 Nid oes gan lawer o gymunedau ddarpariaeth am ddim neu am gost isel o gwbl.
+Cythreulio Pobl Ifanc Mae propaganda’r Llywodraeth wedi cryfhau’r syniad mai pobl ifanc sy’n achosi troseddu ac mai nhw sy’n cyflawni’r mwyaf o droseddau. Mae’r syniad hwn yn cyfrannu at gynnydd mewn ofn troseddu. Mae’r tueddiad i feio pobl ifanc am ffaeleddau cymdeithas yn symptomatig o’r gydberthynas or-syml a wneir rhwng pobl ifanc a throseddu. ‘Hwdis’ yw’r bwch dihangol diweddaraf. Mewn gwirionedd, mae pobl ifanc yn fwy tebygol o ddioddef yn sgil trosedd nag o gyflawni trosedd, fel y gwelir yn ystadegau diweddaraf y Swyddfa Gartref122. Mae’r ystadegau hyn yn dangos bod 35% o bobl ifanc rhwng 10 a 15 oed a 32% o bobl ifanc rhwng 16 a 25 wedi dioddef o leiaf un trosedd bersonol yn y deuddeg mis diwethaf o’i gymharu ag 14% o oedolion rhwng 26 a 65.
+Canfu adroddiad diweddar gan UNICEF123 fod plant yn y DU yn dioddef mwy o amddifadedd, perthynas waeth â’u rhieni ac yn wynebu mwy o risg drwy alcohol, cyffuriau a rhyw anniogel na phlant mewn unrhyw wlad gyfoethog arall yn y byd. Mewn ymateb i’r adroddiad hwn, meddai Al Aynsley-Green, Comisiynydd Plant Lloegr:
+...it’s time to stop demonising children and young people for what goes wrong and start supporting them to make positive choices. To bring an end to the confusing messages we give to young people about their role, responsibility and position in society and ensure that every child feels valued and respected124.
+119
+
+O’Keeffe, A., ‘War on Youth’, New Statesman, 16 Hydref 2006, t. 18-21 Darparwyd y tabl hwn gan adran Darparu Gwaith Ieuenctid Llywodraeth Cynulliad Cymru; daw’r ffigurau o awdit diwethaf y Gwasanaeth Ieuenctid yn 2003-04. Mae’r grŵp yn amcangyfrif na fu newid o bwys yn y ffigurau hyn ers 2004.
+121 Youth Cymru, Annual Report 2004/2005 (2005)
+122 Donaldson, R., Findings 246 The victimisation of young people: findings from the Crime and Justice Survey 2003
+(Home Office: Research, Development and Statistics Directorate, 2005)
+123 United Nations Children Fund, Child Poverty in Perspective: An Overview of Child Well-being in Rich Countries
+(2007)
+124 Boseley, S., ‘British Children: poorer, at greater risk and more insecure’, Guardian, 14 Chwefror 2007 120
+
+38
+
+Parch?
+Mae’r agenda ‘Parch’ wedi bod yn rhan o eirfa Llafur Newydd. Er yn gysyniad deniadol ar yr wyneb, beirniadodd y diweddar Peter Clarke, Comisiynydd Plant cyntaf Cymru, yr agenda
+‘parch’ a chyfeiriodd at y ffaith mai trafodaeth am honiadau am bobl ifanc yn amharchu pobl hŷn oedd hyn, yn hytrach na ffordd o annog parch rhwng pobl o wahanol genedlaethau.
+Beth ydyn ni’n ei wneud i’n pobl ifanc?
+Mae Confensiwn y Cenhedloedd Unedig ar Hawliau’r Plentyn yn nodi y dylai dedfryd i blentyn gael ei ystyried fel yr opsiwn olaf. Ac eto, caiff dwywaith yn fwy o blant eu rhoi dan glo nag oedd ddegawd yn ôl. Mae gweithwyr ieuenctid a chymdeithasol yn brysur yn delio â
+phlant sydd wedi cyflawni mân droseddau fel torri ffenestr, sy’n golygu bod eu llwyth gwaith yn llawn a’u bod yn methu gweithio’n effeithiol gydag ymddygiad mwy difrifol, neu rai sy’n gadael y carchar. Gyda dim ond un cartref diogel i blant yng Nghymru (Canolfan Hillside, Castell-nedd) mae niferoedd mawr mewn carchardai yn golygu bod plant yn cael eu cludo ymhellach i ffwrdd o’u teuluoedd a’u gweithwyr cymdeithasol, gan gynyddu’r risg o hunanniwed a hunanladdiad. Mae tua 84% o droseddwyr ifanc Cymru wedi eu carcharu yn Lloegr.
+Gorchmynion Ymddygiad Gwrthgymdeithasol (ASBOs)
+Er nad yw ASBO yn drosedd, mae’n drosedd torri amodau ASBO. O dorri amodau ASBO, mae pobl yn cael eu hanfon i’r carchar am ymddygiad nad oedd yn ddigon difrifol i gyfiawnhau dedfryd droseddol, heb sôn am ddedfryd i garchar. Mae pedwar deg tri y cant o ASBOs yn cael eu rhoi i bobl ifanc dan ddeunaw oed. Yn ôl y Sefydliad Prydeinig i Blant ag Anafiadau i’r Ymennydd (BIBIC), mae trideg pump y cant o’r rheini wedi cael diagnosis o broblem iechyd meddwl neu mae ganddynt anhawster dysgu125. Mae’n anodd, os nad yn amhosibl, i rai pobl gadw at amodau nad ydynt yn eu deall yn llawn. Nid ydym yn gwybod faint o bobl sydd wedi torri amodau eu ASBOs, gan nad yw’r data ar gael, ond datgelodd astudiaeth gan y Bwrdd Cyfiawnder Ieuenctid yn 2005 fod 700 o blant a phobl ifanc wedi cael eu carcharu am dorri amodau ASBO. Canfu astudiaeth bellach gan y Policy Research Bureau a NACRO mewn ardaloedd yng Nghymru a Lloegr fod yr amodau wedi cael eu torri ar bron hanner yr ASBOs a roddwyd i bobl ifanc dan ddeunaw126. Mae ffigurau a gyhoeddwyd gan y Swyddfa Archwilio Genedlaethol ym mis Rhagfyr 2006 yn amcangyfrif bod yr amodau wedi cael eu torri ar 55% o ASBOs. 47% yw’r amcangyfrif yn ôl ffigurau’r Swyddfa Gartref127.
+Cafodd Gorchmynion Ymddygiad Gwrthgymdeithasol (ASBOs) eu cyflwyno i gyfraith Prydain drwy Ddeddf Troseddu ac Anhrefn 1998. Rhoddodd y gyfraith hon ddiffiniad cyfreithiol eang i ymddygiad gwrthgymdeithasol. Yr honiad yw mai’r canlynol yw ymddygiad gwrthgymdeithasol:
+
+125
+
+British Institute for Brain Injured Children (BIBIC), Ain’t Misbehavin’, (diweddariad ymgyrch, Tachwedd 2005)
+126 Solanki, A-R., Bateman, T., Boswell, G. a Hill, E., Anti-Social Behaviour Orders for Young People given between January 2004 and January 2005, Youth Justice Board for England and Wales (2006)
+127
+‘Half of Asbo holders breach order’, BBC News ar-lein, 7 Rhagfyr 2006
+
+39
+
+Ymddygiad sy’n achosi neu’n debygol o achosi aflonyddu, poendod neu bryder i un neu fwy o bobl nad ydynt yn yr un cartref â’r troseddwr128.
+Gellir llunio gorchymyn ar gyfer unrhyw un sy’n ddeng oed neu’n hŷn. Mae’r rhesymau dros roi ASBO yn amrywio o graffiti i ddelio cyffuriau. Rhybudd yw’r ASBO ei hun i’r troseddwr drwy’r llysoedd sifil sy’n gwahardd unrhyw ymddygiad gwrthgymdeithasol pellach. Ond os bydd y troseddwr yn parhau i ymddwyn mewn ffordd wrthgymdeithasol ac yn torri’r gorchymyn, gellir ei ddedfrydu am hyd at bum mlynedd neu gall wynebu dirwyon trwm. Nid oes rhaid torri’r gyfraith i gael ASBO; mae ASBOs wedi cael eu rhoi am loetran yng nghanol trefi a dinasoedd a hyd yn oed am geisio cyflawni hunanladdiad sawl gwaith129.
+Gellir rhoi ASBO naill ai drwy lys sifil neu drwy lys troseddol, ond gorchmynion sifil ydynt waeth pa lys sy’n ei roi. Yn sgil natur sifil y gorchmynion, ceir clywed tystiolaeth ail law a thystiolaeth broffesiynol gan dystion. Mae gorchymyn yn cynnwys amodau sy’n gwahardd y troseddwr rhag cyflawni gweithredoedd gwrthgymdeithasol penodol neu fynd i fannau penodol. Mae pobl yn cael ASBO am ddwy flynedd o leiaf ac mae ystod o fesurau gorfodaeth arnynt ar gyfer Cymru a Lloegr i gyd. Er mwyn rhoi ASBO, rhaid i farnwr gynnal prawf dau gam. Yn gyntaf, rhaid i’r barnwr ddyfarnu bod yr ymddygiad yn wrthgymdeithasol, ac yn ail bod gorchymyn yn angenrheidiol i amddiffyn unigolion rhag ymddygiad gwrthgymdeithasol pellach gan y troseddwr. Mae angen tystiolaeth ar gyfer cam cyntaf y prawf, ond mater o farn neu werthusiad yw’r ail gam. Hefyd nid oes yn rhaid i’r asiantaeth sy’n gwneud cais am y gorchymyn brofi bod y troseddwr wedi bwriadu peri aflonydd, poendod neu bryder: yr unig beth y mae’n rhaid ei brofi yw bod effaith yr ymddygiad yn wrthgymdeithasol. Yn aml, mae gorfodi ASBOs yn cynnwys enwi a dangos wyneb yr unigolyn mewn cyhoeddusrwydd. Mae hyn yn groes i egwyddorion Deddf Plant 2004 gan nad yw dangos manylion adnabod y plentyn i’r wasg er budd y plentyn. Gall awdurdodau lleol, yr heddlu, Heddlu Trafnidiaeth Prydain a landlordiaid cymdeithasol cofrestredig wneud cais am ASBO.
+Prin yw’r rhai o blith y sefydliadau hyn sy’n ystyried problemau iechyd meddwl, os ydynt yn gwneud o gwbl. Mae hyn yn amlwg gan nad yw’r Swyddfa Gartref wedi casglu na chyhoeddi unrhyw ddata am niferoedd yr oedolion a’r bobl ifanc â phroblemau iechyd meddwl neu anawsterau dysgu sydd wedi cael ASBO. Dywedodd cynrychiolydd o BIBIC yn ddiweddar:
+Despite a number of requests to the government about the collecting of statistics on young people with ASBOs (and mental health issues), it is very difficult to find meaningful statistics about learning difficulties and mental health issues130.
+Mae cyhoeddiad diweddar gan BIBIC yn nodi bod ASBOs wedi cael eu rhoi i bobl ifanc ag anawsterau dysgu a/neu broblemau iechyd meddwl, er gwaethaf y ffaith nad yw’r plant hyn o reidrwydd yn deall y gorchmynion, nad ydynt o reidrwydd yn gallu darllen y gorchmynion, nac o reidrwydd yn gallu cofio telerau eu gorchmynion131. Mae rhai anawsterau dysgu wedi cael eu canfod ar ôl rhoi ASBO i’r plentyn.
+A yw ASBOs yn gweithio?
+128
+
+Office of Public Sector Information, Crime and Disorder Act 1998 (Gorffennaf 1998)
+Stone, A., ‘Suicide bids woman cost 999 services £1m’, Western Mail, 12 Gorffennaf 2007 130 E-bost gan Vivienne Streeter, BIBIC 131 BIBIC, Ain’t Misbehavin’, (diweddariad ymgyrch, Tachwedd 2005)
+129
+
+40
+
+Nid oes unrhyw dystiolaeth i ddangos bod ASBOs yn rhwystro pobl ifanc rhag cyflawni neu ailgyflawni troseddau neu ymddygiad niwsans. Yn wir y gwrthwyneb sy’n wir. Bu gwaith MORI i’r Bwrdd Cyfiawnder Ieuenctid yn olrhain profiad pobl ifanc o droseddu, fel troseddwyr ac fel dioddefwyr, ers 1999. Mae’n dangos bod lefelau troseddu wedi aros yr un fath dros y pedair blynedd hyd nes 2005. Yn ôl MORI:
+Nearly half of the young people whose case files were reviewed (68 out of 137) had been returned to court for failure to comply with their order. The majority had ‘breached’ their ASBO on more than one occasion132.
+Mewn rhai achosion, nid yw’r ffaith nad yw pobl ifanc yn dilyn gorchymyn yn golygu nad ydynt yn parchu’r gorchymyn, ond yn hytrach mae hyn yn aml yn ymwneud â gofynion afrealistig y gorchymyn.
+Efallai nad ASBOs i ddelio ag ymddygiad gwrthgymdeithasol yw’r dull yr hoffai’r rhan fwyaf o bobl ei weld yn cael ei ddefnyddio i ddatrys y broblem hon, fel y datgelodd astudiaeth gan Sefydliad Joseph Rowntree133. Datgelodd yr astudiaeth y byddai’n well gan y rhan fwyaf o bobl ‘gamau ataliol i ddelio â’r achosion’ (66%) o’i gymharu ag 20% sydd am weld camau llym.134 Canfu astudiaeth bellach gan yr IPPR fod ASBOs yn aneffeithiol ar blant dan 12 oed, a’u bod yn ‘taflu plant yn gynnar i mewn i’r system cyfiawnder troseddol’135.
+ASBOs yng Nghymru Mae’r tabl136 isod yn dangos ffigurau’r Gorchmynion Ymddygiad Gwrthgymdeithasol a roddwyd i oedolion a phobl ifanc ers 1999:
+Rhestr o Ardaloedd Dyfed-Powys Gwent Gogledd Cymru De Cymru Cymru Lloegr
+
+Nifer yr ASBOs a roddwyd rhwng 1999 a 2005 i bobl ifanc (10-17 oed)
+4 29 58 49 140 2995
+
+Nifer yr ASBOs a roddwyd rhwng 1999 a 2005 i oedolion
+(18+ oed)
+23 27 64 74 188 3832
+
+Yng Nghymru, mae llwyddiant wedi cael ei fesur drwy’r nifer fechan o ASBOs sydd wedi cael eu rhoi, gan fod ymyriadau eraill yn cael eu defnyddio gyntaf. Yr opsiwn olaf yw’r ASBO.
+Mae Llywodraeth Cynulliad Cymru yn cefnogi’r dull gweithredu hwn. Yn 2006, dywedodd Rhodri Morgan, y Prif Weinidog:
+
+132
+
+Ipsos MORI, What Place for ASBOs in an era of ‘Respect’? (Mehefin 2005)
+Joseph Rowntree Foundation, Anti-Social Behaviour Strategies: Finding a Balance (Institute for Criminal Policy Research, Bryste, 2005)
+134 ibid., t.7 135 Institute for Public Policy Research, Make Me a Criminal – Preventing Youth Crime (2008)
+136 Home Office: Research, Development and Statistics Directorate, ASBO Statistics April 1999-December 2005 133
+
+41
+
+It is true that ASBOs have been used more as a last resort measure in Wales…Chief Constables in Wales have always maintained the line that the more ASBOs you’ve issued, you should regard as a sign of failure137.
+Newid er Gwell Mae’n amlwg bod angen mynd i’r afael ag achosion troseddu ac ymddygiad gwrthgymdeithasol os ydym o ddifrif am wneud ein cymunedau’n fwy diogel. Mae Plaid Cymru wedi dadlau ers tro o blaid rhoi pwerau i’r Cynulliad ar gyfiawnder troseddol er mwyn rhoi strategaeth cymunedau mwy diogel ar waith. Byddai strategaeth o’r fath yn gweddnewid y System Cyfiawnder Troseddol i flaenoriaethu’r gwaith o fynd i’r afael ag achosion troseddu.
+Mae Plaid Cymru o’r farn y byddai creu Bwrdd Cyfiawnder Ieuenctid Cymru yn fan cychwyn da. Nod y Bwrdd fyddai lleihau’r nifer o blant sydd mewn carchardai. Dylid buddsoddi’r arian fydd yn cael ei arbed mewn rhaglenni adfer a chymorth.
+Dylid ymchwilio ac ystyried ymhellach y system cyfiawnder ieuenctid yn y Ffindir. Canfu dadansoddiad cymharol o’r ffordd y caiff pobl ifanc mewn trafferth yng Nghymru a Lloegr a’r Ffindir eu trin fod niferoedd bach iawn o droseddwyr ifanc yn cael eu rhoi dan glo yn y Ffindir, ond ‘caiff nifer fawr o blant a phobl ifanc eu rhoi mewn sefydliadau preswyl o ryw fath neu’i gilydd’ 138. Mae’r rhain yn cynnwys ysgolion penyd, cartrefi plant, cartrefi ieuenctid a chartrefi grŵp teuluol. Caiff y nifer fwyaf o dipyn – bron 4,000 – eu cadw mewn unedau seiciatrig arbennig. Pe bai’r un nifer o welyau seiciatrig fesul pen y boblogaeth yng Nghymru a Lloegr ag yn y Ffindir, byddai oddeutu 40,000. Byddai 2,220 yng Nghymru. 28 sydd ar gael mewn gwirionedd139.
+Ymddengys mai pryder am iechyd meddwl plant a phobl ifanc sydd fwyaf pwysig i bobl yn y Ffindir erbyn hyn, yn hytrach na throseddu gan bobl ifanc. Mae’n dilyn ymlaen o hyn ei bod yn ddigon posibl y byddai’r Ffindir yn delio ag ymddygiad sy’n cael ei ystyried fel ymddygiad troseddol yng Nghymru a Lloegr fel anhwylder seiciatrig yn bennaf. Mae’r ymchwilwyr yn awgrymu bod y defnydd o unedau seiciatrig yn adlewyrchu athroniaeth o driniaeth unigol sydd yn anffasiynol yn y DU. Mae ymchwil diweddar a wnaed ym Manceinion gan yr Ymddiriedolaeth Cyfiawnder Ieuenctid wedi datgelu bod problemau colled neu alar difrifol sydd heb eu trin yn gysylltiedig â 92% o 147 o achosion a ddewiswyd ar hap. O ystyried hyn, yna mae system y Ffindir, lle ceir 160 o leoedd mewn unedau seiciatrig arbennig i blant a phobl ifanc am bob un lle mewn ysgolion penyd, yn ymddangos ychydig yn llai rhyfedd140.
+P’un ai’n rhai preswyl ai peidio, mae’n amlwg nes y bydd gwasanaethau prif ffrwd sylfaenol fel addysg ac iechyd yn gallu ymateb i anghenion troseddwyr ifanc a phlant sydd mewn perygl, mai cyfiawnder ieuenctid fydd yn dal y slac yn dynn, gan ddarparu gwasanaeth paralel, ond o safon eilradd.
+
+137
+
+‘Morgan raises respect ‘tensions’’, BBC News ar-lein, 10 Ionawr 2006 Esmée Fairbairn Foundation, Rethinking Crime and Punishment: The Report (2004), t.45 139 Cynulliad Cenedlaethol Cymru, Papur y Pwyllgor Iechyd a Gwasanaethau Cymdeithasol HSS(2)-06-06(p.3), Gwasanaethau Iechyd Meddwl i Blant a Phobl Ifanc, 23 Mawrth 2006 140 Pitts, J. a Kuula, T., ‘Incarcerating Young People: An Anglo-Finnish Comparison’, Youth Justice, Cyf. 5, Rhif 3,
+(2005), 147-164 138
+
+42
+
+Bydd cost ynghlwm wrth wasanaethau gwell wrth gwrs. Ond bydd amryw fanteision o ran gostyngiad mewn troseddu, canlyniadau dysgu gwell, gostyngiad mewn problemau iechyd meddwl oedolion ac o bosibl gostyngiad mewn defnyddio sylweddau. Bydd hefyd yn lleihau nifer y bobl ifanc mewn carchardai ac unedau diogel, gan arwain at arbedion sylweddol.
+Dylid ehangu Adrannau Gwasanaethau Cymdeithasol a dylid defnyddio rhwydweithiau o gynghorwyr plant arbenigol. Dylid cysylltu’r rhain â Gwasanaeth Iechyd Meddwl Plant a’r Glasoed (CAMHS) estynedig, sy’n cynnwys llety preswyl seiciatrig. Mae angen integreiddio a chydlynu asesu a gofal plant yn ganolog ac yn lleol.
+Dylai Llywodraeth Cynulliad Cymru arfer cyfrifoldeb cyffredinol dros bob plentyn, gan gynnwys y rheini sy’n cyflawni trosedd neu'r rheini y’u bernir sydd mewn perygl o gyflawni trosedd. Byddem yn sicrhau hyfforddiant i athrawon ac aelodau eraill o staff mewn ysgolion mewn ystod eang o dechnegau adferol a datrys problemau, sy’n gallu datrys anghydfod rhwng disgyblion a rhwng disgyblion ac athrawon. Er enghraifft, mewn rhai ysgolion uwchradd yn Sefton, Glannau Merswy, defnyddir cynhadledd adferol bob tro y bydd posibilrwydd y bydd disgybl yn cael ei wahardd141. Hefyd dylid rhoi pwyslais ar hyrwyddo lles y meddwl drwy’r cwricwlwm ysgol.
+Dylai system o gyfiawnder adferol ddisodli ASBOs. Os bydd rhaid cosbi gweithredoedd troseddol, yna mae’n rhaid cosbi’r troseddwr yn ôl safonau troseddol: cyfnod prawf, carchar, dirwyon a gwasanaeth cymunedol. Mae Comisiynydd Cyngor Comisiwn Hawliau Dynol wedi gwneud sylw am y ffordd y caiff plant eu trin o ran ASBOs yng Nghymru a Lloegr:
+It is to be hoped that this burst of ASBO-mania will quieten down and that use [of ASBOs]
+in time will be limited to appropriate and serious cases, where no other means of intervention might succeed. Responsible guidelines and realistic rhetoric is required, however, for this to succeed142.
+Bydd Bwrdd Cyfiawnder Ieuenctid Cymru yn darparu i ehangu’r canlynol:
+•
+
+•
+
+•
+
+Gorchmynion Iawndal. Gwneir y gorchmynion hyn yn y llysoedd sifil, ac mae gofyn i’r troseddwr wneud yn iawn am y difrod y mae ei ymddygiad wedi’i achosi, naill ai yn uniongyrchol i’r sawl sydd wedi dioddef neu’n anuniongyrchol i’r gymuned. Ni chaniateir iawndal ariannol.
+Gorchmynion Diogelwch Plant i blant dan 10 oed sydd wedi dangos problemau ymddygiad. Mae’r gorchymyn yn rhoi’r plentyn dan oruchwyliaeth Tîm Troseddau Ieuenctid, sy’n gweithio gyda throseddwyr ifanc neu bobl ifanc sydd mewn perygl o gyflawni trosedd drwy fentora, cynghori ayb.
+Contractau Ymddygiad Derbyniol. Contractau ysgrifenedig yw’r rhain rhwng troseddwyr ifanc, eu teuluoedd, yr heddlu, timau troseddau ieuenctid ac asiantaethau eraill sy’n gwahardd ymddygiad gwrthgymdeithasol.
+
+141
+
+Allen, R., From punishment to problem solving A new approach to children in trouble, Centre for Crime and Justice Studies (2006)
+142 Liberty, ‘International Criticism of UK Human Rights Record 2006‘, datganiad i’r wasg ar y wefan, 8 Mehefin 2005
+
+43
+
+Mae’r ddarpariaeth ar gyfer y gorchmynion hyn yn Neddf Plant 2001, ond nid ydynt yn cael eu defnyddio rhyw lawer gan fod diffyg staff a chyllid gan Adrannau Gwasanaethau Cymdeithasol. Dylid ehangu’r offer hyn i gynnwys modelau rôl hŷn yn y gymuned ar gyfer pobl iau, a chynadledda sy’n dod â phobl ifanc, eu teuluoedd a’r asiantaethau perthnasol ynghyd i drafod ymddygiad y person ifanc a cheisio dod o hyd i achosion a’u datrys.
+Mynd i’r afael â defnyddio sylweddau a’i achosion Mae’r rhan fwyaf o droseddu yn gysylltiedig ag alcohol neu gyffuriau. Bydd strategaeth lleihau niwed ar ddefnyddio sylweddau dros ugain mlynedd yn mynd i’r afael â dibyniaeth ar sylweddau a defnydd problematig. Bydd buddsoddi mewn adrannau gwasanaethau cymdeithasol a gwasanaethau cynghori arbenigol yn golygu y bydd modd atal cryn dipyn o ymddygiad troseddol. Bydd modd i oedolion sydd â phroblemau defnyddio sylweddau gael gwasanaethau cynghori a chymorth seiciatrig am ddim ar alw. Bydd ‘alcopops’ yn cael eu trethu’n drwm a bydd strategaeth i leihau defnydd alcohol gan bobl ifanc yn cael ei gyflwyno.
+Mae angen buddsoddiad sylweddol i sicrhau bod yr ystod ehangaf o wasanaethau puro ac adfer ar gael i fodloni anghenion defnyddwyr sylweddau. Yn hollbwysig, bydd defnyddwyr sylweddau yn cael eu trin fel cleifion i ddechrau. Os byddant yn torri’r gyfraith i gael arian i brynu sylweddau, dylai gwasanaeth prawf cyhoeddus sydd wedi’i gyllido’n briodol weithio gydag asiantaethau eraill i lunio cynllun personol er mwyn osgoi troseddu, gan gynnwys, os yw’n briodol, defnyddio meddyginiaeth yn lle’r cyffur. Gellid defnyddio cynllun o’r fath mewn carchar, lle bo angen.
+Os bydd y cynllun peilot sydd ar waith yn Lloegr yn llwyddiant, mae llywodraeth Cymru’n Un wedi ymrwymo i ganiatáu presgripsiynau diamorffin (heroin o safon feddygol) o dan amodau meddygol â goruchwyliaeth lem. Er mwyn lleihau troseddu, rydym yn credu mewn cyflwyno canolfannau triniaeth sylweddau aml-asiantaeth, lle gellir delio â phroblemau gan amrywiaeth o weithwyr proffesiynol o dan yr unto.
+Mae’r DU wedi colli’r rhyfel pymtheg mlynedd ar hugain yn erbyn cyffuriau anghyfreithlon.
+Mae angen trafodaeth gyhoeddus ar ddyfodol cyfreithiau cyffuriau. Mae Prif Gwnstabl Gogledd Cymru, Richard Brunstrom, wedi gwneud sawl ymgais i ddechrau’r ddadl hanfodol hon. Mae ymdrechion i leihau’r cyflenwad cyffuriau i’r DU wedi methu. Mae pris pob cyffur anghyfreithlon wedi gostwng143, sy’n dangos bod mwy ohonynt ar gael.
+Ar hyn o bryd, mae tua 70% o gyfanswm cyllideb gyffuriau’r DU yn cael ei wario ar orfodaeth. Tua 20% sy’n cael ei wario ar iechyd, a 10% ar addysg. Mae angen ailflaenoriaethu’r gwariant hwn i ganolbwyntio ar fynd i’r afael ag achosion problemau sylweddau.
+Os gallwn dderbyn y bydd rhai pobl yn defnyddio sylweddau, byddai modd canolbwyntio gwariant ac ymdrechion cyhoeddus ar bobl sydd naill ai’n achosi problemau i eraill, e.e. drwy drais neu ladrata, neu ar bobl sy’n achosi problemau i’w hunain, e.e. menywod beichiog a rhieni sy’n camddefnyddio sylweddau. Nod strategaeth lleihau niwed fyddai lleihau risg niwed i unigolion a chymunedau. I’r perwyl hwn, dylid hyrwyddo cynlluniau cyfnewid nodwyddau, yn ogystal â chyfleusterau chwistrellu diogel a mesurau eraill i leihau niwed.
+143
+
+Travis, A., ‘Britain’s £5.9bn a year drug habit’, Guardian, 24 Tachwedd 2006
+
+44
+
+Dylai pob plentyn ysgol gynradd yng Nghymru gael addysg ar ‘leihau niwed’ defnyddio sylweddau gan weithwyr proffesiynol camddefnyddio sylweddau sydd wedi’u hyfforddi.
+Delio â Throseddau Atgasedd Mae llywodraeth Cymru’n Un wedi ymrwymo i weithredu strategaeth lawn i ddatgelu a lleihau troseddau atgasedd: yn y cartref/rhywiol, hiliol, homoffobig, cam-drin plant a chamdrin oedolion bregus. Dylai hyn gynnwys cynghori a chymorth dwys i bawb sy’n dioddef ac yn goroesi troseddau atgasedd. Bydd y strategaeth yn cynnwys ‘addysg berthnasau’ ym mhob ysgol, gyda’r nod o herio a newid gwahaniaethu ar sail rhyw, hiliaeth, homoffobia a bwlio neu gam-drin. Bydd yr addysg hon yn ymdrin â materion cydsyniad rhywiol a thrais yn y cartref.
+Dylai pob plentyn gael gwasanaeth eiriolaeth annibynnol drwy linell gymorth â staff 24 awr.
+
+Mesurau adfer i leihau aildroseddu Mae 13% yn llai yn aildroseddu ar ôl bod drwy’r gwasanaeth prawf na thrwy’r carchar. Mae hyn er gwaethaf toriadau difrifol i gyllidebau, rhoi gwasanaethau ar gontract allanol a phrinder staff yn y gwasanaeth dros y blynyddoedd diwethaf. Mae Swyddogion Prawf a Swyddogion Troseddu Ieuenctid eisoes yn defnyddio ystod eang o raglenni. Mae modd profi bod y rhain yn effeithiol o ran lleihau risg troseddu. Bydd yr arian sy’n cael ei arbed drwy leihau’r nifer o bobl sydd yn y carchar yn talu i alluogi gweithwyr adfer i reoli’u llwyth gwaith er mwyn gwneud eu gwaith yn effeithiol. Mae Plaid Cymru am wrthdroi unrhyw ddeddfwriaeth sy’n cynnig gwaith adfer troseddwyr i gwmnïau masnachol yng Nghymru.
+Rydym yn cydnabod y bydd dedfryd o garchar yn ganlyniad anochel i rai troseddwyr. Dylai carcharorion gael yr hawl i wasanaethau o safon sylfaenol ym meysydd iechyd, addysg, adfer ac adleoli, yn ystod eu dedfrydau ac wrth iddynt gael eu rhyddhau. Dylai pob carcharor gael cynllun lleihau ymddygiad troseddol wedi ei anelu at osgoi carcharu pellach.
+Lleihau ofn troseddu: syniadau i gloi Rydym yn credu y bydd y mesurau a amlinellir uchod yn lleihau lefelau troseddu yn yr hirdymor. Mae angen mesurau penodol i fynd i’r afael â’r ofn troseddu sy’n bodoli heddiw.
+Gallai Llywodraeth y Cynulliad gyflwyno strategaeth i leihau ofn troseddu o hyd heb i wasanaethau cyfiawnder troseddol gael eu datganoli.
+Mae’n hollbwysig bod pobl ifanc yn cymryd rhan mewn fforymau lleol ar leihau ofn troseddu.
+Bydd eu syniadau ar fynd i’r afael ag ymddygiad problematig yn werthfawr. Gallai mwy o heddlu fynd i fannau lle mae troseddu’n broblem, os yw’n briodol, ond bydd anogaeth i ddefnyddio mwy o weithwyr ieuenctid allgymorth a mwy o ddarpariaeth ieuenctid am ddim neu am gost isel. Mae Plaid am weld buddsoddiad mewn amrywiaeth eang o ddarpariaeth ieuenctid, er enghraifft drwy gynllun gwasanaeth cyhoeddus i ddinasyddion, a fydd yn helpu pobl ifanc i ddatblygu ymdeimlad o wasanaeth cyhoeddus a chyfrifoldeb. Ar yr un pryd bydd
+
+45
+
+hyn yn helpu i bontio’r bwlch rhwng y genhedlaeth hŷn a’r genhedlaeth iau, a fydd yn helpu i leihau ofn troseddu ymhellach yn yr hirdymor.
+Mae angen aildrefnu’r agenda ‘Parch’ i gynnwys parch ymysg pobl o fewn yr un genhedlaeth ac o wahanol genedlaethau. Mae Plaid yn cefnogi barn y diweddar Peter Clarke a oedd yn galw am wrthod y syniad na ddylai pobl hŷn orfod dangos parch i bobl iau. Mae angen herio a newid y ffordd y mae gwleidyddion a’r cyfryngau yn trafod y mater hwn.
+Yn y pen draw, mae angen hunan-barch, gobaith a chymunedau hyfyw ar bobl i deimlo’n ddiogel. Dylai pobl o bob cenhedlaeth fwynhau mannau cyhoeddus, heb iddynt ofni am eu diogelwch personol.
+Rwy’n gobeithio y bydd y syniadau sy’n cael eu cyflwyno yma yn ddechreuad i gyfraniad Plaid i drafodaeth aeddfed ar ddyfodol cyfiawnder cymdeithasol, ac felly at gymunedau mwy diogel yng Nghymru.
+
+46
+
