@@ -4,7 +4,7 @@
 
 	<groupId>info.stuber.fhnw</groupId>
 	<artifactId>stance-predictor-app</artifactId>
-	<version>0.9.0-SNAPSHOT</version>
+	<version>0.9.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>stance-predictor-app</name>
