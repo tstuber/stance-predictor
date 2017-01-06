@@ -50,6 +50,10 @@ public class DocumentSentimentAnalyzer {
 		PredictedResult predictionResult = new PredictedResult(party, questionId);
 		LuceneSearcher searcher = new LuceneSearcher();
 		List<SearchResult> searchResults = searcher.retrieveTopDocs(party, questionId, windowSize);
+		String query = null;
+		
+		if(!searchResults.isEmpty())
+			query = searchResults.get(0).query();
 
 		// Prepare documents to process.
 		String configId = null;
@@ -114,6 +118,7 @@ public class DocumentSentimentAnalyzer {
 					
 					String source = sourceLookup.get(docAnalyticData.getId());
 					item.setSource(source);
+					item.setQuery(query);
 					
 					predictionResult.addItem(item);
 

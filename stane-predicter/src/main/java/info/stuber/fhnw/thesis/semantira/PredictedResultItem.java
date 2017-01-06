@@ -1,6 +1,8 @@
 package info.stuber.fhnw.thesis.semantira;
 
-public class PredictedResultItem {
+import java.io.Serializable;
+
+public class PredictedResultItem implements Serializable {
 
 	private int party;
 	private int question;
@@ -9,6 +11,7 @@ public class PredictedResultItem {
 	private String sentimentPolarity;
 	private String text;
 	private String source;
+	private String query;
 
 	public PredictedResultItem(int party, int question, float sentimentScore, String sentimentPolarity) {
 		this.party = party;
@@ -28,6 +31,14 @@ public class PredictedResultItem {
 	
 	public void setSource(String source) {
 		this.source = source;
+	}
+	
+	public void setQuery(String query) {
+		this.query = query;
+	}
+	
+	public String getQuery() {
+		return this.query;
 	}
 	
 	public String getSource() {

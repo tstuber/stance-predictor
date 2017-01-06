@@ -6,12 +6,14 @@ public class SearchResult {
 	private float hitScore;
 	private int ranking;
 	private String source;
+	private String query;
 	
-	public SearchResult(String passage, float hitScore, int ranking, String source) {
+	public SearchResult(String passage, float hitScore, int ranking, String source, String query) {
 		this.passage = passage;
 		this.hitScore = hitScore;
 		this.ranking = ranking;
 		this.source = source;
+		this.query = query;
 	}
 	
 	public String getPassage() {
@@ -28,6 +30,10 @@ public class SearchResult {
 	
 	public String source() {
 		return this.source;
+	}
+	
+	public String query() {
+		return this.query;
 	}
 	
 	@Override

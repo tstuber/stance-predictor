@@ -1,7 +1,11 @@
 package info.stuber.fhnw.thesis.semantira;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -9,28 +13,22 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import info.stuber.fhnw.thesis.collector.Coding;
 import info.stuber.fhnw.thesis.utils.Party;
 import info.stuber.fhnw.thesis.utils.Props;
 
 public class PredictionRunner {
 
 	PredictionEvaluation evaluator;
-	String evaluationName;
+	ReportHandler reportHandler;
+
+	private int WINDOW_SIZE = Props.evalWindowSize();
 	private Party PARTY = Party.fromInteger(1);
 	private int QUESTION_ID = 14;
 
-	private int WINDOW_SIZE = Props.evalWindowSize();
-	private boolean ONLY_SENTIMENTAL = Props.evalOnlySentiment();
-	private boolean ONLY_FIRST_HIT = Props.evalFirstHit();
-	private boolean INVERSE_QUESTION_MODE = Props.evalInverseQuestion();
-	private String ANALYZER = Props.evalAnalyzer();
-
 	public PredictionRunner() {
 		this.evaluator = new PredictionEvaluation();
-
-		// Create evaluation-Shortcut.
-		this.evaluationName = "WS" + WINDOW_SIZE + "_" + firstLetter(ONLY_SENTIMENTAL) + "_"
-				+ firstLetter(ONLY_FIRST_HIT) + "_" + firstLetter(INVERSE_QUESTION_MODE) + "_" + ANALYZER;
+		this.reportHandler = new ReportHandler();
 	}
 
 	public static void main(String[] args) {
@@ -41,162 +39,48 @@ public class PredictionRunner {
 	public void evaluate() {
 		// List<PredictedResult> results =
 		// this.evaluator.compareAll(WINDOW_SIZE);
-		List<PredictedResult> results = this.evaluator.compareQuestion(10, WINDOW_SIZE);
-		//List<PredictedResult> results = this.evaluator.evaluateSingle(Party.CON, 1, 3);
-		saveReport(results);
+		// List<PredictedResult> results =
+		// this.evaluator.evaluateSingle(Party.CON, 1, 3);
+
+		// List<PredictedResult> results = this.evaluator.compareQuestion(1,
+		// WINDOW_SIZE);
+		// List<PredictedResult> results = this.evaluator.compareParty(PARTY,
+		// WINDOW_SIZE);
+		// dirtySave(results);
+
+		List<PredictedResult> results = dirtyLoad();
+
+		this.reportHandler.saveReport(results);
 	}
 
-	private String firstLetter(boolean input) {
-		return (input == true) ? "T" : "F";
-	}
-
-	private void saveReport(List<PredictedResult> results) {
-
-		StringBuilder sb = new StringBuilder();
-
-		// Create target output file.
-		String date = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
-		String date_report = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date());
-		File file = new File("./reports/Report_" + this.evaluationName + "_" + date + ".html");
-		
-		// Calculate result.
-		int total = results.size();
-		int correct = 0;
-		for(PredictedResult res : results) {
-			if(res.isSuccess(res.getAnswer(res.getMin())))
-				correct++;
-		}
-		int wrong = total-correct;
-		
-		float correctPerc = correct/total;
-		float wrongPerc = wrong/total;
-
-		// HEADER.
-		sb.append("<!DOCTYPE html><html><head>");
-		sb.append("<title>Stance Prediction Report</title>");
-		sb.append("<script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>");
-		sb.append(
-				"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>");
-		sb.append(
-				"<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous'>");
-		sb.append(
-				"<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous'></script>");
-		sb.append("<script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>");
-		sb.append("<style>.hiddenRow {padding: 0!important;}</style>");
-		sb.append("</head>");
-
-		// SETTINGS.
-		sb.append("<body><div class='container'>");
-		sb.append("<h1>Evaluation Report</h1><p><b>Date:</b> " + date_report + "</p>");
-		sb.append("<h3>Settings</h3><p><b>Setting Description</b></p>");
-		sb.append("<ul>");
-		sb.append("<li>Index WindowSize: <kbd>" + WINDOW_SIZE + "</kbd></li>");
-		sb.append("<li>OnlySentiment Sentences: <kbd>" + ONLY_SENTIMENTAL + "</kbd></li>");
-		sb.append("<li>FirstHit: <kbd>" + ONLY_FIRST_HIT + "</kbd></li>");
-		sb.append("<li>InversionFlag: <kbd>" + INVERSE_QUESTION_MODE + "</kbd></li>");
-		sb.append("<li>Analyzer: <kbd>" + ANALYZER + "</kbd></li>");
-		sb.append("</ul>");
-		sb.append("<p>Shortcut: " + this.evaluationName + "</p>");
-
-		// SUMMARY.
-		sb.append("<h3>Summary</h3>");
-		sb.append("<p>" + correct + " from " + total + " are correct predicted.");
-		
-
-		sb.append("<div class='progress'>");
-		sb.append(
-				"<div class='progress-bar progress-bar-success progress-bar-striped' style='width: " + correctPerc + "%'/>");
-		sb.append(" <span class='sr-only'>" + correctPerc + "% Complete (success)</span>");
-		sb.append("</div>");
-		sb.append("<div class='progress-bar progress-bar-danger progress-bar-striped' style='width: " + wrongPerc + "%'/>");
-		sb.append(" <span class='sr-only'>" + wrongPerc + "% Complete (danger)</span>");
-		sb.append("</div>");
-		sb.append("</div>");
-
-		// RESULTS.
-		sb.append("<h3>Results</h3>");
-
-		sb.append("<table class='table' style='border-collapse:collapse;'>");
-
-		sb.append("<thead><tr>");
-		sb.append("<th>#</th>");
-		sb.append("<th>Party</th>");
-		sb.append("<th>Question</th>");
-		sb.append("<th>Expected</th>");
-		sb.append("<th>Predicted</th>");
-		sb.append("<th>More Infos</th>");
-		sb.append("</tr></thead>");
-
-		sb.append("<tbody>");
-
-		int count = 1;
-		for (PredictedResult res : results) {
-			String target = "collapse" + count;
-			int result = res.getAnswer(res.getMin());
-
-			sb.append("<tr>");
-			sb.append("<td>" + count + "</td>");
-			sb.append("<td>" + res.getParty() + "</td>");
-			sb.append("<td>" + res.getQuestionId() + "</td>");
-			sb.append("<td>" + res.getExpectedAnswer() + "</td>");
-			if (res.isSuccess(result))
-				sb.append("<td class='success'>" + result + "</td>"); // TODO:
-																		// VERWENDEN
-																		// DER
-																		// BESTEN
-																		// PERFORMANCE!
-			else
-				sb.append("<td class='danger'>" + result + "</td>"); // TODO:
-																		// VERWENDEN
-																		// DER
-																		// BESTEN
-																		// PERFORMANCE!
-			sb.append("<td><button type=button class='btn btn-default btn-xs'  data-toggle='collapse' data-target='#"
-					+ target + "' class='accordion-toggle'>");
-			sb.append("<span class='glyphicon glyphicon-plus-sign' aria-hidden=true></span>");
-			sb.append(" More</button></td>");
-
-			sb.append("</tr>");
-			sb.append("<tr>");
-			sb.append("<td colspan='6' class='hiddenRow'>");
-			sb.append("<div class='accordian-body collapse' id='" + target + "'>");
-			sb.append("<h3>Debug Information</h3>");
-			int itemPos = 0;
-			for (PredictedResultItem resItem : res.getResultItems()) {
-				
-				if(Props.evalFirstHit() && itemPos != 0)
-					break;
-					
-				sb.append("<p>");
-				sb.append("<b>Hitscore: </b>" + resItem.getHitScore());
-				sb.append(", <b>SentiScore: </b> " + resItem.getSentimentScore());
-				sb.append(", <b>Source: </b>" + resItem.getSource());
-				sb.append("</p>");
-				sb.append("</p><b>Text :</b>" + resItem.getText());
-				sb.append("</p>");
-				
-				itemPos++;
-			}
-
-			sb.append("</div>");
-			sb.append("</td>");
-			sb.append("</tr>");
-
-			count++;
-		}
-
-		sb.append("</tbody>");
-		sb.append("</table></div></body></html>");
-
-		// for each result: print out.
+	private void dirtySave(List<PredictedResult> results) {
 
 		try {
-			Files.write(Paths.get(file.toURI()), sb.toString().getBytes("utf-8"), StandardOpenOption.CREATE,
-					StandardOpenOption.TRUNCATE_EXISTING);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			FileOutputStream fout = new FileOutputStream("lastRunToReport.dat");
+			ObjectOutputStream oos = new ObjectOutputStream(fout);
+			oos.writeObject(results);
+			oos.close();
+			System.out.println("File stored: lastRunToReport.dat");
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 	}
 
+	private List<PredictedResult> dirtyLoad() {
+		List<PredictedResult> results = null;
+		try {
+			FileInputStream fius = new FileInputStream("lastRunToReport.dat");
+			ObjectInputStream ois = new ObjectInputStream(fius);
+			results = (List<PredictedResult>) ois.readObject();
+
+			ois.close();
+			System.out.println("File loaded: lastRunToReport.dat");
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+		return results;
+	}
 }

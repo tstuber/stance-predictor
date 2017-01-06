@@ -1,5 +1,6 @@
 package info.stuber.fhnw.thesis.semantira;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +11,7 @@ import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 import info.stuber.fhnw.thesis.utils.Party;
 import info.stuber.fhnw.thesis.utils.Question;
 
-public class PredictedResult {
+public class PredictedResult implements Serializable {
 
 	private List<PredictedResultItem> resultItemList;
 	private Party party;

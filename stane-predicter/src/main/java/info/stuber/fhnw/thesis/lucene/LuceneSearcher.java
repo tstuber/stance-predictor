@@ -89,7 +89,7 @@ public class LuceneSearcher {
 				String passage = d.get(LuceneConstants.CONTENTS);
 				String source = d.get(LuceneConstants.SOURCE);
 
-				SearchResult res = new SearchResult(passage, hitScore, docCount, source);
+				SearchResult res = new SearchResult(passage, hitScore, docCount, source, q.toString());
 
 				// Only adds search result if not a duplicate.
 				if (!searchResults.contains(res)) {
