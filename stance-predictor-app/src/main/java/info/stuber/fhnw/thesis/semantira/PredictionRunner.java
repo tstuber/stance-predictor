@@ -1,11 +1,7 @@
 package info.stuber.fhnw.thesis.semantira;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -33,55 +29,27 @@ public class PredictionRunner {
 
 	public static void main(String[] args) {
 		PredictionRunner runner = new PredictionRunner();
-		runner.evaluate();
+		// runner.evaluate();
+		
+		// Only for report debugging.
+		runner.evaluateFromFile();
+	}
+
+	// Method is more for testing.
+	public void evaluateFromFile() {
+		String fileName = "Report_WS3_T_F_F_S_20170107-121851.ser";
+		File file = new File("./reports/" + fileName);
+
+		List<PredictedResult> results = reportHandler.deserializeResults(file);
+		this.reportHandler.createReport(results);
 	}
 
 	public void evaluate() {
-		
-		// If set to true, reuses the last saved result. 
-		// No Usage of Web Sentiment Analyzer will be made. 
-		boolean reuseLastRun = true; 
-		List<PredictedResult> results;
-		
-		if(reuseLastRun) {
-			results = deserializeResults();
-		}
-		else {
-			results = this.evaluator.evaluateSingle(PARTY, QUESTION_ID, WINDOW_SIZE);
-			serializeResults(results);
-		}
 
-		this.reportHandler.saveReport(results);
-	}
+		// If set to true, reuses the last saved result.
+		// No Usage of Web Sentiment Analyzer will be made.
+		List<PredictedResult> results = this.evaluator.evaluateSingle(PARTY, QUESTION_ID, WINDOW_SIZE);
 
-	private void serializeResults(List<PredictedResult> results) {
-
-		try {
-			FileOutputStream fout = new FileOutputStream("lastRunToReport.dat");
-			ObjectOutputStream oos = new ObjectOutputStream(fout);
-			oos.writeObject(results);
-			oos.close();
-			System.out.println("File stored: lastRunToReport.dat");
-
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
-
-	private List<PredictedResult> deserializeResults() {
-		List<PredictedResult> results = null;
-		try {
-			FileInputStream fius = new FileInputStream("lastRunToReport.dat");
-			ObjectInputStream ois = new ObjectInputStream(fius);
-			results = (List<PredictedResult>) ois.readObject();
-
-			ois.close();
-			System.out.println("File loaded: lastRunToReport.dat");
-
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-
-		return results;
+		this.reportHandler.createReport(results);
 	}
 }

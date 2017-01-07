@@ -1,7 +1,11 @@
 package info.stuber.fhnw.thesis.semantira;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -16,33 +20,56 @@ import info.stuber.fhnw.thesis.utils.Question;
 
 public class ReportHandler {
 
-	String evaluationName;
+	String reportName;
+	String reportConfig;
 
 	private int WINDOW_SIZE = Props.evalWindowSize();
 	private boolean ONLY_SENTIMENTAL = Props.evalOnlySentiment();
 	private boolean ONLY_FIRST_HIT = Props.evalFirstHit();
 	private boolean INVERSE_QUESTION_MODE = Props.evalInverseQuestion();
 	private String ANALYZER = Props.evalAnalyzer();
+	private final static String REPORT_PATH = "./reports/";
 
 	public ReportHandler() {
 
-		// Create evaluation-Shortcut.
-		this.evaluationName = "WS" + WINDOW_SIZE + "_" + firstLetter(ONLY_SENTIMENTAL) + "_"
-				+ firstLetter(ONLY_FIRST_HIT) + "_" + firstLetter(INVERSE_QUESTION_MODE) + "_" + ANALYZER;
+		// Create evaluation report name (without extention).
+		String date = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
+		this.reportConfig = "WS" + WINDOW_SIZE + "_" + firstLetter(ONLY_SENTIMENTAL) + "_" + firstLetter(ONLY_FIRST_HIT)
+				+ "_" + firstLetter(INVERSE_QUESTION_MODE) + "_" + ANALYZER;
+		this.reportName = "Report_" + this.reportConfig + "_" + date;
 	}
 
 	private String firstLetter(boolean input) {
 		return (input == true) ? "T" : "F";
 	}
+	
+	public void createReport(List<PredictedResult> results) {
+		// Create target output file.
+		File reportFile = new File(REPORT_PATH + this.reportName + ".html");
+		File resultFile = new File(REPORT_PATH + this.reportName + ".ser");
+		System.out.println(reportFile.getAbsolutePath());
+		System.out.println(resultFile.getAbsolutePath());
+		
+		String htmlReport = createHtmlReport(results);
+		exportReport(htmlReport, reportFile);
+		serializeResults(results, resultFile);
+	}
+	
+	private void exportReport(String htmlReport, File file) {
+				
+		try {
+			Files.write(Paths.get(file.toURI()), htmlReport.getBytes("utf-8"), StandardOpenOption.CREATE,
+					StandardOpenOption.TRUNCATE_EXISTING);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
-	public void saveReport(List<PredictedResult> results) {
+	public String createHtmlReport(List<PredictedResult> results) {
 
 		StringBuilder sb = new StringBuilder();
-
-		// Create target output file.
-		String date = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
 		String date_report = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date());
-		File file = new File("./reports/Report_" + this.evaluationName + "_" + date + ".html");
 
 		// Calculate result.
 		int total = results.size();
@@ -78,7 +105,7 @@ public class ReportHandler {
 		sb.append("<li>InversionFlag: <kbd>" + INVERSE_QUESTION_MODE + "</kbd></li>");
 		sb.append("<li>Analyzer: <kbd>" + ANALYZER + "</kbd></li>");
 		sb.append("</ul>");
-		sb.append("<p>Shortcut: " + this.evaluationName + "</p>");
+		sb.append("<p>Shortcut: " + this.reportConfig + "</p>");
 
 		// SUMMARY.
 		sb.append("<h3>Summary</h3>");
@@ -192,20 +219,14 @@ public class ReportHandler {
 		sb.append("</script>");
 
 		sb.append("</body></html>");
-
-		try {
-			Files.write(Paths.get(file.toURI()), sb.toString().getBytes("utf-8"), StandardOpenOption.CREATE,
-					StandardOpenOption.TRUNCATE_EXISTING);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		return sb.toString();
 	}
 
 	public String highlightMatches(String text, String query) {
 		// Cleanup query.
 		String q = null;
-		q = query.replace("(", "").replace(")","");
+		q = query.replace("(", "").replace(")", "");
 		q = q.substring(0, q.indexOf("+"));
 		String[] searchWords = q.split("contents\\:");
 
@@ -224,16 +245,39 @@ public class ReportHandler {
 
 		return text;
 	}
-	
+
 	private String firstLetterCapital(String word) {
 		return word.substring(0, 1).toUpperCase() + word.substring(1);
 	}
 
-	@Test
-	public void testMatch() {
-		String query = "contents:government contents:spending contents:should contents:cut contents:further contents:order contents:balance contents:budget +party:1";
-		String text = "99We have cut the EU budget, for the first time in history, and pushed for better value for money for British taxpayers in all spending.";
+	public void serializeResults(List<PredictedResult> results, File file) {
 
-		System.out.println(text);
+		try {
+			FileOutputStream fout = new FileOutputStream(file);
+			ObjectOutputStream oos = new ObjectOutputStream(fout);
+			oos.writeObject(results);
+			oos.close();
+			System.out.println("File stored: " + file.getPath());
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	public List<PredictedResult> deserializeResults(File file) {
+		List<PredictedResult> results = null;
+		try {
+			FileInputStream fius = new FileInputStream(file);
+			ObjectInputStream ois = new ObjectInputStream(fius);
+			results = (List<PredictedResult>) ois.readObject();
+
+			ois.close();
+			System.out.println("File loaded: " + file.getPath());
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+		return results;
 	}
 }
