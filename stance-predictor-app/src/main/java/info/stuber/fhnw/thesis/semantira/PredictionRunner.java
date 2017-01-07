@@ -1,15 +1,8 @@
 package info.stuber.fhnw.thesis.semantira;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
-import info.stuber.fhnw.thesis.collector.Coding;
 import info.stuber.fhnw.thesis.utils.Party;
 import info.stuber.fhnw.thesis.utils.Props;
 
