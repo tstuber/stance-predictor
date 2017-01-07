@@ -19,6 +19,7 @@ import junit.framework.Assert;
 public class PredictionEvaluationTest {
 
 	PredictionEvaluation evaluator;
+	ReportHandler reportHandler;
 	String evaluationName;
 	private Party PARTY = Party.fromInteger(1);
 	private int QUESTION_ID = 14;
@@ -34,6 +35,7 @@ public class PredictionEvaluationTest {
 	@Before
 	public void setup() {
 		this.evaluator = new PredictionEvaluation();
+		this.reportHandler = new ReportHandler();
 
 		// Create evaluation-Shortcut.
 		this.evaluationName = "WS" + WINDOW_SIZE + "_" + firstLetter(ONLY_SENTIMENTAL) + "_" + firstLetter(ONLY_FIRST_HIT)
@@ -45,6 +47,7 @@ public class PredictionEvaluationTest {
 
 		List<PredictedResult> results = evaluator.evaluateSingle(PARTY, QUESTION_ID, WINDOW_SIZE);
 		printResult(results);
+		this.reportHandler.createReport(results);
 	}
 
 	@Test
@@ -52,6 +55,7 @@ public class PredictionEvaluationTest {
 
 		List<PredictedResult> results = evaluator.evaluateQuestion(QUESTION_ID, WINDOW_SIZE);
 		printResult(results);
+		this.reportHandler.createReport(results);
 	}
 
 	@Test
@@ -59,6 +63,7 @@ public class PredictionEvaluationTest {
 
 		List<PredictedResult> results = evaluator.evaluateParty(PARTY, WINDOW_SIZE);
 		printResult(results);
+		this.reportHandler.createReport(results);
 	}
 
 	@Test
@@ -66,6 +71,7 @@ public class PredictionEvaluationTest {
 
 		List<PredictedResult> results = evaluator.evaluateAll(WINDOW_SIZE);
 		printResult(results);
+		this.reportHandler.createReport(results);
 	}
 
 	private void printResult(List<PredictedResult> results) {

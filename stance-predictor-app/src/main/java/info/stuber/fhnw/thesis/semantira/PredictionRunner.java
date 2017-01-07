@@ -29,10 +29,10 @@ public class PredictionRunner {
 
 	public static void main(String[] args) {
 		PredictionRunner runner = new PredictionRunner();
-		// runner.evaluate();
+		runner.evaluate();
 		
 		// Only for report debugging.
-		runner.evaluateFromFile();
+		// runner.evaluateFromFile();
 	}
 
 	// Method is more for testing.
@@ -48,7 +48,8 @@ public class PredictionRunner {
 
 		// If set to true, reuses the last saved result.
 		// No Usage of Web Sentiment Analyzer will be made.
-		List<PredictedResult> results = this.evaluator.evaluateSingle(PARTY, QUESTION_ID, WINDOW_SIZE);
+		// List<PredictedResult> results = this.evaluator.evaluateSingle(PARTY, QUESTION_ID, WINDOW_SIZE);
+		List<PredictedResult> results = this.evaluator.evaluateAll(WINDOW_SIZE);
 
 		this.reportHandler.createReport(results);
 	}
