@@ -3,11 +3,9 @@ package info.stuber.fhnw.thesis.lucene;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
@@ -15,27 +13,17 @@ import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.queryparser.xml.ParserException;
-import org.apache.lucene.queryparser.xml.QueryBuilder;
-import org.apache.lucene.queryparser.xml.QueryBuilderFactory;
-import org.apache.lucene.queryparser.xml.builders.BooleanQueryBuilder;
-import org.apache.lucene.search.BooleanClause;
+import org.apache.lucene.search.BooleanClause.Occur;
 import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.search.TopDocs;
-import org.apache.lucene.search.similarities.BM25Similarity;
-import org.apache.lucene.search.similarities.MultiSimilarity;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.springframework.aop.aspectj.AspectJAdviceParameterNameDiscoverer.AmbiguousBindingException;
-import org.w3c.dom.Element;
-
 import info.stuber.fhnw.thesis.utils.GetConfigPropertyValues;
 import info.stuber.fhnw.thesis.utils.Party;
-import info.stuber.fhnw.thesis.utils.Question;
 
 /*
  * This class is a copy of SearchResult.java and is used for testing. 
@@ -45,7 +33,7 @@ public class CustomSearcher {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		CustomSearcher tester = new CustomSearcher();
-		tester.retrieveTopDocs(Party.CON, 14, 2);
+		tester.retrieveTopDocs(Party.CON, 1,2 );
 	}
 
 	public List<SearchResult> retrieveTopDocs(Party party, int questionId, int windowSize) {
@@ -54,26 +42,41 @@ public class CustomSearcher {
 		String indexPath = getPathOfIndex(windowSize);
 
 		try {
-			Analyzer analyzer = new EnglishAnalyzer();
+			Analyzer analyzer = new StandardAnalyzer();
 			Directory index = FSDirectory.open(Paths.get(indexPath));
+			
+			String blockedArticle = "uk-politics-29642613";
 
 			// 2. query
-			String issueStmt = Question.getQuestionById(questionId);
-			int partyId = party.getId();
-			String special = issueStmt + " +party:" + partyId;
-			// special = "contents:end contents:subsidies contents:wind
-			// contents:farms contents:renewal +contents:energy +party:5";
-
-			Query q = new QueryParser(LuceneConstants.CONTENTS, analyzer).parse(special);
-
-			System.out.println(q.toString());
+			
+			// Issue Statement query
+			// String issueStmt = Question.getQuestionById(questionId);
+			String issueStmt = "NHS privatisation";
+			QueryParser issueStatementQP = new QueryParser(LuceneConstants.CONTENTS, analyzer);
+			Query issueStmtQuery = issueStatementQP.parse(issueStmt);
+			
+			// Party query
+			String partyId = Integer.toString(party.getId());
+			QueryParser partyQP = new QueryParser(LuceneConstants.PARTY, analyzer);
+			Query partyQuery = partyQP.parse(partyId);
+			
+			// Source query
+			TermQuery queryBlacklist = new TermQuery(new Term("source", blockedArticle));
+			
+			// Final query
+			BooleanQuery.Builder finalQuery = new BooleanQuery.Builder();
+			finalQuery.add(issueStmtQuery, Occur.SHOULD);
+			finalQuery.add(partyQuery, Occur.MUST);
+			finalQuery.add(queryBlacklist, Occur.MUST_NOT); // Fixes the problem of the all mixed stance passage. 
+			
+			System.out.println(finalQuery.build().toString());
 
 			// 3. search
 			int hitsPerPage = LuceneConstants.MAX_SEARCH;
 			IndexReader reader = DirectoryReader.open(index);
 
 			IndexSearcher searcher = new IndexSearcher(reader);
-			TopDocs docs = searcher.search(q, hitsPerPage);
+			TopDocs docs = searcher.search(finalQuery.build(), hitsPerPage);
 			ScoreDoc[] hits = docs.scoreDocs;
 
 			System.out.println("maxDocs: " + reader.maxDoc());
@@ -98,7 +101,7 @@ public class CustomSearcher {
 				String passage = d.get(LuceneConstants.CONTENTS);
 				String source = d.get(LuceneConstants.SOURCE);
 
-				SearchResult res = new SearchResult(passage, hitScore, docCount, source, q.toString());
+				SearchResult res = new SearchResult(passage, hitScore, docCount, source, finalQuery.build().toString());
 
 				// Only adds search result if not a duplicate.
 				if (!searchResults.contains(res)) {
